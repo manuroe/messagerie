@@ -1,0 +1,65 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
+  - GZIP (1.2.3)
+  - libbase58 (0.1.4)
+  - OLMKit (3.1.0):
+    - OLMKit/olmc (= 3.1.0)
+    - OLMKit/olmcpp (= 3.1.0)
+  - OLMKit/olmc (3.1.0)
+  - OLMKit/olmcpp (3.1.0)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - SwiftMatrixSDK (0.13.1):
+    - AFNetworking (~> 3.2.0)
+    - GZIP (~> 1.2.2)
+    - libbase58 (~> 0.1.4)
+    - OLMKit (~> 3.1.0)
+    - Realm (~> 3.13.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.8)
+  - AlamofireImage (~> 3.5)
+  - SwiftMatrixSDK (= 0.13.1)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Alamofire
+    - AlamofireImage
+    - GZIP
+    - libbase58
+    - OLMKit
+    - Realm
+    - SwiftMatrixSDK
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  GZIP: af5c90ef903776a7e9afe6ebebd794a84a2929d4
+  libbase58: 7c040313537b8c44b6e2d15586af8e21f7354efd
+  OLMKit: 4ee0159d63feeb86d836fdcfefe418e163511639
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  SwiftMatrixSDK: 3e91121526999dc8fa1c484faabbe1ae09bc1eff
+
+PODFILE CHECKSUM: 340f10e7847a51cd76bd63e48e940c2d45164d2f
+
+COCOAPODS: 1.8.4

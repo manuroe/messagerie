@@ -3,19 +3,50 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		329908FE2371A5AE00D7D989 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908DF2371A5AE00D7D989 /* RoomListViewModel.swift */; };
+		329908FF2371A5AE00D7D989 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908E12371A5AE00D7D989 /* RoomListView.swift */; };
+		329909002371A5AE00D7D989 /* RoomSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908E32371A5AE00D7D989 /* RoomSummary.swift */; };
+		329909012371A5AE00D7D989 /* RoomListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908E52371A5AE00D7D989 /* RoomListSource.swift */; };
+		329909022371A5AE00D7D989 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908E82371A5AE00D7D989 /* AvatarView.swift */; };
+		329909032371A5AE00D7D989 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908EA2371A5AE00D7D989 /* ImageLoader.swift */; };
+		329909042371A5AE00D7D989 /* MockRoomListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908EE2371A5AE00D7D989 /* MockRoomListSource.swift */; };
+		329909052371A5AE00D7D989 /* MatrixRoomListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908F12371A5AE00D7D989 /* MatrixRoomListSource.swift */; };
+		329909062371A5AE00D7D989 /* MatrixSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908F42371A5AE00D7D989 /* MatrixSession.swift */; };
+		329909072371A5AE00D7D989 /* MatrixManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908F52371A5AE00D7D989 /* MatrixManager.swift */; };
+		329909082371A5AE00D7D989 /* MatrixSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908F62371A5AE00D7D989 /* MatrixSessionManager.swift */; };
+		329909092371A5AE00D7D989 /* MatrixAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908F72371A5AE00D7D989 /* MatrixAccount.swift */; };
+		3299090A2371A5AE00D7D989 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908FA2371A5AE00D7D989 /* AccountManager.swift */; };
+		3299090B2371A5AE00D7D989 /* ProtocolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908FC2371A5AE00D7D989 /* ProtocolManager.swift */; };
+		3299090C2371A5AE00D7D989 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329908FD2371A5AE00D7D989 /* Account.swift */; };
 		32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1EF2367A23E00CDE9BC /* AppDelegate.swift */; };
 		32D5C1F22367A23E00CDE9BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1F12367A23E00CDE9BC /* SceneDelegate.swift */; };
 		32D5C1F42367A23E00CDE9BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1F32367A23E00CDE9BC /* ContentView.swift */; };
 		32D5C1F62367A24100CDE9BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1F52367A24100CDE9BC /* Assets.xcassets */; };
 		32D5C1F92367A24100CDE9BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1F82367A24100CDE9BC /* Preview Assets.xcassets */; };
 		32D5C1FC2367A24100CDE9BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1FA2367A24100CDE9BC /* LaunchScreen.storyboard */; };
+		36881D96632A4B97E93FEEB1 /* Pods_Messagerie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A8EE204848F0C2F45D3FC /* Pods_Messagerie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		329908DF2371A5AE00D7D989 /* RoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
+		329908E12371A5AE00D7D989 /* RoomListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
+		329908E32371A5AE00D7D989 /* RoomSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomSummary.swift; sourceTree = "<group>"; };
+		329908E52371A5AE00D7D989 /* RoomListSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListSource.swift; sourceTree = "<group>"; };
+		329908E82371A5AE00D7D989 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		329908EA2371A5AE00D7D989 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		329908EE2371A5AE00D7D989 /* MockRoomListSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRoomListSource.swift; sourceTree = "<group>"; };
+		329908F12371A5AE00D7D989 /* MatrixRoomListSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixRoomListSource.swift; sourceTree = "<group>"; };
+		329908F42371A5AE00D7D989 /* MatrixSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixSession.swift; sourceTree = "<group>"; };
+		329908F52371A5AE00D7D989 /* MatrixManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixManager.swift; sourceTree = "<group>"; };
+		329908F62371A5AE00D7D989 /* MatrixSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixSessionManager.swift; sourceTree = "<group>"; };
+		329908F72371A5AE00D7D989 /* MatrixAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixAccount.swift; sourceTree = "<group>"; };
+		329908FA2371A5AE00D7D989 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		329908FC2371A5AE00D7D989 /* ProtocolManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolManager.swift; sourceTree = "<group>"; };
+		329908FD2371A5AE00D7D989 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		32D5C1EC2367A23E00CDE9BC /* Messagerie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messagerie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D5C1EF2367A23E00CDE9BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D5C1F12367A23E00CDE9BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +55,9 @@
 		32D5C1F82367A24100CDE9BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32D5C1FB2367A24100CDE9BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32D5C1FD2367A24100CDE9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96BC35D419748984B6B1E7A8 /* Pods-Messagerie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messagerie.debug.xcconfig"; path = "Target Support Files/Pods-Messagerie/Pods-Messagerie.debug.xcconfig"; sourceTree = "<group>"; };
+		A96634EB3F6696EC12BF9593 /* Pods-Messagerie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messagerie.release.xcconfig"; path = "Target Support Files/Pods-Messagerie/Pods-Messagerie.release.xcconfig"; sourceTree = "<group>"; };
+		EC1A8EE204848F0C2F45D3FC /* Pods_Messagerie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messagerie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +65,235 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36881D96632A4B97E93FEEB1 /* Pods_Messagerie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		329908D42371A5AE00D7D989 /* MessagerieUI */ = {
+			isa = PBXGroup;
+			children = (
+				329908E62371A5AE00D7D989 /* Common */,
+				329908F82371A5AE00D7D989 /* Data */,
+				329908D52371A5AE00D7D989 /* UI */,
+				329908EB2371A5AE00D7D989 /* Implementation */,
+			);
+			path = MessagerieUI;
+			sourceTree = "<group>";
+		};
+		329908D52371A5AE00D7D989 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				329908D62371A5AE00D7D989 /* Room */,
+				329908DC2371A5AE00D7D989 /* RoomList */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		329908D62371A5AE00D7D989 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				329908D72371A5AE00D7D989 /* UI */,
+				329908DA2371A5AE00D7D989 /* Models */,
+				329908DB2371A5AE00D7D989 /* Protocols */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		329908D72371A5AE00D7D989 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				329908D82371A5AE00D7D989 /* ViewModels */,
+				329908D92371A5AE00D7D989 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		329908D82371A5AE00D7D989 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		329908D92371A5AE00D7D989 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		329908DA2371A5AE00D7D989 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		329908DB2371A5AE00D7D989 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		329908DC2371A5AE00D7D989 /* RoomList */ = {
+			isa = PBXGroup;
+			children = (
+				329908DD2371A5AE00D7D989 /* UI */,
+				329908E22371A5AE00D7D989 /* Models */,
+				329908E42371A5AE00D7D989 /* Protocols */,
+			);
+			path = RoomList;
+			sourceTree = "<group>";
+		};
+		329908DD2371A5AE00D7D989 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				329908E12371A5AE00D7D989 /* RoomListView.swift */,
+				329908DF2371A5AE00D7D989 /* RoomListViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		329908E22371A5AE00D7D989 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				329908E32371A5AE00D7D989 /* RoomSummary.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		329908E42371A5AE00D7D989 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				329908E52371A5AE00D7D989 /* RoomListSource.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		329908E62371A5AE00D7D989 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				329908E72371A5AE00D7D989 /* UI */,
+				329908E92371A5AE00D7D989 /* Services */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		329908E72371A5AE00D7D989 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				329908E82371A5AE00D7D989 /* AvatarView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		329908E92371A5AE00D7D989 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				329908EA2371A5AE00D7D989 /* ImageLoader.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		329908EB2371A5AE00D7D989 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				329908EF2371A5AE00D7D989 /* Matrix */,
+				329908EC2371A5AE00D7D989 /* Mock */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		329908EC2371A5AE00D7D989 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				329908ED2371A5AE00D7D989 /* DataSource */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		329908ED2371A5AE00D7D989 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				329908EE2371A5AE00D7D989 /* MockRoomListSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		329908EF2371A5AE00D7D989 /* Matrix */ = {
+			isa = PBXGroup;
+			children = (
+				329908F02371A5AE00D7D989 /* DataSource */,
+				329908F22371A5AE00D7D989 /* Data */,
+			);
+			path = Matrix;
+			sourceTree = "<group>";
+		};
+		329908F02371A5AE00D7D989 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				329908F12371A5AE00D7D989 /* MatrixRoomListSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		329908F22371A5AE00D7D989 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				329908F32371A5AE00D7D989 /* Account */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		329908F32371A5AE00D7D989 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				329908F42371A5AE00D7D989 /* MatrixSession.swift */,
+				329908F52371A5AE00D7D989 /* MatrixManager.swift */,
+				329908F62371A5AE00D7D989 /* MatrixSessionManager.swift */,
+				329908F72371A5AE00D7D989 /* MatrixAccount.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		329908F82371A5AE00D7D989 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				329908F92371A5AE00D7D989 /* Account */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		329908F92371A5AE00D7D989 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				329908FA2371A5AE00D7D989 /* AccountManager.swift */,
+				329908FB2371A5AE00D7D989 /* Protocols */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		329908FB2371A5AE00D7D989 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				329908FC2371A5AE00D7D989 /* ProtocolManager.swift */,
+				329908FD2371A5AE00D7D989 /* Account.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		32D5C1E32367A23E00CDE9BC = {
 			isa = PBXGroup;
 			children = (
 				32D5C1EE2367A23E00CDE9BC /* Messagerie */,
+				329908D42371A5AE00D7D989 /* MessagerieUI */,
 				32D5C1ED2367A23E00CDE9BC /* Products */,
+				6133E02DC5EF3514CA914EB9 /* Pods */,
+				B4EF5D895A8871585C1EBF30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +327,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		6133E02DC5EF3514CA914EB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96BC35D419748984B6B1E7A8 /* Pods-Messagerie.debug.xcconfig */,
+				A96634EB3F6696EC12BF9593 /* Pods-Messagerie.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B4EF5D895A8871585C1EBF30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC1A8EE204848F0C2F45D3FC /* Pods_Messagerie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32D5C2002367A24100CDE9BC /* Build configuration list for PBXNativeTarget "Messagerie" */;
 			buildPhases = (
+				8F34C1FCF6C0231429F25F99 /* [CP] Check Pods Manifest.lock */,
 				32D5C1E82367A23E00CDE9BC /* Sources */,
 				32D5C1E92367A23E00CDE9BC /* Frameworks */,
 				32D5C1EA2367A23E00CDE9BC /* Resources */,
+				D5F5ABF2E054F19BA671DFB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,14 +412,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8F34C1FCF6C0231429F25F99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Messagerie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5F5ABF2E054F19BA671DFB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Messagerie/Pods-Messagerie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Messagerie/Pods-Messagerie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Messagerie/Pods-Messagerie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		32D5C1E82367A23E00CDE9BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329909092371A5AE00D7D989 /* MatrixAccount.swift in Sources */,
+				329909012371A5AE00D7D989 /* RoomListSource.swift in Sources */,
+				329909052371A5AE00D7D989 /* MatrixRoomListSource.swift in Sources */,
 				32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */,
 				32D5C1F22367A23E00CDE9BC /* SceneDelegate.swift in Sources */,
+				3299090C2371A5AE00D7D989 /* Account.swift in Sources */,
+				3299090B2371A5AE00D7D989 /* ProtocolManager.swift in Sources */,
 				32D5C1F42367A23E00CDE9BC /* ContentView.swift in Sources */,
+				329908FE2371A5AE00D7D989 /* RoomListViewModel.swift in Sources */,
+				329909032371A5AE00D7D989 /* ImageLoader.swift in Sources */,
+				329909022371A5AE00D7D989 /* AvatarView.swift in Sources */,
+				329908FF2371A5AE00D7D989 /* RoomListView.swift in Sources */,
+				329909002371A5AE00D7D989 /* RoomSummary.swift in Sources */,
+				329909042371A5AE00D7D989 /* MockRoomListSource.swift in Sources */,
+				329909082371A5AE00D7D989 /* MatrixSessionManager.swift in Sources */,
+				329909062371A5AE00D7D989 /* MatrixSession.swift in Sources */,
+				3299090A2371A5AE00D7D989 /* AccountManager.swift in Sources */,
+				329909072371A5AE00D7D989 /* MatrixManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +610,7 @@
 		};
 		32D5C2012367A24100CDE9BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96BC35D419748984B6B1E7A8 /* Pods-Messagerie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +630,7 @@
 		};
 		32D5C2022367A24100CDE9BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A96634EB3F6696EC12BF9593 /* Pods-Messagerie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

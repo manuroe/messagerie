@@ -19,8 +19,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        // Create the SwiftUI view that provides the window contents
+
+        let accountManager = AccountManager.shared
+        self.setupHardCodedAccount(accountManager: accountManager)
+
+        // Hmm: that's painful
+        // Factory instead?
+        // protocolManager as @EnvironmentObject? Maybe account too?
+        let account = accountManager.accounts.first!
+        let protocolManager = accountManager.manager(protocolType: account.protocolType)!
+        let roomListSource = protocolManager.roomListSource(account: account)
+
+        let contentView = RoomListView(viewModel: RoomListViewModel(source: roomListSource))
+
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -29,6 +41,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+    }
+
+    // TODO: Remove it
+    private func setupHardCodedAccount(accountManager: AccountManager) {
+        accountManager.registerProtocolManager(protocolType: ProtocolType.matrix, manager: MatrixManager())
+        let account = MatrixAccount(homeserver: URL(string: "https://matrix.org")!,
+                                    userId: "@superman:matrix.org",
+                                    accessToken: "MDAxOGxvY2F0aW9uIG1hdHJpeC5vcmcKMDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2VuID0gMQowMDI3Y2lkIHVzZXJfaWQgPSBAc3VwZXJtYW46bWF0cml4Lm9yZwowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAyMWNpZCBub25jZSA9IHJaRjRSNSpVOjNPTCZNPTYKMDAyZnNpZ25hdHVyZSDwKgaV-qS3-6I3jvj-La7FZAwitRuMCSuerEx2If34Two")
+        accountManager.addAccount(account: account)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
