@@ -22,6 +22,10 @@
 		3299093E2372208A00D7D989 /* RoomSummariesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299092E2372208A00D7D989 /* RoomSummariesSource.swift */; };
 		3299093F2372208A00D7D989 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909302372208A00D7D989 /* AccountManager.swift */; };
 		329909402372208A00D7D989 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909312372208A00D7D989 /* Account.swift */; };
+		32990944237227F900D7D989 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32990943237227F900D7D989 /* User.swift */; };
+		329909462372289000D7D989 /* UserSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909452372288F00D7D989 /* UserSource.swift */; };
+		329909492372295000D7D989 /* MatrixUserSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909482372295000D7D989 /* MatrixUserSource.swift */; };
+		3299094B2372308400D7D989 /* MockUserSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299094A2372308400D7D989 /* MockUserSource.swift */; };
 		32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1EF2367A23E00CDE9BC /* AppDelegate.swift */; };
 		32D5C1F22367A23E00CDE9BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1F12367A23E00CDE9BC /* SceneDelegate.swift */; };
 		32D5C1F42367A23E00CDE9BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1F32367A23E00CDE9BC /* ContentView.swift */; };
@@ -47,6 +51,10 @@
 		3299092E2372208A00D7D989 /* RoomSummariesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomSummariesSource.swift; sourceTree = "<group>"; };
 		329909302372208A00D7D989 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		329909312372208A00D7D989 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		32990943237227F900D7D989 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		329909452372288F00D7D989 /* UserSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSource.swift; sourceTree = "<group>"; };
+		329909482372295000D7D989 /* MatrixUserSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixUserSource.swift; sourceTree = "<group>"; };
+		3299094A2372308400D7D989 /* MockUserSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserSource.swift; sourceTree = "<group>"; };
 		32D5C1EC2367A23E00CDE9BC /* Messagerie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messagerie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D5C1EF2367A23E00CDE9BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D5C1F12367A23E00CDE9BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				3299091D2372208A00D7D989 /* RoomList */,
+				3299094A2372308400D7D989 /* MockUserSource.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -193,6 +202,7 @@
 		329909202372208A00D7D989 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				329909472372293600D7D989 /* User */,
 				329909212372208A00D7D989 /* RoomList */,
 				329909232372208A00D7D989 /* Account */,
 			);
@@ -221,6 +231,7 @@
 		329909282372208A00D7D989 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				329909422372277F00D7D989 /* User */,
 				329909292372208A00D7D989 /* Room */,
 				3299092A2372208A00D7D989 /* Protocol */,
 				3299092C2372208A00D7D989 /* RoomList */,
@@ -260,6 +271,23 @@
 				329909312372208A00D7D989 /* Account.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		329909422372277F00D7D989 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				32990943237227F900D7D989 /* User.swift */,
+				329909452372288F00D7D989 /* UserSource.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		329909472372293600D7D989 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				329909482372295000D7D989 /* MatrixUserSource.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		32D5C1E32367A23E00CDE9BC = {
@@ -438,12 +466,14 @@
 				329909352372208A00D7D989 /* ImageLoader.swift in Sources */,
 				3299093C2372208A00D7D989 /* ProtocolManager.swift in Sources */,
 				3299093D2372208A00D7D989 /* RoomSummary.swift in Sources */,
+				329909462372289000D7D989 /* UserSource.swift in Sources */,
 				32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */,
 				329909342372208A00D7D989 /* AvatarView.swift in Sources */,
 				329909402372208A00D7D989 /* Account.swift in Sources */,
 				329909372372208A00D7D989 /* MatrixRoomSummariesSource.swift in Sources */,
 				32D5C1F22367A23E00CDE9BC /* SceneDelegate.swift in Sources */,
 				3299093A2372208A00D7D989 /* MatrixSessionManager.swift in Sources */,
+				329909492372295000D7D989 /* MatrixUserSource.swift in Sources */,
 				32D5C1F42367A23E00CDE9BC /* ContentView.swift in Sources */,
 				3299093E2372208A00D7D989 /* RoomSummariesSource.swift in Sources */,
 				329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */,
@@ -452,7 +482,9 @@
 				329909392372208A00D7D989 /* MatrixManager.swift in Sources */,
 				3299093F2372208A00D7D989 /* AccountManager.swift in Sources */,
 				329909362372208A00D7D989 /* MockRoomSummariesSource.swift in Sources */,
+				3299094B2372308400D7D989 /* MockUserSource.swift in Sources */,
 				329909382372208A00D7D989 /* MatrixSession.swift in Sources */,
+				32990944237227F900D7D989 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

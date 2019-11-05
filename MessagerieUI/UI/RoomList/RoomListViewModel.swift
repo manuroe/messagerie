@@ -11,21 +11,30 @@ import Combine
 
 class RoomListViewModel: ObservableObject {
     @Published var rooms: [RoomSummary]?
+    @Published var myUser: User?
 
-    private let source: RoomSummariesSource
-    private var sourceObserver: AnyCancellable?
+    private let summariesSource: RoomSummariesSource
+    private var summariesSourceObserver: AnyCancellable?
 
-    init(source: RoomSummariesSource) {
-        self.source = source
+    private let userSource: UserSource
+    private var userSourceObserver: AnyCancellable?
+
+    init(source: RoomSummariesSource, userSource: UserSource) {
+        self.summariesSource = source
+        self.userSource = userSource
         load()
     }
 
     private func load() {
-        sourceObserver = source.publisher.sink { (rooms) in
+        summariesSourceObserver = summariesSource.publisher.sink { (rooms) in
             self.rooms = rooms
         }
+        summariesSource.load()
 
-        source.load()
+        userSourceObserver = userSource.publisher.sink { (user) in
+            self.myUser = user
+        }
+        userSource.load()
     }
 }
 

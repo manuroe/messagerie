@@ -29,9 +29,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // protocolManager as @EnvironmentObject? Maybe account too?
         let account = accountManager.accounts.first!
         let protocolManager = accountManager.manager(protocolType: account.protocolType)!
-        let roomListSource = protocolManager.roomListSource(account: account)
+        let roomSummariesSource = protocolManager.makeRoomSummariesSource(account: account)
 
-        let contentView = RoomListView(viewModel: RoomListViewModel(source: roomListSource))
+        let userSource = protocolManager.makeUserSource(account: account, userId: account.userId)
+
+        let contentView = RoomListView(viewModel: RoomListViewModel(source: roomSummariesSource, userSource: userSource))
 
 
         // Use a UIHostingController as window root view controller.

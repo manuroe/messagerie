@@ -45,6 +45,7 @@ class MatrixRoomSummariesSource: RoomSummariesSource {
 
     private func buildRoom(from roomSummary: MXRoomSummary) -> RoomSummary {
         let size = CGSize(width: 40, height: 40) // TODO: Must be driven by the UI
+        
         return RoomSummary(roomId: roomSummary.roomId,
                            displayname: roomSummary.displayname ?? roomSummary.roomId,
                            avatar: session.urlString(mxcString: roomSummary.avatar, size: size) ?? "https://matrix.org/matrix.png")

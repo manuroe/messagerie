@@ -43,40 +43,19 @@ struct RoomListView: View {
                 }
             }
             .navigationBarTitle(
-                Text("TODO")
-                //Text(account.session.myUser?.displayname ?? "Loading...")
+                Text((viewModel.myUser != nil) ? viewModel.myUser!.displayname : "")
             )
             .navigationBarItems(
-                leading: NavLogo()
+                leading: AvatarView(avatarUrl: viewModel.myUser?.avatar)
             )
         }
-    }
-}
-
-// TODO
-struct NavLogo: View {
-
-    var body: some View {
-//            VStack {
-//                Image(systemName: "person")
-//                    .resizable()
-//                    .aspectRatio(2, contentMode: .fit)
-//                    .imageScale(.large)
-//            }
-//            .frame(width: 200)
-//            .background(Color.clear)
-
-        Image(systemName: "person")
-
-
-//        AvatarView(avatarUrl: "https://matrix.org/matrix.png")
     }
 }
 
 #if DEBUG
 struct RoomListView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = RoomListViewModel(source: MockRoomSummariesSource())
+        let viewModel = RoomListViewModel(source: MockRoomSummariesSource(), userSource: MockUserSource())
         return RoomListView(viewModel: viewModel)
     }
 }
