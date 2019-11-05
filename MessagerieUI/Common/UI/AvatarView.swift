@@ -11,18 +11,23 @@ import SwiftUI
 struct AvatarView: View {
     @ObservedObject private var imageLoader = ImageLoader()
 
-    init(avatarUrl: String?) {
+    let width: CGFloat?
+    let height: CGFloat?
+
+    init(avatarUrl: String?, width: CGFloat? = nil, height: CGFloat? = nil) {
+        self.width = width
+        self.height = height
 
         if let avatarUrl = avatarUrl {
-            self.imageLoader.loadUrl(urlString: avatarUrl)
+            imageLoader.loadUrl(urlString: avatarUrl)
         }
     }
 
     var body: some View {
-        Image(uiImage: self.imageLoader.image)
+        Image(uiImage: imageLoader.image)
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame(width: 40, height: 40)   // TODO: Should be a param
+            .frame(width: width, height: height)
             .clipShape(Circle())
     }
 }

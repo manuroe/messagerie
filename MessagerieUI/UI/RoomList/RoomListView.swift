@@ -30,7 +30,7 @@ struct RoomListView: View {
     // */
     //                    )) {
                             HStack {
-                                AvatarView(avatarUrl: room.avatar)
+                                AvatarView(avatarUrl: room.avatar, width: 40, height: 40)
                                 Text(room.displayname)
                             }
     //                    }
@@ -46,7 +46,7 @@ struct RoomListView: View {
                 Text((viewModel.myUser != nil) ? viewModel.myUser!.displayname : "")
             )
             .navigationBarItems(
-                leading: AvatarView(avatarUrl: viewModel.myUser?.avatar)
+                leading: AvatarView(avatarUrl: viewModel.myUser?.avatar, width: 30, height: 30)
             )
         }
     }
