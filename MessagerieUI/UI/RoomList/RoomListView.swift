@@ -76,7 +76,7 @@ struct NavLogo: View {
 #if DEBUG
 struct RoomListView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = RoomListViewModel(source: MockRoomListSource())
+        let viewModel = RoomListViewModel(source: MockRoomSummariesSource())
         return RoomListView(viewModel: viewModel)
     }
 }

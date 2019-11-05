@@ -1,5 +1,5 @@
 //
-//  MatrixRoomListSource.swift
+//  MatrixRoomSummariesSource.swift
 //  Messagerie
 //
 //  Created by Emmanuel ROHEE on 03/11/2019.
@@ -11,7 +11,7 @@ import Combine
 
 import SwiftMatrixSDK
 
-class MatrixRoomListSource: RoomListSource {
+class MatrixRoomSummariesSource: RoomSummariesSource {
 
     private let subject = PassthroughSubject<[RoomSummary], Never>()
     var publisher : AnyPublisher<[RoomSummary], Never> {

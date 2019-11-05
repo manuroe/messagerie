@@ -15,7 +15,7 @@ protocol ProtocolManager {
 
     //func accountSource(account: Account) -> AccountSource
 
-    func roomListSource(account: Account) -> RoomListSource
+    func roomListSource(account: Account) -> RoomSummariesSource
     //func roomSource(account: Account, roomId: String) -> RoomSource
 }
 

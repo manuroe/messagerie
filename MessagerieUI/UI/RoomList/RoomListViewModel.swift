@@ -12,10 +12,10 @@ import Combine
 class RoomListViewModel: ObservableObject {
     @Published var rooms: [RoomSummary]?
 
-    private let source: RoomListSource
+    private let source: RoomSummariesSource
     private var sourceObserver: AnyCancellable?
 
-    init(source: RoomListSource) {
+    init(source: RoomSummariesSource) {
         self.source = source
         load()
     }
