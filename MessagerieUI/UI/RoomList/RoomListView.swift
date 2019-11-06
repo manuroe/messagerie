@@ -20,43 +20,48 @@ struct RoomListView: View {
                 Group {
                     if viewModel.rooms != nil {
                         List(viewModel.rooms!) { room in
-
-    //                    NavigationLink(destination: RoomView(
-    //                        //viewModel: RoomViewModel.stub())
-    //                        viewModel: RoomViewModel(roomSummary: roomSummary)
-    ///*
-    //                        viewModel: RoomViewModel(timeline: timeline, roomService: roomService),
-    //                        messageComposer: messageComposer(roomService)
-    // */
-    //                    )) {
-                            HStack {
-                                AvatarView(avatarUrl: room.avatar, width: 40, height: 40)
-                                Text(room.displayname)
+                            NavigationLink(destination: self.roomView(for: room.roomId)) {
+                                HStack {
+                                    AvatarView(avatarUrl: room.avatar, width: 40, height: 40)
+                                    Text(room.displayname)
+                                }
                             }
-    //                    }
-
-                }
+                        }
                     }
                     else {
                         Text("Loading...")
                     }
                 }
             }
-            .navigationBarTitle(
-                Text((viewModel.myUser != nil) ? viewModel.myUser!.displayname : "")
-            )
-            .navigationBarItems(
-                leading: AvatarView(avatarUrl: viewModel.myUser?.avatar, width: 30, height: 30)
-            )
         }
+        .navigationBarTitle(
+            Text((viewModel.myUser != nil) ? viewModel.myUser!.displayname : "")
+        )
+        .navigationBarItems(
+            leading: AvatarView(avatarUrl: viewModel.myUser?.avatar, width: 30, height: 30)
+        )
+    }
+
+    func roomView(for roomId: String) -> RoomView {
+
+        let accountManager = AccountManager.shared
+        let account = viewModel.account
+        let protocolManager = accountManager.manager(protocolType: account.protocolType)!
+
+        let messagesSource = protocolManager.makeTimeline(account: account, roomId: roomId)
+        let roomViewModel = RoomViewModel(source: messagesSource)
+
+        return RoomView(viewModel: roomViewModel)
     }
 }
+
 
 #if DEBUG
 struct RoomListView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = RoomListViewModel(source: MockRoomSummariesSource(), userSource: MockUserSource())
-        return RoomListView(viewModel: viewModel)
+//        let viewModel = RoomListViewModel(source: MockRoomSummariesSource(), userSource: MockUserSource())
+//        return RoomListView(viewModel: viewModel)
+        Text("TODO")
     }
 }
 #endif

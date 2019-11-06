@@ -13,13 +13,15 @@ class RoomListViewModel: ObservableObject {
     @Published var rooms: [RoomSummary]?
     @Published var myUser: User?
 
+    let account: Account
     private let summariesSource: RoomSummariesSource
     private var summariesSourceObserver: AnyCancellable?
 
     private let userSource: UserSource
     private var userSourceObserver: AnyCancellable?
 
-    init(source: RoomSummariesSource, userSource: UserSource) {
+    init(account: Account, source: RoomSummariesSource, userSource: UserSource) {
+        self.account = account
         self.summariesSource = source
         self.userSource = userSource
         load()

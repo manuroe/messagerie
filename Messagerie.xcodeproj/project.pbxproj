@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320F7EF2237723C400BCAE2F /* MockTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF1237723C400BCAE2F /* MockTimeline.swift */; };
 		329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909132372208A00D7D989 /* RoomListViewModel.swift */; };
 		329909332372208A00D7D989 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909142372208A00D7D989 /* RoomListView.swift */; };
 		329909342372208A00D7D989 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909172372208A00D7D989 /* AvatarView.swift */; };
@@ -26,6 +27,19 @@
 		329909462372289000D7D989 /* UserSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909452372288F00D7D989 /* UserSource.swift */; };
 		329909492372295000D7D989 /* MatrixUserSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909482372295000D7D989 /* MatrixUserSource.swift */; };
 		3299094B2372308400D7D989 /* MockUserSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299094A2372308400D7D989 /* MockUserSource.swift */; };
+		3299095023723A4D00D7D989 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299094D23723A4D00D7D989 /* Message.swift */; };
+		3299095423723B1C00D7D989 /* MatrixTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299095323723B1C00D7D989 /* MatrixTimeline.swift */; };
+		3299095623723BAF00D7D989 /* MatrixMessageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299095523723BAF00D7D989 /* MatrixMessageFactory.swift */; };
+		329909582373029A00D7D989 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 329909572373029900D7D989 /* README.md */; };
+		3299095B237359BD00D7D989 /* MessagesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32990959237359BD00D7D989 /* MessagesSource.swift */; };
+		3299095C237359BD00D7D989 /* MessagesUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299095A237359BD00D7D989 /* MessagesUpdate.swift */; };
+		329909652373691800D7D989 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299095D2373691700D7D989 /* RoomView.swift */; };
+		329909662373691800D7D989 /* RoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299095E2373691700D7D989 /* RoomViewModel.swift */; };
+		329909672373691800D7D989 /* MessageImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909602373691700D7D989 /* MessageImageView.swift */; };
+		329909682373691800D7D989 /* MessageHtmlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909612373691700D7D989 /* MessageHtmlView.swift */; };
+		329909692373691800D7D989 /* MessageWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909622373691700D7D989 /* MessageWidgetView.swift */; };
+		3299096A2373691800D7D989 /* MessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909632373691700D7D989 /* MessageTextView.swift */; };
+		3299096B2373691800D7D989 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909642373691700D7D989 /* MessageView.swift */; };
 		32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1EF2367A23E00CDE9BC /* AppDelegate.swift */; };
 		32D5C1F22367A23E00CDE9BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1F12367A23E00CDE9BC /* SceneDelegate.swift */; };
 		32D5C1F42367A23E00CDE9BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1F32367A23E00CDE9BC /* ContentView.swift */; };
@@ -36,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		320F7EF1237723C400BCAE2F /* MockTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimeline.swift; sourceTree = "<group>"; };
 		329909132372208A00D7D989 /* RoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
 		329909142372208A00D7D989 /* RoomListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
 		329909172372208A00D7D989 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -55,6 +70,19 @@
 		329909452372288F00D7D989 /* UserSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSource.swift; sourceTree = "<group>"; };
 		329909482372295000D7D989 /* MatrixUserSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixUserSource.swift; sourceTree = "<group>"; };
 		3299094A2372308400D7D989 /* MockUserSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserSource.swift; sourceTree = "<group>"; };
+		3299094D23723A4D00D7D989 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		3299095323723B1C00D7D989 /* MatrixTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixTimeline.swift; sourceTree = "<group>"; };
+		3299095523723BAF00D7D989 /* MatrixMessageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixMessageFactory.swift; sourceTree = "<group>"; };
+		329909572373029900D7D989 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		32990959237359BD00D7D989 /* MessagesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesSource.swift; sourceTree = "<group>"; };
+		3299095A237359BD00D7D989 /* MessagesUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesUpdate.swift; sourceTree = "<group>"; };
+		3299095D2373691700D7D989 /* RoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
+		3299095E2373691700D7D989 /* RoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewModel.swift; sourceTree = "<group>"; };
+		329909602373691700D7D989 /* MessageImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageImageView.swift; sourceTree = "<group>"; };
+		329909612373691700D7D989 /* MessageHtmlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageHtmlView.swift; sourceTree = "<group>"; };
+		329909622373691700D7D989 /* MessageWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWidgetView.swift; sourceTree = "<group>"; };
+		329909632373691700D7D989 /* MessageTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTextView.swift; sourceTree = "<group>"; };
+		329909642373691700D7D989 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		32D5C1EC2367A23E00CDE9BC /* Messagerie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messagerie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D5C1EF2367A23E00CDE9BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32D5C1F12367A23E00CDE9BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		320F7EEE2377236B00BCAE2F /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				320F7EF1237723C400BCAE2F /* MockTimeline.swift */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
 		3299090D2372208A00D7D989 /* MessagerieUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,24 +139,11 @@
 		3299090F2372208A00D7D989 /* Room */ = {
 			isa = PBXGroup;
 			children = (
-				329909102372208A00D7D989 /* ViewModels */,
-				329909112372208A00D7D989 /* Views */,
+				3299095F2373691700D7D989 /* Views */,
+				3299095D2373691700D7D989 /* RoomView.swift */,
+				3299095E2373691700D7D989 /* RoomViewModel.swift */,
 			);
 			path = Room;
-			sourceTree = "<group>";
-		};
-		329909102372208A00D7D989 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		329909112372208A00D7D989 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		329909122372208A00D7D989 /* RoomList */ = {
@@ -177,6 +200,7 @@
 		3299091C2372208A00D7D989 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				320F7EEE2377236B00BCAE2F /* Room */,
 				3299091D2372208A00D7D989 /* RoomList */,
 				3299094A2372308400D7D989 /* MockUserSource.swift */,
 			);
@@ -202,6 +226,7 @@
 		329909202372208A00D7D989 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3299095223723AFA00D7D989 /* Room */,
 				329909472372293600D7D989 /* User */,
 				329909212372208A00D7D989 /* RoomList */,
 				329909232372208A00D7D989 /* Account */,
@@ -243,6 +268,9 @@
 		329909292372208A00D7D989 /* Room */ = {
 			isa = PBXGroup;
 			children = (
+				3299094D23723A4D00D7D989 /* Message.swift */,
+				32990959237359BD00D7D989 /* MessagesSource.swift */,
+				3299095A237359BD00D7D989 /* MessagesUpdate.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -290,9 +318,31 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		3299095223723AFA00D7D989 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				3299095523723BAF00D7D989 /* MatrixMessageFactory.swift */,
+				3299095323723B1C00D7D989 /* MatrixTimeline.swift */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		3299095F2373691700D7D989 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				329909602373691700D7D989 /* MessageImageView.swift */,
+				329909612373691700D7D989 /* MessageHtmlView.swift */,
+				329909622373691700D7D989 /* MessageWidgetView.swift */,
+				329909632373691700D7D989 /* MessageTextView.swift */,
+				329909642373691700D7D989 /* MessageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		32D5C1E32367A23E00CDE9BC = {
 			isa = PBXGroup;
 			children = (
+				329909572373029900D7D989 /* README.md */,
 				32D5C1EE2367A23E00CDE9BC /* Messagerie */,
 				3299090D2372208A00D7D989 /* MessagerieUI */,
 				32D5C1ED2367A23E00CDE9BC /* Products */,
@@ -410,6 +460,7 @@
 			files = (
 				32D5C1FC2367A24100CDE9BC /* LaunchScreen.storyboard in Resources */,
 				32D5C1F92367A24100CDE9BC /* Preview Assets.xcassets in Resources */,
+				329909582373029A00D7D989 /* README.md in Resources */,
 				32D5C1F62367A24100CDE9BC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,14 +514,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3299095423723B1C00D7D989 /* MatrixTimeline.swift in Sources */,
 				329909352372208A00D7D989 /* ImageLoader.swift in Sources */,
 				3299093C2372208A00D7D989 /* ProtocolManager.swift in Sources */,
 				3299093D2372208A00D7D989 /* RoomSummary.swift in Sources */,
+				3299096A2373691800D7D989 /* MessageTextView.swift in Sources */,
 				329909462372289000D7D989 /* UserSource.swift in Sources */,
+				3299095C237359BD00D7D989 /* MessagesUpdate.swift in Sources */,
 				32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */,
 				329909342372208A00D7D989 /* AvatarView.swift in Sources */,
 				329909402372208A00D7D989 /* Account.swift in Sources */,
 				329909372372208A00D7D989 /* MatrixRoomSummariesSource.swift in Sources */,
+				329909672373691800D7D989 /* MessageImageView.swift in Sources */,
 				32D5C1F22367A23E00CDE9BC /* SceneDelegate.swift in Sources */,
 				3299093A2372208A00D7D989 /* MatrixSessionManager.swift in Sources */,
 				329909492372295000D7D989 /* MatrixUserSource.swift in Sources */,
@@ -478,13 +533,22 @@
 				3299093E2372208A00D7D989 /* RoomSummariesSource.swift in Sources */,
 				329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */,
 				3299093B2372208A00D7D989 /* MatrixAccount.swift in Sources */,
+				329909652373691800D7D989 /* RoomView.swift in Sources */,
 				329909332372208A00D7D989 /* RoomListView.swift in Sources */,
 				329909392372208A00D7D989 /* MatrixManager.swift in Sources */,
+				3299096B2373691800D7D989 /* MessageView.swift in Sources */,
+				329909662373691800D7D989 /* RoomViewModel.swift in Sources */,
+				329909692373691800D7D989 /* MessageWidgetView.swift in Sources */,
 				3299093F2372208A00D7D989 /* AccountManager.swift in Sources */,
+				320F7EF2237723C400BCAE2F /* MockTimeline.swift in Sources */,
 				329909362372208A00D7D989 /* MockRoomSummariesSource.swift in Sources */,
 				3299094B2372308400D7D989 /* MockUserSource.swift in Sources */,
 				329909382372208A00D7D989 /* MatrixSession.swift in Sources */,
+				329909682373691800D7D989 /* MessageHtmlView.swift in Sources */,
+				3299095023723A4D00D7D989 /* Message.swift in Sources */,
 				32990944237227F900D7D989 /* User.swift in Sources */,
+				3299095B237359BD00D7D989 /* MessagesSource.swift in Sources */,
+				3299095623723BAF00D7D989 /* MatrixMessageFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

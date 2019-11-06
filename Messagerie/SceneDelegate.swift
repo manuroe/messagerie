@@ -33,8 +33,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let userSource = protocolManager.makeUserSource(account: account, userId: account.userId)
 
-        let contentView = RoomListView(viewModel: RoomListViewModel(source: roomSummariesSource, userSource: userSource))
+        let contentView = RoomListView(viewModel: RoomListViewModel(account: account, source: roomSummariesSource, userSource: userSource))
 
+        // TODO: Remove this Mock RoomView test
+        //let contentView = RoomView(viewModel: RoomViewModel(source: MockTimeline()))
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

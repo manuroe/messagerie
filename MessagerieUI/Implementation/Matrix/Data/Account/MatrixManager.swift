@@ -17,6 +17,11 @@ class MatrixManager: ProtocolManager {
         return MatrixRoomSummariesSource(session: session)
     }
 
+    func makeTimeline(account: Account, roomId: String) -> MessagesSource {
+        let session = matrixSession(forAccount: account)
+        return MatrixTimeline(session: session, roomId: roomId)
+    }
+
     func makeUserSource(account: Account, userId: String) -> UserSource {
         let session = matrixSession(forAccount: account)
         return MatrixUserSource(session: session, userId: userId)
