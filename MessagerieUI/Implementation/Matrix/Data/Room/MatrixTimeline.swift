@@ -26,7 +26,7 @@ class MatrixTimeline: MessagesSource {
     private var timeline: MXEventTimeline?
 
     // TODO: injection
-    private lazy var messageFactory = MatrixMessageFactory()
+    private lazy var messageFactory = MatrixMessageFactory(session: session)
 
     init(session: MatrixSession, roomId: String) {
         self.session = session

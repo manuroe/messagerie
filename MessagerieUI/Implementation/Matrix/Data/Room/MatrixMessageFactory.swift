@@ -10,7 +10,9 @@ import UIKit
 
 import SwiftMatrixSDK
 
-class MatrixMessageFactory {
+struct MatrixMessageFactory {
+
+    let session: MatrixSession
 
     func buildMessage(from event: MXEvent, roomState: MXRoomState, direction: MXTimelineDirection) -> Message? {
 
@@ -19,7 +21,8 @@ class MatrixMessageFactory {
         }
 
         let senderDisplayName: String = roomState.members.memberName(event.sender) ?? event.sender
-        let senderAvatar = roomState.members.member(withUserId: event.sender)?.avatarUrl
+        let mxcSenderAvatar = roomState.members.member(withUserId: event.sender)?.avatarUrl
+        let senderAvatar = session.urlString(mxcString: mxcSenderAvatar, size: CGSize(width: 40, height: 40))
 
         return Message(eventId: event.eventId,
                         sender: event.sender,
@@ -61,11 +64,8 @@ class MatrixMessageFactory {
                 return .text(message: "## Unsupported image :/")
             }
 
-            if url.hasPrefix("mxc://") {
-                url = url.replacingOccurrences(of: "mxc://", with: "https://matrix.org/_matrix/media/r0/thumbnail/") + "?width=320&height=320&method=scale"
-            }
-
             // TODO
+            url = session.urlString(mxcString: url, size: CGSize(width: 320, height: 320))!
             let size = CGSize()
 
             return .image(imageModel: MessageContentImage(url: url, size: size))
