@@ -23,6 +23,14 @@ class RoomViewModel: ObservableObject {
         self.timeline = source
         self.roomName = "TODO"
         self.roomAvatar = "https://matrix.org/matrix.png"
+
+        // TODO: Why this is required ?
+        self.messages = [
+            Message(eventId: "11",
+        sender:  "111",
+        senderDisplayName: "WTF",
+        content: .text(message: "Need a random message to make UI work. Why???"))
+        ]
     }
 
     func start() {
