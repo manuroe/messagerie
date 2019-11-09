@@ -10,7 +10,6 @@ import SwiftUI
 
 struct RoomListView: View {
 
-    //@ObservedObject var account: AccountViewModel   ?
     @ObservedObject var viewModel: RoomListViewModel
 
     var body: some View {
@@ -33,13 +32,13 @@ struct RoomListView: View {
                     }
                 }
             }
+            .navigationBarTitle(
+                Text((viewModel.myUser != nil) ? viewModel.myUser!.displayname : "")
+            )
+            .navigationBarItems(
+                leading: AvatarView(avatarUrl: viewModel.myUser?.avatar, width: 30, height: 30)
+            )
         }
-        .navigationBarTitle(
-            Text((viewModel.myUser != nil) ? viewModel.myUser!.displayname : "")
-        )
-        .navigationBarItems(
-            leading: AvatarView(avatarUrl: viewModel.myUser?.avatar, width: 30, height: 30)
-        )
     }
 
     func roomView(for roomId: String) -> RoomView {
