@@ -26,12 +26,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Hmm: that's painful
         // Factory instead?
-        // protocolManager as @EnvironmentObject? Maybe account too?
+        // dataFactory as @EnvironmentObject? Maybe account too?
         let account = accountManager.accounts.first!
-        let protocolManager = accountManager.manager(protocolType: account.protocolName)!
-        let roomSummariesSource = protocolManager.makeRoomSummariesSource(account: account)
+        let dataFactory = accountManager.protocolDataFactory(for: account.protocolName)!
+        let roomSummariesSource = dataFactory.makeRoomSummariesSource(account: account)
 
-        let userSource = protocolManager.makeUserSource(account: account, userId: account.userId)
+        let userSource = dataFactory.makeUserSource(account: account, userId: account.userId)
 
         let contentView = RoomListView(viewModel: RoomListViewModel(account: account, source: roomSummariesSource, userSource: userSource))
 
@@ -49,7 +49,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // TODO: Remove it
     private func setupHardCodedAccount(accountManager: AccountManager) {
-        accountManager.registerProtocolManager(protocolType: ProtocolName.matrix, manager: MatrixManager())
+        accountManager.registerProtocolDataFactory(protocolName: ProtocolName.matrix, factory: MatrixDataFactory())
         let account = MatrixAccount(homeserver: URL(string: "https://matrix.org")!,
                                     userId: "@superman:matrix.org",
                                     accessToken: "MDAxOGxvY2F0aW9uIG1hdHJpeC5vcmcKMDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2VuID0gMQowMDI3Y2lkIHVzZXJfaWQgPSBAc3VwZXJtYW46bWF0cml4Lm9yZwowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAyMWNpZCBub25jZSA9IHJaRjRSNSpVOjNPTCZNPTYKMDAyZnNpZ25hdHVyZSDwKgaV-qS3-6I3jvj-La7FZAwitRuMCSuerEx2If34Two")

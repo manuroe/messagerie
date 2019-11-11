@@ -15,10 +15,10 @@
 		329909362372208A00D7D989 /* MockRoomSummariesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299091E2372208A00D7D989 /* MockRoomSummariesSource.swift */; };
 		329909372372208A00D7D989 /* MatrixRoomSummariesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909222372208A00D7D989 /* MatrixRoomSummariesSource.swift */; };
 		329909382372208A00D7D989 /* MatrixSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909242372208A00D7D989 /* MatrixSession.swift */; };
-		329909392372208A00D7D989 /* MatrixManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909252372208A00D7D989 /* MatrixManager.swift */; };
+		329909392372208A00D7D989 /* MatrixDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909252372208A00D7D989 /* MatrixDataFactory.swift */; };
 		3299093A2372208A00D7D989 /* MatrixSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909262372208A00D7D989 /* MatrixSessionManager.swift */; };
 		3299093B2372208A00D7D989 /* MatrixAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909272372208A00D7D989 /* MatrixAccount.swift */; };
-		3299093C2372208A00D7D989 /* ProtocolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299092B2372208A00D7D989 /* ProtocolManager.swift */; };
+		3299093C2372208A00D7D989 /* ProtocolDataFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299092B2372208A00D7D989 /* ProtocolDataFactoryType.swift */; };
 		3299093D2372208A00D7D989 /* RoomSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299092D2372208A00D7D989 /* RoomSummary.swift */; };
 		3299093E2372208A00D7D989 /* RoomSummariesSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299092E2372208A00D7D989 /* RoomSummariesSourceType.swift */; };
 		3299093F2372208A00D7D989 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909302372208A00D7D989 /* AccountManager.swift */; };
@@ -58,10 +58,10 @@
 		3299091E2372208A00D7D989 /* MockRoomSummariesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRoomSummariesSource.swift; sourceTree = "<group>"; };
 		329909222372208A00D7D989 /* MatrixRoomSummariesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixRoomSummariesSource.swift; sourceTree = "<group>"; };
 		329909242372208A00D7D989 /* MatrixSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixSession.swift; sourceTree = "<group>"; };
-		329909252372208A00D7D989 /* MatrixManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixManager.swift; sourceTree = "<group>"; };
+		329909252372208A00D7D989 /* MatrixDataFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixDataFactory.swift; sourceTree = "<group>"; };
 		329909262372208A00D7D989 /* MatrixSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixSessionManager.swift; sourceTree = "<group>"; };
 		329909272372208A00D7D989 /* MatrixAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixAccount.swift; sourceTree = "<group>"; };
-		3299092B2372208A00D7D989 /* ProtocolManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolManager.swift; sourceTree = "<group>"; };
+		3299092B2372208A00D7D989 /* ProtocolDataFactoryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolDataFactoryType.swift; sourceTree = "<group>"; };
 		3299092D2372208A00D7D989 /* RoomSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomSummary.swift; sourceTree = "<group>"; };
 		3299092E2372208A00D7D989 /* RoomSummariesSourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomSummariesSourceType.swift; sourceTree = "<group>"; };
 		329909302372208A00D7D989 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				329909242372208A00D7D989 /* MatrixSession.swift */,
-				329909252372208A00D7D989 /* MatrixManager.swift */,
+				329909252372208A00D7D989 /* MatrixDataFactory.swift */,
 				329909262372208A00D7D989 /* MatrixSessionManager.swift */,
 				329909272372208A00D7D989 /* MatrixAccount.swift */,
 			);
@@ -278,7 +278,7 @@
 		3299092A2372208A00D7D989 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				3299092B2372208A00D7D989 /* ProtocolManager.swift */,
+				3299092B2372208A00D7D989 /* ProtocolDataFactoryType.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -516,7 +516,7 @@
 			files = (
 				3299095423723B1C00D7D989 /* MatrixTimeline.swift in Sources */,
 				329909352372208A00D7D989 /* ImageLoader.swift in Sources */,
-				3299093C2372208A00D7D989 /* ProtocolManager.swift in Sources */,
+				3299093C2372208A00D7D989 /* ProtocolDataFactoryType.swift in Sources */,
 				3299093D2372208A00D7D989 /* RoomSummary.swift in Sources */,
 				3299096A2373691800D7D989 /* MessageTextView.swift in Sources */,
 				329909462372289000D7D989 /* UserSourceType.swift in Sources */,
@@ -535,7 +535,7 @@
 				3299093B2372208A00D7D989 /* MatrixAccount.swift in Sources */,
 				329909652373691800D7D989 /* RoomView.swift in Sources */,
 				329909332372208A00D7D989 /* RoomListView.swift in Sources */,
-				329909392372208A00D7D989 /* MatrixManager.swift in Sources */,
+				329909392372208A00D7D989 /* MatrixDataFactory.swift in Sources */,
 				3299096B2373691800D7D989 /* MessageView.swift in Sources */,
 				329909662373691800D7D989 /* RoomViewModel.swift in Sources */,
 				329909692373691800D7D989 /* MessageWidgetView.swift in Sources */,

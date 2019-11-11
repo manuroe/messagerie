@@ -12,22 +12,23 @@ class AccountManager {
 
     static let shared = AccountManager()
 
-    var protocolManagers: [String: ProtocolManager] = [:]
     var accounts: [AccountType] = []
 
 
     init() {
     }
 
-    func registerProtocolManager(protocolType: String, manager: ProtocolManager) {
-        protocolManagers[protocolType] = manager
-    }
-
-    func manager(protocolType: String) -> ProtocolManager? {
-         protocolManagers[protocolType]
-    }
-
     func addAccount(account: AccountType) {
         accounts.append(account)
+    }
+
+    // TODO: to move: Service Locator?
+    var protocolDataFactories: [String: ProtocolDataFactoryType] = [:]
+    func registerProtocolDataFactory(protocolName: String, factory: ProtocolDataFactoryType) {
+        protocolDataFactories[protocolName] = factory
+    }
+
+    func protocolDataFactory(for protocolName: String) -> ProtocolDataFactoryType? {
+         protocolDataFactories[protocolName]
     }
 }

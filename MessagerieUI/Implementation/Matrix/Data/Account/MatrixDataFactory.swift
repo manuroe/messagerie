@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MatrixManager: ProtocolManager {
+class MatrixDataFactory: ProtocolDataFactoryType {
 
     private let sessionMananager = MatrixSessionManager.shared
 
