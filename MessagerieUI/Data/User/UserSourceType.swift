@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-protocol UserSource {
+protocol UserSourceType {
     var publisher : AnyPublisher<User, Never> { get }
 
     func load()

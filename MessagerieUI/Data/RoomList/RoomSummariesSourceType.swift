@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-protocol RoomSummariesSource {
+protocol RoomSummariesSourceType {
     // TODO: incremental update
     var publisher : AnyPublisher<[RoomSummary], Never> { get }
 

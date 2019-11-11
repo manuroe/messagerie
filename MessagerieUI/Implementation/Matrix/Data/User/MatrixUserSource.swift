@@ -11,7 +11,7 @@ import Combine
 
 import SwiftMatrixSDK
 
-class MatrixUserSource: UserSource {
+class MatrixUserSource: UserSourceType {
 
     private let subject = PassthroughSubject<User, Never>()
     var publisher : AnyPublisher<User, Never> {

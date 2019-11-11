@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class MockTimeline: MessagesSource {
+class MockTimeline: MessagesSourceType {
 
     private let subject = PassthroughSubject<MessagesUpdate, Never>()
     var publisher : AnyPublisher<MessagesUpdate, Never> {

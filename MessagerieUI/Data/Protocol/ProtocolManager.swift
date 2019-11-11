@@ -15,16 +15,18 @@ import Foundation
 // Function builder: https://www.swiftbysundell.com/articles/the-swift-51-features-that-power-swiftuis-api/#function-builders
 // https://basememara.com/swift-dependency-injection-via-property-wrapper/
 // pod: https://github.com/square/Cleanse
+// ProtocolDataDependencyContainerType
 protocol ProtocolManager {
 
     //func accountSource(account: Account) -> AccountSource
 
-    func makeRoomSummariesSource(account: Account) -> RoomSummariesSource
-    func makeTimeline(account: Account, roomId: String) -> MessagesSource
-    func makeUserSource(account: Account, userId: String) -> UserSource
+    func makeRoomSummariesSource(account: AccountType) -> RoomSummariesSourceType
+    func makeTimeline(account: AccountType, roomId: String) -> MessagesSourceType
+    func makeUserSource(account: AccountType, userId: String) -> UserSourceType
 
-    //func roomSource(account: Account, roomId: String) -> RoomSource
 }
 
-struct ProtocolType {
+/// List of supported protocol (Matrix, Mock)
+/// DataProtocol
+struct ProtocolName {
 }

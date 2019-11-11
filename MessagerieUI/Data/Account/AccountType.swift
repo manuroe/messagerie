@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Account {
-    var protocolType: String { get }
+protocol AccountType {
+    var protocolName: String { get }
     var userId: String { get }
 }

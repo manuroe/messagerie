@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct MatrixAccount: Account {
-    let protocolType = ProtocolType.matrix
+struct MatrixAccount: AccountType {
+    let protocolName = ProtocolName.matrix
     
     let homeserver: URL
     let userId: String
@@ -17,6 +17,6 @@ struct MatrixAccount: Account {
     let accessToken: String
 }
 
-extension ProtocolType {
+extension ProtocolName {
     static let matrix = "matrix.org";
 }

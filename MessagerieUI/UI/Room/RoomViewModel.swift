@@ -14,12 +14,12 @@ class RoomViewModel: ObservableObject {
     @Published var roomAvatar: String
     @Published var messages: [Message] = []
 
-    let timeline: MessagesSource
+    let timeline: MessagesSourceType
 
     var timelineObserver: AnyCancellable?
 
 
-    init(source: MessagesSource) {
+    init(source: MessagesSourceType) {
         self.timeline = source
         self.roomName = "TODO"
         self.roomAvatar = "https://matrix.org/matrix.png"

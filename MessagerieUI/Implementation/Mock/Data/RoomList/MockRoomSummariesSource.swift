@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-struct MockRoomSummariesSource: RoomSummariesSource {
+struct MockRoomSummariesSource: RoomSummariesSourceType {
 
     private let subject = PassthroughSubject<[RoomSummary], Never>()
     var publisher : AnyPublisher<[RoomSummary], Never> {

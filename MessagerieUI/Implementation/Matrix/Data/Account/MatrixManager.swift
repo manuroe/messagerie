@@ -12,23 +12,23 @@ class MatrixManager: ProtocolManager {
 
     private let sessionMananager = MatrixSessionManager.shared
 
-    func makeRoomSummariesSource(account: Account) -> RoomSummariesSource {
+    func makeRoomSummariesSource(account: AccountType) -> RoomSummariesSourceType {
         let session = matrixSession(forAccount: account)
         return MatrixRoomSummariesSource(session: session)
     }
 
-    func makeTimeline(account: Account, roomId: String) -> MessagesSource {
+    func makeTimeline(account: AccountType, roomId: String) -> MessagesSourceType {
         let session = matrixSession(forAccount: account)
         return MatrixTimeline(session: session, roomId: roomId)
     }
 
-    func makeUserSource(account: Account, userId: String) -> UserSource {
+    func makeUserSource(account: AccountType, userId: String) -> UserSourceType {
         let session = matrixSession(forAccount: account)
         return MatrixUserSource(session: session, userId: userId)
     }
 
 
-    private func matrixSession(forAccount account: Account) -> MatrixSession{
+    private func matrixSession(forAccount account: AccountType) -> MatrixSession{
         // Die in case of error
         let matrixAccount: MatrixAccount = account as! MatrixAccount
         return sessionMananager.session(account: matrixAccount)!

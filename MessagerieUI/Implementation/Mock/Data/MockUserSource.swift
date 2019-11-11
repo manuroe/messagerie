@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-struct MockUserSource: UserSource {
+struct MockUserSource: UserSourceType {
 
     private let subject = PassthroughSubject<User, Never>()
     var publisher : AnyPublisher<User, Never> {

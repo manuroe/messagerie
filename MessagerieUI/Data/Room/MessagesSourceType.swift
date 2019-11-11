@@ -14,14 +14,15 @@ enum Direction {
     case forwards
 }
 
-protocol MessagesSource {
+/// Timeline, search result, notifications view
+protocol MessagesSourceType {
 
     var publisher : AnyPublisher<MessagesUpdate, Never> { get }
 
     func paginate(messagesCount: UInt, direction: Direction)
 }
 
-extension MessagesSource {
+extension MessagesSourceType {
     func paginate(messagesCount: UInt = 30) {
         paginate(messagesCount: messagesCount, direction: .backwards)
     }

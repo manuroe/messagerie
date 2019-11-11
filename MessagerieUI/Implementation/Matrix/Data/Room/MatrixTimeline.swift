@@ -11,7 +11,7 @@ import Combine
 
 import SwiftMatrixSDK
 
-class MatrixTimeline: MessagesSource {
+class MatrixTimeline: MessagesSourceType {
 
     private let subject = PassthroughSubject<MessagesUpdate, Never>()
     var publisher : AnyPublisher<MessagesUpdate, Never> {

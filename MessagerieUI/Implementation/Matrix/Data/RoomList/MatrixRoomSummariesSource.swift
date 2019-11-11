@@ -11,7 +11,7 @@ import Combine
 
 import SwiftMatrixSDK
 
-class MatrixRoomSummariesSource: RoomSummariesSource {
+class MatrixRoomSummariesSource: RoomSummariesSourceType {
 
     private let subject = PassthroughSubject<[RoomSummary], Never>()
     var publisher : AnyPublisher<[RoomSummary], Never> {

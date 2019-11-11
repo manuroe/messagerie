@@ -13,7 +13,7 @@ class AccountManager {
     static let shared = AccountManager()
 
     var protocolManagers: [String: ProtocolManager] = [:]
-    var accounts: [Account] = []
+    var accounts: [AccountType] = []
 
 
     init() {
@@ -27,7 +27,7 @@ class AccountManager {
          protocolManagers[protocolType]
     }
 
-    func addAccount(account: Account) {
+    func addAccount(account: AccountType) {
         accounts.append(account)
     }
 }
