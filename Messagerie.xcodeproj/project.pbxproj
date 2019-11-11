@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		320F7EF2237723C400BCAE2F /* MockTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF1237723C400BCAE2F /* MockTimeline.swift */; };
+		320F7EF4237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */; };
 		329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909132372208A00D7D989 /* RoomListViewModel.swift */; };
 		329909332372208A00D7D989 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909142372208A00D7D989 /* RoomListView.swift */; };
 		329909342372208A00D7D989 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909172372208A00D7D989 /* AvatarView.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		320F7EF1237723C400BCAE2F /* MockTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimeline.swift; sourceTree = "<group>"; };
+		320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDataFactoryManager.swift; sourceTree = "<group>"; };
 		329909132372208A00D7D989 /* RoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
 		329909142372208A00D7D989 /* RoomListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
 		329909172372208A00D7D989 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				3299092B2372208A00D7D989 /* ProtocolDataFactoryType.swift */,
+				320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				329909342372208A00D7D989 /* AvatarView.swift in Sources */,
 				329909402372208A00D7D989 /* AccountType.swift in Sources */,
 				329909372372208A00D7D989 /* MatrixRoomSummariesSource.swift in Sources */,
+				320F7EF4237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift in Sources */,
 				329909672373691800D7D989 /* MessageImageView.swift in Sources */,
 				32D5C1F22367A23E00CDE9BC /* SceneDelegate.swift in Sources */,
 				3299093A2372208A00D7D989 /* MatrixSessionManager.swift in Sources */,

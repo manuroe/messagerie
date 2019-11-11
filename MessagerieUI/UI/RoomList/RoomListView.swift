@@ -43,9 +43,9 @@ struct RoomListView: View {
 
     func roomView(for roomId: String) -> RoomView {
 
-        let accountManager = AccountManager.shared
+        let factoryManager = ProtocolDataFactoryManager.shared
         let account = viewModel.account
-        let dataFactory = accountManager.protocolDataFactory(for: account.protocolName)!
+        let dataFactory = factoryManager.factory(for: account.protocolName)!
 
         let messagesSource = dataFactory.makeTimeline(account: account, roomId: roomId)
         let roomViewModel = RoomViewModel(source: messagesSource)

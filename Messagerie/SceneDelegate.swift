@@ -19,20 +19,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
+
+        // TODO: Find a better place
+        let factoryManager = ProtocolDataFactoryManager.shared
+        factoryManager.registerFactory(protocolName: ProtocolName.matrix, factory: MatrixDataFactory())
+
+
         // Create the SwiftUI view that provides the window contents
 
         let accountManager = AccountManager.shared
         self.setupHardCodedAccount(accountManager: accountManager)
 
         // Hmm: that's painful
-        // Factory instead?
         // dataFactory as @EnvironmentObject? Maybe account too?
         let account = accountManager.accounts.first!
-        let dataFactory = accountManager.protocolDataFactory(for: account.protocolName)!
+        let dataFactory = factoryManager.factory(for: account.protocolName)!
+
         let roomSummariesSource = dataFactory.makeRoomSummariesSource(account: account)
-
         let userSource = dataFactory.makeUserSource(account: account, userId: account.userId)
-
         let contentView = RoomListView(viewModel: RoomListViewModel(account: account, source: roomSummariesSource, userSource: userSource))
 
         // TODO: Remove this Mock RoomView test
@@ -49,7 +53,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // TODO: Remove it
     private func setupHardCodedAccount(accountManager: AccountManager) {
-        accountManager.registerProtocolDataFactory(protocolName: ProtocolName.matrix, factory: MatrixDataFactory())
         let account = MatrixAccount(homeserver: URL(string: "https://matrix.org")!,
                                     userId: "@superman:matrix.org",
                                     accessToken: "MDAxOGxvY2F0aW9uIG1hdHJpeC5vcmcKMDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2VuID0gMQowMDI3Y2lkIHVzZXJfaWQgPSBAc3VwZXJtYW46bWF0cml4Lm9yZwowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAyMWNpZCBub25jZSA9IHJaRjRSNSpVOjNPTCZNPTYKMDAyZnNpZ25hdHVyZSDwKgaV-qS3-6I3jvj-La7FZAwitRuMCSuerEx2If34Two")

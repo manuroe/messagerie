@@ -14,21 +14,10 @@ class AccountManager {
 
     var accounts: [AccountType] = []
 
-
     init() {
     }
 
     func addAccount(account: AccountType) {
         accounts.append(account)
-    }
-
-    // TODO: to move: Service Locator?
-    var protocolDataFactories: [String: ProtocolDataFactoryType] = [:]
-    func registerProtocolDataFactory(protocolName: String, factory: ProtocolDataFactoryType) {
-        protocolDataFactories[protocolName] = factory
-    }
-
-    func protocolDataFactory(for protocolName: String) -> ProtocolDataFactoryType? {
-         protocolDataFactories[protocolName]
     }
 }
