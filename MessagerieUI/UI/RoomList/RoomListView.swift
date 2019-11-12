@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-struct RoomListView: View {
+struct RoomListView: View, Identifiable {
+    let id = UUID()
 
     @ObservedObject var viewModel: RoomListViewModel
 

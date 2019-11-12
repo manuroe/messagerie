@@ -24,20 +24,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let factoryManager = ProtocolDataFactoryManager.shared
         factoryManager.registerFactory(protocolName: ProtocolName.matrix, factory: MatrixDataFactory())
 
-
-        // Create the SwiftUI view that provides the window contents
-
         let accountManager = AccountManager.shared
         self.setupHardCodedAccount(accountManager: accountManager)
 
-        // Hmm: that's painful
-        // dataFactory as @EnvironmentObject? Maybe account too?
-        let account = accountManager.accounts.first!
-        let dataFactory = factoryManager.factory(for: account.protocolName)!
-
-        let roomSummariesSource = dataFactory.makeRoomSummariesSource(account: account)
-        let userSource = dataFactory.makeUserSource(account: account, userId: account.userId)
-        let contentView = RoomListView(viewModel: RoomListViewModel(account: account, source: roomSummariesSource, userSource: userSource))
+        // Create the SwiftUI view that provides the window contents
+        let homeViewModel = HomeViewModel(accountManager: accountManager)
+        let contentView = HomeView<RoomListView>(viewModel: homeViewModel)
 
         // TODO: Remove this Mock RoomView test
         //let contentView = RoomView(viewModel: RoomViewModel(source: MockTimeline()))
@@ -57,6 +49,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                     userId: "@superman:matrix.org",
                                     accessToken: "MDAxOGxvY2F0aW9uIG1hdHJpeC5vcmcKMDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2VuID0gMQowMDI3Y2lkIHVzZXJfaWQgPSBAc3VwZXJtYW46bWF0cml4Lm9yZwowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAyMWNpZCBub25jZSA9IHJaRjRSNSpVOjNPTCZNPTYKMDAyZnNpZ25hdHVyZSDwKgaV-qS3-6I3jvj-La7FZAwitRuMCSuerEx2If34Two")
         accountManager.addAccount(account: account)
+
+        let account2 = MatrixAccount(homeserver: URL(string: "https://matrix.org")!,
+                                    userId: "@manolo:matrix.org",
+                                    accessToken: "MDAxOGxvY2F0aW9uIG1hdHJpeC5vcmcKMDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2VuID0gMQowMDI1Y2lkIHVzZXJfaWQgPSBAbWFub2xvOm1hdHJpeC5vcmcKMDAxNmNpZCB0eXBlID0gYWNjZXNzCjAwMjFjaWQgbm9uY2UgPSA1cS5OfkZsK35TMyN5REIxCjAwMmZzaWduYXR1cmUgzKuPpDGJ8EC8ZmfSbdPrh4ZKxJI6aMEuyw-20izHx-AK")
+        accountManager.addAccount(account: account2)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

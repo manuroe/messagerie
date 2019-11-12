@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		320F7EF2237723C400BCAE2F /* MockTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF1237723C400BCAE2F /* MockTimeline.swift */; };
 		320F7EF4237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */; };
+		320F7EF6237A0E0C00BCAE2F /* SwiftUIPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */; };
+		320F7EF9237A0F6000BCAE2F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF8237A0F6000BCAE2F /* HomeView.swift */; };
+		3236A0E9237B60D40056EA88 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236A0E8237B60D30056EA88 /* HomeViewModel.swift */; };
 		329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909132372208A00D7D989 /* RoomListViewModel.swift */; };
 		329909332372208A00D7D989 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909142372208A00D7D989 /* RoomListView.swift */; };
 		329909342372208A00D7D989 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909172372208A00D7D989 /* AvatarView.swift */; };
@@ -53,6 +56,9 @@
 /* Begin PBXFileReference section */
 		320F7EF1237723C400BCAE2F /* MockTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimeline.swift; sourceTree = "<group>"; };
 		320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDataFactoryManager.swift; sourceTree = "<group>"; };
+		320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPagerView.swift; sourceTree = "<group>"; };
+		320F7EF8237A0F6000BCAE2F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3236A0E8237B60D30056EA88 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		329909132372208A00D7D989 /* RoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
 		329909142372208A00D7D989 /* RoomListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
 		329909172372208A00D7D989 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -118,6 +124,15 @@
 			path = Room;
 			sourceTree = "<group>";
 		};
+		320F7EF7237A0F4B00BCAE2F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				320F7EF8237A0F6000BCAE2F /* HomeView.swift */,
+				3236A0E8237B60D30056EA88 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		3299090D2372208A00D7D989 /* MessagerieUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +147,7 @@
 		3299090E2372208A00D7D989 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				320F7EF7237A0F4B00BCAE2F /* Home */,
 				3299090F2372208A00D7D989 /* Room */,
 				329909122372208A00D7D989 /* RoomList */,
 			);
@@ -170,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				329909172372208A00D7D989 /* AvatarView.swift */,
+				320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -537,6 +554,7 @@
 				3299093E2372208A00D7D989 /* RoomSummariesSourceType.swift in Sources */,
 				329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */,
 				3299093B2372208A00D7D989 /* MatrixAccount.swift in Sources */,
+				320F7EF6237A0E0C00BCAE2F /* SwiftUIPagerView.swift in Sources */,
 				329909652373691800D7D989 /* RoomView.swift in Sources */,
 				329909332372208A00D7D989 /* RoomListView.swift in Sources */,
 				329909392372208A00D7D989 /* MatrixDataFactory.swift in Sources */,
@@ -550,9 +568,11 @@
 				329909382372208A00D7D989 /* MatrixSession.swift in Sources */,
 				329909682373691800D7D989 /* MessageHtmlView.swift in Sources */,
 				3299095023723A4D00D7D989 /* Message.swift in Sources */,
+				3236A0E9237B60D40056EA88 /* HomeViewModel.swift in Sources */,
 				32990944237227F900D7D989 /* User.swift in Sources */,
 				3299095B237359BD00D7D989 /* MessagesSourceType.swift in Sources */,
 				3299095623723BAF00D7D989 /* MatrixMessageFactory.swift in Sources */,
+				320F7EF9237A0F6000BCAE2F /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +711,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Messagerie/Preview Content\"";
+				DEVELOPMENT_TEAM = 858XJN7544;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Messagerie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -711,6 +732,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Messagerie/Preview Content\"";
+				DEVELOPMENT_TEAM = 858XJN7544;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Messagerie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
