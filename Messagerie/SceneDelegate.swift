@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents
         let homeViewModel = HomeViewModel(accountManager: accountManager)
-        let contentView = HomeView<RoomListView>(viewModel: homeViewModel)
+        let contentView = HomeView(viewModel: homeViewModel)
 
         // TODO: Remove this Mock RoomView test
         //let contentView = RoomView(viewModel: RoomViewModel(source: MockTimeline()))

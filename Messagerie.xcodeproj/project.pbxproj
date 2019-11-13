@@ -12,6 +12,7 @@
 		320F7EF6237A0E0C00BCAE2F /* SwiftUIPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */; };
 		320F7EF9237A0F6000BCAE2F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF8237A0F6000BCAE2F /* HomeView.swift */; };
 		3236A0E9237B60D40056EA88 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236A0E8237B60D30056EA88 /* HomeViewModel.swift */; };
+		3236A0EC237B6E710056EA88 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236A0EB237B6E710056EA88 /* LoginView.swift */; };
 		329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909132372208A00D7D989 /* RoomListViewModel.swift */; };
 		329909332372208A00D7D989 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909142372208A00D7D989 /* RoomListView.swift */; };
 		329909342372208A00D7D989 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909172372208A00D7D989 /* AvatarView.swift */; };
@@ -59,6 +60,7 @@
 		320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPagerView.swift; sourceTree = "<group>"; };
 		320F7EF8237A0F6000BCAE2F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3236A0E8237B60D30056EA88 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		3236A0EB237B6E710056EA88 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		329909132372208A00D7D989 /* RoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
 		329909142372208A00D7D989 /* RoomListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
 		329909172372208A00D7D989 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		3236A0EA237B6E460056EA88 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3236A0EB237B6E710056EA88 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		3299090D2372208A00D7D989 /* MessagerieUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +157,7 @@
 		3299090E2372208A00D7D989 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3236A0EA237B6E460056EA88 /* Login */,
 				320F7EF7237A0F4B00BCAE2F /* Home */,
 				3299090F2372208A00D7D989 /* Room */,
 				329909122372208A00D7D989 /* RoomList */,
@@ -572,6 +583,7 @@
 				32990944237227F900D7D989 /* User.swift in Sources */,
 				3299095B237359BD00D7D989 /* MessagesSourceType.swift in Sources */,
 				3299095623723BAF00D7D989 /* MatrixMessageFactory.swift in Sources */,
+				3236A0EC237B6E710056EA88 /* LoginView.swift in Sources */,
 				320F7EF9237A0F6000BCAE2F /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

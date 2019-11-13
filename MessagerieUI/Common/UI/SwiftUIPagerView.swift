@@ -2,21 +2,21 @@
 
 import SwiftUI
 
-struct SwiftUIPagerView<Content: View & Identifiable>: View {
+struct SwiftUIPagerView: View {
 
     @Binding var index: Int
     @State private var offset: CGFloat = 0
     @State private var isGestureActive: Bool = false
 
     // 1
-    var pages: [Content]
+    var pages: [AnyView]
 
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .center, spacing: 0) {
-                    ForEach(self.pages) { page in
-                        page
+                    ForEach(self.pages.indices) { indice in
+                        self.pages[indice]
                             .frame(width: geometry.size.width, height: nil)
                     }
                 }

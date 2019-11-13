@@ -8,15 +8,21 @@
 
 import SwiftUI
 
-struct HomeView<Content: View & Identifiable>: View {
+struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     
     @State var index: Int = 0
     
-    var views: [Content] {
-        viewModel.roomListViewModels.map { (roomListViewModel) -> Content in
-            RoomListView(viewModel: roomListViewModel) as! Content
+    var views: [AnyView] {
+        var roomListViews = viewModel.roomListViewModels.map { (roomListViewModel) -> AnyView in
+            AnyView (
+                RoomListView(viewModel: roomListViewModel)
+            )
         }
+
+        roomListViews.append(AnyView(LoginView()))
+
+        return roomListViews
     }
 
     var body: some View {
