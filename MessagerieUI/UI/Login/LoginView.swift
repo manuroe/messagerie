@@ -9,13 +9,63 @@
 import SwiftUI
 
 struct LoginView: View {
+    var viewModel: LoginViewModelType
+    @ObservedObject var state: LoginViewState
+
+    @State private var server = "" //: String? TODO
+    @State private var userId = ""
+    @State private var password  = ""
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Group {
+                Form {
+                    if state.serverSection?.displayIt == true {
+                        Section(header: Text(state.serverSection!.serverHeaderTitle)) {
+                            TextField(state.serverSection!.defaultServer, text: $server)
+                        }
+                    }
+
+                    Section(header: Text("Credentials")) {
+                        TextField("user id", text: $userId)
+                        SecureField("password", text: $password)
+                    }
+
+                    Section {
+                        HStack() {
+                            Spacer()
+                            Button(action: {
+                                self.viewModel.process(viewAction: .login(server: self.server, userId: self.userId, password: self.password))
+                            }) {
+                                Text(state.logingIn ? "Signing..." : "Sign In")
+                                }
+                            .disabled(isFormDataInValid())
+                            Spacer()
+                        }
+                    }
+                }.disabled(state.logingIn)
+            }
+            .navigationBarTitle("Sign In")
+            .onAppear(perform: didLoad)
+        }
+    }
+
+    private func didLoad() {
+        guard let serverSection = state.serverSection else {
+            return
+        }
+        server = serverSection.defaultServer
+    }
+
+    private func isFormDataInValid() -> Bool {
+        server.count == 0
+        || userId.count == 0
+        || password.count == 0
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        Text("TODO")
     }
 }

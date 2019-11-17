@@ -13,6 +13,10 @@
 		320F7EF9237A0F6000BCAE2F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF8237A0F6000BCAE2F /* HomeView.swift */; };
 		3236A0E9237B60D40056EA88 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236A0E8237B60D30056EA88 /* HomeViewModel.swift */; };
 		3236A0EC237B6E710056EA88 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236A0EB237B6E710056EA88 /* LoginView.swift */; };
+		326EB5402381E55000DD5857 /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB53F2381E55000DD5857 /* LoginViewState.swift */; };
+		326EB5422381E84D00DD5857 /* LoginViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB5412381E84D00DD5857 /* LoginViewModelType.swift */; };
+		326EB5462381EFFD00DD5857 /* MatrixLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB5452381EFFD00DD5857 /* MatrixLoginViewModel.swift */; };
+		326EB5482381FA8000DD5857 /* LoginViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB5472381FA8000DD5857 /* LoginViewAction.swift */; };
 		329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909132372208A00D7D989 /* RoomListViewModel.swift */; };
 		329909332372208A00D7D989 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909142372208A00D7D989 /* RoomListView.swift */; };
 		329909342372208A00D7D989 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909172372208A00D7D989 /* AvatarView.swift */; };
@@ -61,6 +65,10 @@
 		320F7EF8237A0F6000BCAE2F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3236A0E8237B60D30056EA88 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3236A0EB237B6E710056EA88 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		326EB53F2381E55000DD5857 /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
+		326EB5412381E84D00DD5857 /* LoginViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelType.swift; sourceTree = "<group>"; };
+		326EB5452381EFFD00DD5857 /* MatrixLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixLoginViewModel.swift; sourceTree = "<group>"; };
+		326EB5472381FA8000DD5857 /* LoginViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewAction.swift; sourceTree = "<group>"; };
 		329909132372208A00D7D989 /* RoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
 		329909142372208A00D7D989 /* RoomListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
 		329909172372208A00D7D989 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -139,6 +147,25 @@
 			isa = PBXGroup;
 			children = (
 				3236A0EB237B6E710056EA88 /* LoginView.swift */,
+				326EB53F2381E55000DD5857 /* LoginViewState.swift */,
+				326EB5412381E84D00DD5857 /* LoginViewModelType.swift */,
+				326EB5472381FA8000DD5857 /* LoginViewAction.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		326EB5432381EFCC00DD5857 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				326EB5442381EFD800DD5857 /* Login */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		326EB5442381EFD800DD5857 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				326EB5452381EFFD00DD5857 /* MatrixLoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -248,6 +275,7 @@
 		3299091F2372208A00D7D989 /* Matrix */ = {
 			isa = PBXGroup;
 			children = (
+				326EB5432381EFCC00DD5857 /* UI */,
 				329909202372208A00D7D989 /* Data */,
 			);
 			path = Matrix;
@@ -549,11 +577,13 @@
 				329909352372208A00D7D989 /* ImageLoader.swift in Sources */,
 				3299093C2372208A00D7D989 /* ProtocolDataFactoryType.swift in Sources */,
 				3299093D2372208A00D7D989 /* RoomSummary.swift in Sources */,
+				326EB5462381EFFD00DD5857 /* MatrixLoginViewModel.swift in Sources */,
 				3299096A2373691800D7D989 /* MessageTextView.swift in Sources */,
 				329909462372289000D7D989 /* UserSourceType.swift in Sources */,
 				3299095C237359BD00D7D989 /* MessagesUpdate.swift in Sources */,
 				32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */,
 				329909342372208A00D7D989 /* AvatarView.swift in Sources */,
+				326EB5482381FA8000DD5857 /* LoginViewAction.swift in Sources */,
 				329909402372208A00D7D989 /* AccountType.swift in Sources */,
 				329909372372208A00D7D989 /* MatrixRoomSummariesSource.swift in Sources */,
 				320F7EF4237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift in Sources */,
@@ -561,6 +591,7 @@
 				32D5C1F22367A23E00CDE9BC /* SceneDelegate.swift in Sources */,
 				3299093A2372208A00D7D989 /* MatrixSessionManager.swift in Sources */,
 				329909492372295000D7D989 /* MatrixUserSource.swift in Sources */,
+				326EB5422381E84D00DD5857 /* LoginViewModelType.swift in Sources */,
 				32D5C1F42367A23E00CDE9BC /* ContentView.swift in Sources */,
 				3299093E2372208A00D7D989 /* RoomSummariesSourceType.swift in Sources */,
 				329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */,
@@ -579,6 +610,7 @@
 				329909382372208A00D7D989 /* MatrixSession.swift in Sources */,
 				329909682373691800D7D989 /* MessageHtmlView.swift in Sources */,
 				3299095023723A4D00D7D989 /* Message.swift in Sources */,
+				326EB5402381E55000DD5857 /* LoginViewState.swift in Sources */,
 				3236A0E9237B60D40056EA88 /* HomeViewModel.swift in Sources */,
 				32990944237227F900D7D989 /* User.swift in Sources */,
 				3299095B237359BD00D7D989 /* MessagesSourceType.swift in Sources */,

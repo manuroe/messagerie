@@ -34,6 +34,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // TODO: Remove this Mock RoomView test
         //let contentView = RoomView(viewModel: RoomViewModel(source: MockTimeline()))
 
+	    // TODO: Remove this Mock test
+//        let loginViewModel = MatrixLoginViewModel {_ in}
+//        let contentView = LoginView(viewModel: loginViewModel, state: loginViewModel.state)
+
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

@@ -20,12 +20,23 @@ struct HomeView: View {
             )
         }
 
-        roomListViews.append(AnyView(LoginView()))
+        roomListViews.append(AnyView(self.matrixLoginView))
 
         return roomListViews
     }
 
     var body: some View {
         SwiftUIPagerView(index: $index, pages: views)
+    }
+
+    private var matrixLoginView: LoginView {
+        let loginViewModel = MatrixLoginViewModel {account in
+            self.onNewAccount(newAccount: account)
+        }
+        return LoginView(viewModel: loginViewModel, state: loginViewModel.state)
+    }
+
+    private func onNewAccount(newAccount: AccountType) {
+        // TODO
     }
 }
