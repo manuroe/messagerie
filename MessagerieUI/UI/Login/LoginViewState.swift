@@ -11,6 +11,7 @@ import Foundation
 class LoginViewState: ObservableObject {
 
     @Published var logingIn: Bool = false
+    @Published var error: Error?
 
     struct ServerSection {
         let displayIt: Bool

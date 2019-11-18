@@ -9,12 +9,15 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var viewModel: HomeViewModel
-    
-    @State var index: Int = 0
-    
-    var views: [AnyView] {
-        var roomListViews = viewModel.roomListViewModels.map { (roomListViewModel) -> AnyView in
+    var viewModel: HomeViewModel
+    @ObservedObject var state: HomeViewState
+
+    var body: some View {
+        SwiftUIPagerView(index: $state.index, pages: views)
+    }
+
+    private var views: [AnyView] {
+        var roomListViews = state.roomListViewModels.map { (roomListViewModel) -> AnyView in
             AnyView (
                 RoomListView(viewModel: roomListViewModel)
             )
@@ -25,10 +28,6 @@ struct HomeView: View {
         return roomListViews
     }
 
-    var body: some View {
-        SwiftUIPagerView(index: $index, pages: views)
-    }
-
     private var matrixLoginView: LoginView {
         let loginViewModel = MatrixLoginViewModel {account in
             self.onNewAccount(newAccount: account)
@@ -37,6 +36,6 @@ struct HomeView: View {
     }
 
     private func onNewAccount(newAccount: AccountType) {
-        // TODO
+        viewModel.process(viewAction: .addAccount(account: newAccount))
     }
 }

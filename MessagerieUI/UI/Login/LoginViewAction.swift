@@ -10,4 +10,5 @@ import Foundation
 
 enum LoginViewAction {
     case login(server: String? = nil, userId: String, password: String)
+    case cancel
 }

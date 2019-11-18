@@ -8,15 +8,39 @@
 
 import SwiftUI
 
-class HomeViewModel: ObservableObject {
-
+class HomeViewModel {
     let accountManager: AccountManager
-
-    @Published var roomListViewModels: [RoomListViewModel] = []
+    let state: HomeViewState
 
     init(accountManager: AccountManager) {
         self.accountManager = accountManager
-        roomListViewModels = loadRoomListViewModels()
+        state = HomeViewState()
+        reload()
+    }
+
+    func process(viewAction: HomeViewAction) {
+        switch viewAction {
+        case .reload:
+            reload()
+        case .addAccount(let account):
+            addAccount(account: account)
+        }
+    }
+
+    private func reload() {
+        state.roomListViewModels = loadRoomListViewModels()
+    }
+
+    private func addAccount(account: AccountType) {
+        let factoryManager = ProtocolDataFactoryManager.shared
+        let dataFactory = factoryManager.factory(for: account.protocolName)!
+
+        let roomSummariesSource = dataFactory.makeRoomSummariesSource(account: account)
+        let userSource = dataFactory.makeUserSource(account: account, userId: account.userId)
+
+        let roomListViewModel = RoomListViewModel(account: account, source: roomSummariesSource, userSource: userSource)
+
+        state.roomListViewModels.append(roomListViewModel)
     }
 
     private func loadRoomListViewModels() -> [RoomListViewModel] {
