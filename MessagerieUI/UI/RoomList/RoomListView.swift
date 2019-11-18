@@ -33,7 +33,8 @@ struct RoomListView: View {
                 }
             }
             .navigationBarTitle(
-                Text((viewModel.myUser != nil) ? viewModel.myUser!.displayname : "")
+                Text((viewModel.myUser != nil) ? viewModel.myUser!.displayname : ""),
+                displayMode: .inline
             )
             .navigationBarItems(
                 leading: AvatarView(avatarUrl: viewModel.myUser?.avatar, width: 30, height: 30)

@@ -45,7 +45,7 @@ struct LoginView: View {
                     }
                 }.disabled(state.logingIn)
             }
-            .navigationBarTitle("Sign In")
+            .navigationBarTitle("Sign In", displayMode: .large)
             .onAppear(perform: didLoad)
         }
     }
