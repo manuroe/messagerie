@@ -9,14 +9,14 @@ struct SwiftUIPagerView: View {
     @State private var isGestureActive: Bool = false
 
     // 1
-    var pages: [AnyView]
+    var pages: [AnyIdentifiableView]
 
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .center, spacing: 0) {
-                    ForEach(self.pages.indices) { indice in
-                        self.pages[indice]
+                    ForEach(self.pages) { page in
+                        page
                             .frame(width: geometry.size.width, height: nil)
                     }
                 }

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct RoomListView: View {
-
+    
     @ObservedObject var viewModel: RoomListViewModel
 
     var body: some View {
@@ -54,6 +54,14 @@ struct RoomListView: View {
         return RoomView(viewModel: roomViewModel)
     }
 }
+
+
+extension RoomListView: Identifiable {
+    var id: String {
+        viewModel.account.protocolName + viewModel.account.userId
+    }
+}
+
 
 
 #if DEBUG

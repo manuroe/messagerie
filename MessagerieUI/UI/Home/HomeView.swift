@@ -16,19 +16,17 @@ struct HomeView: View {
         SwiftUIPagerView(index: $state.index, pages: views)
     }
 
-    private var views: [AnyView] {
-        var roomListViews = state.roomListViewModels.map { (roomListViewModel) -> AnyView in
-            AnyView (
-                RoomListView(viewModel: roomListViewModel)
-            )
+    private var views: [AnyIdentifiableView] {
+        var roomListViews = state.roomListViewModels.map { (roomListViewModel) -> AnyIdentifiableView in
+            AnyIdentifiableView(item: RoomListView(viewModel: roomListViewModel))
         }
 
-        roomListViews.append(AnyView(self.matrixLoginView))
+        roomListViews.append(AnyIdentifiableView(item: self.makeMatrixLoginView()))
 
         return roomListViews
     }
 
-    private var matrixLoginView: LoginView {
+    private func makeMatrixLoginView() -> LoginView {
         let loginViewModel = MatrixLoginViewModel {account in
             self.onNewAccount(newAccount: account)
         }

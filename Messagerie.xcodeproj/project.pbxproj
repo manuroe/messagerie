@@ -13,6 +13,7 @@
 		320F7EF9237A0F6000BCAE2F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF8237A0F6000BCAE2F /* HomeView.swift */; };
 		3236A0E9237B60D40056EA88 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236A0E8237B60D30056EA88 /* HomeViewModel.swift */; };
 		3236A0EC237B6E710056EA88 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3236A0EB237B6E710056EA88 /* LoginView.swift */; };
+		326D91062384ABA4004B8C00 /* AnyIdentifiableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326D91052384ABA4004B8C00 /* AnyIdentifiableView.swift */; };
 		326EB5402381E55000DD5857 /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB53F2381E55000DD5857 /* LoginViewState.swift */; };
 		326EB5422381E84D00DD5857 /* LoginViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB5412381E84D00DD5857 /* LoginViewModelType.swift */; };
 		326EB5462381EFFD00DD5857 /* MatrixLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB5452381EFFD00DD5857 /* MatrixLoginViewModel.swift */; };
@@ -67,6 +68,7 @@
 		320F7EF8237A0F6000BCAE2F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3236A0E8237B60D30056EA88 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3236A0EB237B6E710056EA88 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		326D91052384ABA4004B8C00 /* AnyIdentifiableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyIdentifiableView.swift; sourceTree = "<group>"; };
 		326EB53F2381E55000DD5857 /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
 		326EB5412381E84D00DD5857 /* LoginViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelType.swift; sourceTree = "<group>"; };
 		326EB5452381EFFD00DD5857 /* MatrixLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixLoginViewModel.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				329909172372208A00D7D989 /* AvatarView.swift */,
 				320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */,
+				326D91052384ABA4004B8C00 /* AnyIdentifiableView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				329909362372208A00D7D989 /* MockRoomSummariesSource.swift in Sources */,
 				3299094B2372308400D7D989 /* MockUserSource.swift in Sources */,
 				329909382372208A00D7D989 /* MatrixSession.swift in Sources */,
+				326D91062384ABA4004B8C00 /* AnyIdentifiableView.swift in Sources */,
 				329909682373691800D7D989 /* MessageHtmlView.swift in Sources */,
 				3299095023723A4D00D7D989 /* Message.swift in Sources */,
 				326EB5402381E55000DD5857 /* LoginViewState.swift in Sources */,

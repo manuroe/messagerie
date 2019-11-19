@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LoginView: View {
+
     var viewModel: LoginViewModelType
     @ObservedObject var state: LoginViewState
 
@@ -63,6 +64,14 @@ struct LoginView: View {
         || password.count == 0
     }
 }
+
+
+extension LoginView: Identifiable {
+    var id: String {
+        "LoginView"
+    }
+}
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
