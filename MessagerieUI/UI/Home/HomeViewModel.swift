@@ -9,10 +9,10 @@
 import SwiftUI
 
 class HomeViewModel {
-    let accountManager: AccountManager
+    let accountManager: AccountManagerType
     let state: HomeViewState
 
-    init(accountManager: AccountManager) {
+    init(accountManager: AccountManagerType) {
         self.accountManager = accountManager
         state = HomeViewState()
         reload()
@@ -46,7 +46,7 @@ class HomeViewModel {
     private func loadRoomListViewModels() -> [RoomListViewModel] {
         let factoryManager = ProtocolDataFactoryManager.shared
 
-        return accountManager.accounts.map { account in
+        return accountManager.getAccounts().map { account in
             let dataFactory = factoryManager.factory(for: account.protocolName)!
 
             let roomSummariesSource = dataFactory.makeRoomSummariesSource(account: account)

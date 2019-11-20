@@ -8,13 +8,17 @@
 
 import Foundation
 
-class AccountManager {
-
+class AccountManager: AccountManagerType {
     static let shared = AccountManager()
-
-    var accounts: [AccountType] = []
+    
+    private var accounts: [AccountType]
 
     init() {
+        accounts = []
+    }
+
+    func getAccounts() -> [AccountType] {
+        accounts
     }
 
     func addAccount(account: AccountType) {

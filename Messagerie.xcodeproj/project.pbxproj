@@ -50,6 +50,7 @@
 		329909692373691800D7D989 /* MessageWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909622373691700D7D989 /* MessageWidgetView.swift */; };
 		3299096A2373691800D7D989 /* MessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909632373691700D7D989 /* MessageTextView.swift */; };
 		3299096B2373691800D7D989 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909642373691700D7D989 /* MessageView.swift */; };
+		32AF64112385D27F00D70570 /* AccountManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF64102385D27F00D70570 /* AccountManagerType.swift */; };
 		32D2C27923833BE000447AD9 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2C27823833BE000447AD9 /* HomeViewState.swift */; };
 		32D2C27B2383461C00447AD9 /* HomeViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2C27A2383461C00447AD9 /* HomeViewAction.swift */; };
 		32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1EF2367A23E00CDE9BC /* AppDelegate.swift */; };
@@ -105,6 +106,7 @@
 		329909622373691700D7D989 /* MessageWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWidgetView.swift; sourceTree = "<group>"; };
 		329909632373691700D7D989 /* MessageTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTextView.swift; sourceTree = "<group>"; };
 		329909642373691700D7D989 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		32AF64102385D27F00D70570 /* AccountManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerType.swift; sourceTree = "<group>"; };
 		32D2C27823833BE000447AD9 /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
 		32D2C27A2383461C00447AD9 /* HomeViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewAction.swift; sourceTree = "<group>"; };
 		32D5C1EC2367A23E00CDE9BC /* Messagerie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messagerie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +367,7 @@
 			children = (
 				329909302372208A00D7D989 /* AccountManager.swift */,
 				329909312372208A00D7D989 /* AccountType.swift */,
+				32AF64102385D27F00D70570 /* AccountManagerType.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				326EB5482381FA8000DD5857 /* LoginViewAction.swift in Sources */,
 				329909402372208A00D7D989 /* AccountType.swift in Sources */,
 				329909372372208A00D7D989 /* MatrixRoomSummariesSource.swift in Sources */,
+				32AF64112385D27F00D70570 /* AccountManagerType.swift in Sources */,
 				320F7EF4237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift in Sources */,
 				329909672373691800D7D989 /* MessageImageView.swift in Sources */,
 				32D5C1F22367A23E00CDE9BC /* SceneDelegate.swift in Sources */,
