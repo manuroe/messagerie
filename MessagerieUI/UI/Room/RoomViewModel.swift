@@ -12,7 +12,7 @@ import Combine
 class RoomViewModel: ObservableObject {
     @Published var roomName: String
     @Published var roomAvatar: String
-    @Published var messages: [Message] = []
+    @Published var items: [RoomItem] = []
 
     let timeline: MessagesSourceType
 
@@ -20,26 +20,27 @@ class RoomViewModel: ObservableObject {
 
 
     init(source: MessagesSourceType) {
-        self.timeline = source
-        self.roomName = "TODO"
-        self.roomAvatar = "https://matrix.org/matrix.png"
+        timeline = source
+        roomName = "TODO"
+        roomAvatar = "https://matrix.org/matrix.png"
 
         // TODO: Why this is required ?
-        self.messages = [
-            Message(eventId: "11",
-        sender:  "111",
-        senderDisplayName: "WTF",
-        content: .text(message: "Need a random message to make UI work. Why???"))
-        ]
+        let message = Message(eventId: "11",
+                sender:  "111",
+                senderDisplayName: "WTF",
+                content: .text(message: "Need a random message to make UI work. Why???"))
+
+        items = makeItems(from: [message])
+
     }
 
     func start() {
-        self.setupObservers()
-        self.timeline.paginate()
+        setupObservers()
+        timeline.paginate()
     }
 
     func setupObservers() {
-        self.timelineObserver = self.timeline.publisher
+        timelineObserver = timeline.publisher
             .sink(receiveValue: { (update) in
                 self.handle(update: update)
             })
@@ -48,15 +49,21 @@ class RoomViewModel: ObservableObject {
     func handle(update: MessagesUpdate) {
         switch update {
         case .backwards(let messages):
-            self.messages = messages + self.messages
+            items = makeItems(from: messages) + items
         case .forwards(let messages):
-            self.messages = self.messages + messages
+            items = items + makeItems(from: messages)
         case .update(_):
             // TODO
             break
         case .deletion(_):
             // TODO
             break
+        }
+    }
+
+    func makeItems(from messages: [Message]) -> [RoomItem] {
+        messages.map { message in
+            .message(message: message)
         }
     }
 

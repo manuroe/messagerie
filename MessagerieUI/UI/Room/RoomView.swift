@@ -16,9 +16,9 @@ struct RoomView: View {
         VStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    ForEach(viewModel.messages) { message in
+                    ForEach(viewModel.items) { item in
                         HStack {
-                            MessageView(message: message)
+                            RoomItemView(item: item)
                             Spacer()
                         }
                     }

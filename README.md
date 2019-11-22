@@ -10,6 +10,16 @@ By its seperation of concerns design, it is communication protocol agnostic.
 This may change in the future and may be more matrix-oriented but data models implementations will stay away from the UI.
 
 # TODO
-- Matrix Login screen / Store account
-- Multi account
++ Matrix Login screen / Store account
++ Multi account
+- True image cache
+- avatar: enum: letter + 2 urls preview
+- scroll to bottom
+- scroll more
++ abstract message more for date, preview, etc
+- WTF text
+- text composer
+
+Later
 - View injection (for messages to render them differently)
+- image send
