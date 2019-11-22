@@ -26,6 +26,7 @@ class MatrixSession {
         let credentials = MXCredentials(homeServer: account.homeserver.absoluteString,
                                         userId: account.userId,
                                         accessToken: account.accessToken)
+        credentials.deviceId = account.deviceId
         
         matrixRestClient = MXRestClient(credentials: credentials, unrecognizedCertificateHandler: nil)
         session = MXSession(matrixRestClient: matrixRestClient)

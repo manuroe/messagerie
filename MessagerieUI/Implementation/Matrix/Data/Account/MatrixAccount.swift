@@ -13,13 +13,9 @@ struct MatrixAccount: AccountType {
     
     let homeserver: URL
     let userId: String
-    //let deviceId: String
+    let deviceId: String?
     let accessToken: String
 }
-
-extension MatrixAccount: Codable {
-}
-
 
 extension ProtocolName {
     static let matrix = "matrix.org";

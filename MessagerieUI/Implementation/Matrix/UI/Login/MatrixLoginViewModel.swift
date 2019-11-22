@@ -68,7 +68,10 @@ class MatrixLoginViewModel : LoginViewModelType {
             return nil
         }
 
-        return MatrixAccount(homeserver: homeserverUrl, userId: userId, accessToken: accessToken)
+        return MatrixAccount(homeserver: homeserverUrl,
+                             userId: userId,
+                             deviceId: credentials.deviceId,
+                             accessToken: accessToken)
     }
 
 

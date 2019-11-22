@@ -8,9 +8,20 @@
 
 import Foundation
 
+import SwiftMatrixSDK
+
 class MatrixDataFactory: ProtocolDataFactoryType {
 
     private let sessionMananager = MatrixSessionManager.shared
+
+    init() {
+        setupMatrixSDKOptions()
+    }
+
+    private func setupMatrixSDKOptions() {
+        let sdkOptions = MXSDKOptions.sharedInstance()
+        sdkOptions.enableCryptoWhenStartingMXSession = true
+    }
 
     func makeRoomSummariesSource(account: AccountType) -> RoomSummariesSourceType {
         let session = matrixSession(forAccount: account)

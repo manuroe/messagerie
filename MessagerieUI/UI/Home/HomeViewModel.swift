@@ -32,15 +32,8 @@ class HomeViewModel {
     }
 
     private func addAccount(account: AccountType) {
-        let factoryManager = ProtocolDataFactoryManager.shared
-        let dataFactory = factoryManager.factory(for: account.protocolName)!
-
-        let roomSummariesSource = dataFactory.makeRoomSummariesSource(account: account)
-        let userSource = dataFactory.makeUserSource(account: account, userId: account.userId)
-
-        let roomListViewModel = RoomListViewModel(account: account, source: roomSummariesSource, userSource: userSource)
-
-        state.roomListViewModels.append(roomListViewModel)
+        accountManager.addAccount(account: account)
+        reload()
     }
 
     private func loadRoomListViewModels() -> [RoomListViewModel] {
