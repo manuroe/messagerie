@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AccountType {
+protocol AccountType: Codable {
     var protocolName: String { get }
     var userId: String { get }
 }

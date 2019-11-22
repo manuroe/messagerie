@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let factoryManager = ProtocolDataFactoryManager.shared
         factoryManager.registerFactory(protocolName: ProtocolName.matrix, factory: MatrixDataFactory())
 
-        let accountManager = AccountManager.shared
+        let accountManager = SecureAccountManager()
         self.setupHardCodedAccount(accountManager: accountManager)
 
         // Create the SwiftUI view that provides the window contents
@@ -52,11 +52,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let account = MatrixAccount(homeserver: URL(string: "https://matrix.org")!,
                                     userId: "@superman:matrix.org",
                                     accessToken: "MDAxOGxvY2F0aW9uIG1hdHJpeC5vcmcKMDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2VuID0gMQowMDI3Y2lkIHVzZXJfaWQgPSBAc3VwZXJtYW46bWF0cml4Lm9yZwowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAyMWNpZCBub25jZSA9IHJaRjRSNSpVOjNPTCZNPTYKMDAyZnNpZ25hdHVyZSDwKgaV-qS3-6I3jvj-La7FZAwitRuMCSuerEx2If34Two")
+        accountManager.removeAccount(protocolName: account.protocolName, userId: account.userId)
         accountManager.addAccount(account: account)
 
         let account2 = MatrixAccount(homeserver: URL(string: "https://matrix.org")!,
                                     userId: "@manolo:matrix.org",
                                     accessToken: "MDAxOGxvY2F0aW9uIG1hdHJpeC5vcmcKMDAxM2lkZW50aWZpZXIga2V5CjAwMTBjaWQgZ2VuID0gMQowMDI1Y2lkIHVzZXJfaWQgPSBAbWFub2xvOm1hdHJpeC5vcmcKMDAxNmNpZCB0eXBlID0gYWNjZXNzCjAwMjFjaWQgbm9uY2UgPSA1cS5OfkZsK35TMyN5REIxCjAwMmZzaWduYXR1cmUgzKuPpDGJ8EC8ZmfSbdPrh4ZKxJI6aMEuyw-20izHx-AK")
+        accountManager.removeAccount(protocolName: account2.protocolName, userId: account2.userId)
         accountManager.addAccount(account: account2)
     }
 

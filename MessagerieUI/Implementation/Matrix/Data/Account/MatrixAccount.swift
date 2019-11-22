@@ -17,6 +17,10 @@ struct MatrixAccount: AccountType {
     let accessToken: String
 }
 
+extension MatrixAccount: Codable {
+}
+
+
 extension ProtocolName {
     static let matrix = "matrix.org";
 }

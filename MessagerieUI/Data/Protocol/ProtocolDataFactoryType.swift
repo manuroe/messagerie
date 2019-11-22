@@ -19,5 +19,5 @@ protocol ProtocolDataFactoryType {
 }
 
 /// List of supported protocol (Matrix, Mock)
-struct ProtocolName {
+enum ProtocolName {
 }

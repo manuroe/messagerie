@@ -11,4 +11,6 @@ import Foundation
 protocol AccountManagerType {
     func getAccounts() -> [AccountType]
     func addAccount(account: AccountType)
+    func udpateAccount(account: AccountType)
+    func removeAccount(protocolName: String, userId: String)
 }

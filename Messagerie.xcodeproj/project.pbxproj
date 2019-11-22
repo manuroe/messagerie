@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3200052323887E410064C360 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200052223887E410064C360 /* Codable.swift */; };
+		32000525238880960064C360 /* SecuredAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32000524238880960064C360 /* SecuredAccount.swift */; };
 		320F7EF2237723C400BCAE2F /* MockTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF1237723C400BCAE2F /* MockTimeline.swift */; };
 		320F7EF4237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */; };
 		320F7EF6237A0E0C00BCAE2F /* SwiftUIPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */; };
@@ -51,6 +53,8 @@
 		3299096A2373691800D7D989 /* MessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909632373691700D7D989 /* MessageTextView.swift */; };
 		3299096B2373691800D7D989 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909642373691700D7D989 /* MessageView.swift */; };
 		32AF64112385D27F00D70570 /* AccountManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF64102385D27F00D70570 /* AccountManagerType.swift */; };
+		32AF64132385E3E900D70570 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 32AF64122385E3E900D70570 /* Podfile */; };
+		32AF64152385E7EA00D70570 /* SecureAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AF64142385E7EA00D70570 /* SecureAccountManager.swift */; };
 		32D2C27923833BE000447AD9 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2C27823833BE000447AD9 /* HomeViewState.swift */; };
 		32D2C27B2383461C00447AD9 /* HomeViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2C27A2383461C00447AD9 /* HomeViewAction.swift */; };
 		32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D5C1EF2367A23E00CDE9BC /* AppDelegate.swift */; };
@@ -63,6 +67,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3200052223887E410064C360 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
+		32000524238880960064C360 /* SecuredAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuredAccount.swift; sourceTree = "<group>"; };
 		320F7EF1237723C400BCAE2F /* MockTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimeline.swift; sourceTree = "<group>"; };
 		320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDataFactoryManager.swift; sourceTree = "<group>"; };
 		320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPagerView.swift; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 		329909632373691700D7D989 /* MessageTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTextView.swift; sourceTree = "<group>"; };
 		329909642373691700D7D989 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		32AF64102385D27F00D70570 /* AccountManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManagerType.swift; sourceTree = "<group>"; };
+		32AF64122385E3E900D70570 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		32AF64142385E7EA00D70570 /* SecureAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAccountManager.swift; sourceTree = "<group>"; };
 		32D2C27823833BE000447AD9 /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
 		32D2C27A2383461C00447AD9 /* HomeViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewAction.swift; sourceTree = "<group>"; };
 		32D5C1EC2367A23E00CDE9BC /* Messagerie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messagerie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +142,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3200052123887E0B0064C360 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3200052223887E410064C360 /* Codable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		320F7EEE2377236B00BCAE2F /* Room */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +240,8 @@
 		329909152372208A00D7D989 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3200052123887E0B0064C360 /* Extensions */,
+				32AF64182386BFB100D70570 /* Managers */,
 				329909162372208A00D7D989 /* UI */,
 				329909182372208A00D7D989 /* Services */,
 			);
@@ -365,9 +383,7 @@
 		3299092F2372208A00D7D989 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				329909302372208A00D7D989 /* AccountManager.swift */,
 				329909312372208A00D7D989 /* AccountType.swift */,
-				32AF64102385D27F00D70570 /* AccountManagerType.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -410,10 +426,30 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		32AF64182386BFB100D70570 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				32AF64192386BFB100D70570 /* Account */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		32AF64192386BFB100D70570 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				32AF64102385D27F00D70570 /* AccountManagerType.swift */,
+				329909302372208A00D7D989 /* AccountManager.swift */,
+				32AF64142385E7EA00D70570 /* SecureAccountManager.swift */,
+				32000524238880960064C360 /* SecuredAccount.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		32D5C1E32367A23E00CDE9BC = {
 			isa = PBXGroup;
 			children = (
 				329909572373029900D7D989 /* README.md */,
+				32AF64122385E3E900D70570 /* Podfile */,
 				32D5C1EE2367A23E00CDE9BC /* Messagerie */,
 				3299090D2372208A00D7D989 /* MessagerieUI */,
 				32D5C1ED2367A23E00CDE9BC /* Products */,
@@ -529,6 +565,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32AF64132385E3E900D70570 /* Podfile in Resources */,
 				32D5C1FC2367A24100CDE9BC /* LaunchScreen.storyboard in Resources */,
 				32D5C1F92367A24100CDE9BC /* Preview Assets.xcassets in Resources */,
 				329909582373029A00D7D989 /* README.md in Resources */,
@@ -587,7 +624,9 @@
 			files = (
 				3299095423723B1C00D7D989 /* MatrixTimeline.swift in Sources */,
 				329909352372208A00D7D989 /* ImageLoader.swift in Sources */,
+				32AF64152385E7EA00D70570 /* SecureAccountManager.swift in Sources */,
 				3299093C2372208A00D7D989 /* ProtocolDataFactoryType.swift in Sources */,
+				32000525238880960064C360 /* SecuredAccount.swift in Sources */,
 				3299093D2372208A00D7D989 /* RoomSummary.swift in Sources */,
 				326EB5462381EFFD00DD5857 /* MatrixLoginViewModel.swift in Sources */,
 				3299096A2373691800D7D989 /* MessageTextView.swift in Sources */,
@@ -602,6 +641,7 @@
 				320F7EF4237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift in Sources */,
 				329909672373691800D7D989 /* MessageImageView.swift in Sources */,
 				32D5C1F22367A23E00CDE9BC /* SceneDelegate.swift in Sources */,
+				3200052323887E410064C360 /* Codable.swift in Sources */,
 				3299093A2372208A00D7D989 /* MatrixSessionManager.swift in Sources */,
 				329909492372295000D7D989 /* MatrixUserSource.swift in Sources */,
 				326EB5422381E84D00DD5857 /* LoginViewModelType.swift in Sources */,

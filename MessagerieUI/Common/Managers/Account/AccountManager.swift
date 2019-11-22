@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Dumb implementation
 class AccountManager: AccountManagerType {
     static let shared = AccountManager()
     
@@ -23,5 +24,13 @@ class AccountManager: AccountManagerType {
 
     func addAccount(account: AccountType) {
         accounts.append(account)
+    }
+
+    func udpateAccount(account: AccountType) {
+        // TODO
+    }
+
+    func removeAccount(protocolName: String, userId: String) {
+        // TODO
     }
 }
