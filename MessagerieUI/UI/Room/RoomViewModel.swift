@@ -9,10 +9,8 @@
 import UIKit
 import Combine
 
-class RoomViewModel: ObservableObject {
-    @Published var roomName: String
-    @Published var roomAvatar: String
-    @Published var items: [RoomItem] = []
+class RoomViewModel: RoomViewModelType {
+    let state: RoomViewState
 
     let timeline: MessagesSourceType
 
@@ -21,8 +19,8 @@ class RoomViewModel: ObservableObject {
 
     init(source: MessagesSourceType) {
         timeline = source
-        roomName = "TODO"
-        roomAvatar = "https://matrix.org/matrix.png"
+        state = RoomViewState(roomName: "TODO",
+                              roomAvatar:"https://matrix.org/matrix.png")
 
         // TODO: Why this is required ?
         let message = Message(eventId: "11",
@@ -30,11 +28,18 @@ class RoomViewModel: ObservableObject {
                 senderDisplayName: "WTF",
                 content: .text(message: "Need a random message to make UI work. Why???"))
 
-        items = makeItems(from: [message])
+        state.items = makeItems(from: [message])
 
     }
 
-    func start() {
+    func process(action: RoomAction) {
+        switch action {
+        case .load:
+            load()
+        }
+    }
+
+    func load() {
         setupObservers()
         timeline.paginate()
     }
@@ -49,9 +54,9 @@ class RoomViewModel: ObservableObject {
     func handle(update: MessagesUpdate) {
         switch update {
         case .backwards(let messages):
-            items = makeItems(from: messages) + items
+            state.items = makeItems(from: messages) + state.items
         case .forwards(let messages):
-            items = items + makeItems(from: messages)
+            state.items = state.items + makeItems(from: messages)
         case .update(_):
             // TODO
             break

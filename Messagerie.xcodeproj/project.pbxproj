@@ -14,6 +14,9 @@
 		3200052C2389B1CB0064C360 /* RoomListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200052B2389B1CB0064C360 /* RoomListViewState.swift */; };
 		3200052E2389B35B0064C360 /* RoomListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200052D2389B35B0064C360 /* RoomListAction.swift */; };
 		320005302389B5220064C360 /* RoomListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200052F2389B5220064C360 /* RoomListViewModelType.swift */; };
+		320005322389B75F0064C360 /* RoomAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320005312389B75F0064C360 /* RoomAction.swift */; };
+		320005362389B7AC0064C360 /* RoomViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320005352389B7AC0064C360 /* RoomViewState.swift */; };
+		320005382389B8C90064C360 /* RoomViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320005372389B8C90064C360 /* RoomViewModelType.swift */; };
 		320F7EF2237723C400BCAE2F /* MockTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF1237723C400BCAE2F /* MockTimeline.swift */; };
 		320F7EF4237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */; };
 		320F7EF6237A0E0C00BCAE2F /* SwiftUIPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */; };
@@ -79,6 +82,9 @@
 		3200052B2389B1CB0064C360 /* RoomListViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewState.swift; sourceTree = "<group>"; };
 		3200052D2389B35B0064C360 /* RoomListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListAction.swift; sourceTree = "<group>"; };
 		3200052F2389B5220064C360 /* RoomListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModelType.swift; sourceTree = "<group>"; };
+		320005312389B75F0064C360 /* RoomAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomAction.swift; sourceTree = "<group>"; };
+		320005352389B7AC0064C360 /* RoomViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewState.swift; sourceTree = "<group>"; };
+		320005372389B8C90064C360 /* RoomViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelType.swift; sourceTree = "<group>"; };
 		320F7EF1237723C400BCAE2F /* MockTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimeline.swift; sourceTree = "<group>"; };
 		320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDataFactoryManager.swift; sourceTree = "<group>"; };
 		320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPagerView.swift; sourceTree = "<group>"; };
@@ -241,8 +247,11 @@
 			children = (
 				320005262388954D0064C360 /* ViewModels */,
 				3299095F2373691700D7D989 /* Views */,
+				320005312389B75F0064C360 /* RoomAction.swift */,
 				3299095D2373691700D7D989 /* RoomView.swift */,
+				320005372389B8C90064C360 /* RoomViewModelType.swift */,
 				3299095E2373691700D7D989 /* RoomViewModel.swift */,
+				320005352389B7AC0064C360 /* RoomViewState.swift */,
 			);
 			path = Room;
 			sourceTree = "<group>";
@@ -252,9 +261,9 @@
 			children = (
 				329909142372208A00D7D989 /* RoomListView.swift */,
 				3200052D2389B35B0064C360 /* RoomListAction.swift */,
+				3200052F2389B5220064C360 /* RoomListViewModelType.swift */,
 				329909132372208A00D7D989 /* RoomListViewModel.swift */,
 				3200052B2389B1CB0064C360 /* RoomListViewState.swift */,
-				3200052F2389B5220064C360 /* RoomListViewModelType.swift */,
 			);
 			path = RoomList;
 			sourceTree = "<group>";
@@ -652,7 +661,9 @@
 				32000525238880960064C360 /* SecuredAccount.swift in Sources */,
 				3299093D2372208A00D7D989 /* RoomSummary.swift in Sources */,
 				326EB5462381EFFD00DD5857 /* MatrixLoginViewModel.swift in Sources */,
+				320005362389B7AC0064C360 /* RoomViewState.swift in Sources */,
 				3299096A2373691800D7D989 /* MessageTextView.swift in Sources */,
+				320005322389B75F0064C360 /* RoomAction.swift in Sources */,
 				329909462372289000D7D989 /* UserSourceType.swift in Sources */,
 				3299095C237359BD00D7D989 /* MessagesUpdate.swift in Sources */,
 				32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */,
@@ -696,6 +707,7 @@
 				32D2C27B2383461C00447AD9 /* HomeViewAction.swift in Sources */,
 				32D2C27923833BE000447AD9 /* HomeViewState.swift in Sources */,
 				32990944237227F900D7D989 /* User.swift in Sources */,
+				320005382389B8C90064C360 /* RoomViewModelType.swift in Sources */,
 				3299095B237359BD00D7D989 /* MessagesSourceType.swift in Sources */,
 				3299095623723BAF00D7D989 /* MatrixMessageFactory.swift in Sources */,
 				320005302389B5220064C360 /* RoomListViewModelType.swift in Sources */,

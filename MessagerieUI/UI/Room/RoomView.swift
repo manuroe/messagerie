@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct RoomView: View {
-
-    @ObservedObject var viewModel: RoomViewModel
+    var viewModel: RoomViewModelType
+    @ObservedObject var state: RoomViewState
 
     var body: some View {
         VStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    ForEach(viewModel.items) { item in
+                    ForEach(state.items) { item in
                         HStack {
                             RoomItemView(item: item)
                             Spacer()
@@ -24,11 +24,11 @@ struct RoomView: View {
                     }
                 }
             }
-            .onAppear(
-                perform: self.viewModel.start
-            )
+            .onAppear {
+                self.viewModel.process(action: .load)
+            }
         }
-        .navigationBarTitle(Text(viewModel.roomName), displayMode: .inline)
+        .navigationBarTitle(Text(state.roomName), displayMode: .inline)
     }
 }
 
