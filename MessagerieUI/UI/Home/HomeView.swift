@@ -18,7 +18,7 @@ struct HomeView: View {
 
     private var views: [AnyIdentifiableView] {
         var roomListViews = state.roomListViewModels.map { (roomListViewModel) -> AnyIdentifiableView in
-            AnyIdentifiableView(item: RoomListView(viewModel: roomListViewModel))
+            AnyIdentifiableView(item: RoomListView(viewModel: roomListViewModel, state: roomListViewModel.state))
         }
 
         roomListViews.append(AnyIdentifiableView(item: self.makeMatrixLoginView()))

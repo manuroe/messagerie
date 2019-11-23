@@ -11,6 +11,9 @@
 		32000525238880960064C360 /* SecuredAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32000524238880960064C360 /* SecuredAccount.swift */; };
 		32000528238895B30064C360 /* RoomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32000527238895B30064C360 /* RoomItem.swift */; };
 		3200052A238899510064C360 /* RoomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32000529238899510064C360 /* RoomItemView.swift */; };
+		3200052C2389B1CB0064C360 /* RoomListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200052B2389B1CB0064C360 /* RoomListViewState.swift */; };
+		3200052E2389B35B0064C360 /* RoomListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200052D2389B35B0064C360 /* RoomListAction.swift */; };
+		320005302389B5220064C360 /* RoomListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200052F2389B5220064C360 /* RoomListViewModelType.swift */; };
 		320F7EF2237723C400BCAE2F /* MockTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF1237723C400BCAE2F /* MockTimeline.swift */; };
 		320F7EF4237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */; };
 		320F7EF6237A0E0C00BCAE2F /* SwiftUIPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */; };
@@ -73,6 +76,9 @@
 		32000524238880960064C360 /* SecuredAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuredAccount.swift; sourceTree = "<group>"; };
 		32000527238895B30064C360 /* RoomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomItem.swift; sourceTree = "<group>"; };
 		32000529238899510064C360 /* RoomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomItemView.swift; sourceTree = "<group>"; };
+		3200052B2389B1CB0064C360 /* RoomListViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewState.swift; sourceTree = "<group>"; };
+		3200052D2389B35B0064C360 /* RoomListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListAction.swift; sourceTree = "<group>"; };
+		3200052F2389B5220064C360 /* RoomListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModelType.swift; sourceTree = "<group>"; };
 		320F7EF1237723C400BCAE2F /* MockTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimeline.swift; sourceTree = "<group>"; };
 		320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDataFactoryManager.swift; sourceTree = "<group>"; };
 		320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPagerView.swift; sourceTree = "<group>"; };
@@ -244,8 +250,11 @@
 		329909122372208A00D7D989 /* RoomList */ = {
 			isa = PBXGroup;
 			children = (
-				329909132372208A00D7D989 /* RoomListViewModel.swift */,
 				329909142372208A00D7D989 /* RoomListView.swift */,
+				3200052D2389B35B0064C360 /* RoomListAction.swift */,
+				329909132372208A00D7D989 /* RoomListViewModel.swift */,
+				3200052B2389B1CB0064C360 /* RoomListViewState.swift */,
+				3200052F2389B5220064C360 /* RoomListViewModelType.swift */,
 			);
 			path = RoomList;
 			sourceTree = "<group>";
@@ -667,12 +676,14 @@
 				329909652373691800D7D989 /* RoomView.swift in Sources */,
 				329909332372208A00D7D989 /* RoomListView.swift in Sources */,
 				329909392372208A00D7D989 /* MatrixDataFactory.swift in Sources */,
+				3200052E2389B35B0064C360 /* RoomListAction.swift in Sources */,
 				3299096B2373691800D7D989 /* MessageView.swift in Sources */,
 				329909662373691800D7D989 /* RoomViewModel.swift in Sources */,
 				329909692373691800D7D989 /* MessageWidgetView.swift in Sources */,
 				3299093F2372208A00D7D989 /* AccountManager.swift in Sources */,
 				320F7EF2237723C400BCAE2F /* MockTimeline.swift in Sources */,
 				329909362372208A00D7D989 /* MockRoomSummariesSource.swift in Sources */,
+				3200052C2389B1CB0064C360 /* RoomListViewState.swift in Sources */,
 				3299094B2372308400D7D989 /* MockUserSource.swift in Sources */,
 				329909382372208A00D7D989 /* MatrixSession.swift in Sources */,
 				326D91062384ABA4004B8C00 /* AnyIdentifiableView.swift in Sources */,
@@ -687,6 +698,7 @@
 				32990944237227F900D7D989 /* User.swift in Sources */,
 				3299095B237359BD00D7D989 /* MessagesSourceType.swift in Sources */,
 				3299095623723BAF00D7D989 /* MatrixMessageFactory.swift in Sources */,
+				320005302389B5220064C360 /* RoomListViewModelType.swift in Sources */,
 				3236A0EC237B6E710056EA88 /* LoginView.swift in Sources */,
 				320F7EF9237A0F6000BCAE2F /* HomeView.swift in Sources */,
 			);

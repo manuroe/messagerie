@@ -10,7 +10,7 @@ import Foundation
 
 class HomeViewState: ObservableObject {
 
-    @Published var roomListViewModels: [RoomListViewModel] = []
+    @Published var roomListViewModels: [RoomListViewModelType] = []
     @Published var index: Int = 0
 
     init() {

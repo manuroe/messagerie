@@ -11,6 +11,7 @@ import Foundation
 enum RoomItem {
     // case dateHeader
     case message(message: Message)
+    //case collapsed
     //case urlPreview
 }
 

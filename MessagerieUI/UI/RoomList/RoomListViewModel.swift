@@ -9,11 +9,9 @@
 import Foundation
 import Combine
 
-class RoomListViewModel: ObservableObject {
-    @Published var rooms: [RoomSummary]?
-    @Published var myUser: User?
+class RoomListViewModel: RoomListViewModelType {
+    let state: RoomListViewState
 
-    let account: AccountType
     private let summariesSource: RoomSummariesSourceType
     private var summariesSourceObserver: AnyCancellable?
 
@@ -21,20 +19,26 @@ class RoomListViewModel: ObservableObject {
     private var userSourceObserver: AnyCancellable?
 
     init(account: AccountType, source: RoomSummariesSourceType, userSource: UserSourceType) {
-        self.account = account
         self.summariesSource = source
         self.userSource = userSource
-        load()
+        self.state = RoomListViewState(account: account)
+    }
+
+    func process(action: RoomListAction) {
+        switch action {
+        case .load:
+            load()
+        }
     }
 
     private func load() {
         summariesSourceObserver = summariesSource.publisher.sink { (rooms) in
-            self.rooms = rooms
+            self.state.rooms = rooms
         }
         summariesSource.load()
 
         userSourceObserver = userSource.publisher.sink { (user) in
-            self.myUser = user
+            self.state.myUser = user
         }
         userSource.load()
     }

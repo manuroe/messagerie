@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct RoomListView: View {
-    
-    @ObservedObject var viewModel: RoomListViewModel
+    var viewModel: RoomListViewModelType
+    @ObservedObject var state: RoomListViewState
 
     var body: some View {
 
         NavigationView {
             VStack {
                 Group {
-                    if viewModel.rooms != nil {
-                        List(viewModel.rooms!) { room in
+                    if state.rooms != nil {
+                        List(state.rooms!) { room in
                             NavigationLink(destination: self.roomView(for: room.roomId)) {
                                 HStack {
                                     AvatarView(avatarUrl: room.avatar, width: 40, height: 40)
@@ -32,12 +32,15 @@ struct RoomListView: View {
                     }
                 }
             }
+            .onAppear {
+                self.viewModel.process(action: .load)
+            }
             .navigationBarTitle(
-                Text((viewModel.myUser != nil) ? viewModel.myUser!.displayname : ""),
+                Text((state.myUser != nil) ? state.myUser!.displayname : ""),
                 displayMode: .inline
             )
             .navigationBarItems(
-                leading: AvatarView(avatarUrl: viewModel.myUser?.avatar, width: 30, height: 30)
+                leading: AvatarView(avatarUrl: state.myUser?.avatar, width: 30, height: 30)
             )
         }
     }
@@ -45,20 +48,20 @@ struct RoomListView: View {
     func roomView(for roomId: String) -> RoomView {
 
         let factoryManager = ProtocolDataFactoryManager.shared
-        let account = viewModel.account
+        let account = state.account
         let dataFactory = factoryManager.factory(for: account.protocolName)!
 
         let messagesSource = dataFactory.makeTimeline(account: account, roomId: roomId)
         let roomViewModel = RoomViewModel(source: messagesSource)
 
-        return RoomView(viewModel: roomViewModel)
+        return RoomView(viewModel: roomViewModel, state: roomViewModel.state)
     }
 }
 
 
 extension RoomListView: Identifiable {
     var id: String {
-        viewModel.account.protocolName + viewModel.account.userId
+        state.account.protocolName + state.account.userId
     }
 }
 
