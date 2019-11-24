@@ -8,7 +8,7 @@
 
 import Foundation
 
-// TODO: Find better name (RoomViewItem?)
+// TODO: Find better name (RoomViewItem?, Room?)
 struct RoomSummary: Identifiable {
     var id: String {
         roomId
@@ -18,4 +18,7 @@ struct RoomSummary: Identifiable {
 
     var displayname: String
     var avatar: String
+
+    // TODO: Replace by last message
+    var lastMessageTs: UInt64
 }

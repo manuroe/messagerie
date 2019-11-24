@@ -33,7 +33,7 @@ class RoomListViewModel: RoomListViewModelType {
 
     private func load() {
         summariesSourceObserver = summariesSource.publisher.sink { (rooms) in
-            self.state.rooms = rooms
+            self.state.rooms = rooms.sorted(by: { $0.lastMessageTs > $1.lastMessageTs })
         }
         summariesSource.load()
 
