@@ -18,7 +18,7 @@ class ImageLoader: ObservableObject {
 
     func loadUrl(urlString: String) {
         Alamofire.request(urlString).responseImage { response in
-            debugPrint(response)
+            //debugPrint(response)
 
             if let image = response.result.value {
                 self.image = image
