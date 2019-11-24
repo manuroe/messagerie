@@ -22,7 +22,6 @@ class MatrixTimeline: MessagesSourceType {
     private let mxSession: MXSession
     private let roomId: String
 
-    private let mxRoom: MXRoom
     private var timeline: MXEventTimeline?
 
     // TODO: injection
@@ -32,9 +31,6 @@ class MatrixTimeline: MessagesSourceType {
         self.session = session
         self.roomId = roomId
         mxSession = session.session
-
-        // TODO: This can fail
-        mxRoom = mxSession.room(withRoomId: roomId)
     }
 
     func paginate(messagesCount: UInt, direction: Direction) {
@@ -46,21 +42,30 @@ class MatrixTimeline: MessagesSourceType {
         }
     }
 
+    private var dataReadyFuture: AnyCancellable?
     private func getLiveTimeline(completion: @escaping (_ timeline: MXEventTimeline) -> Void) {
         if let timeline = self.timeline {
             completion(timeline)
             return
         }
 
-        mxRoom.liveTimeline() { timeline in
-            guard let timeline = timeline else {
+        dataReadyFuture = session.dataReadyFuture().sink(receiveValue: { state in
+            self.dataReadyFuture = nil      // boring
+
+            guard let mxRoom = self.mxSession.room(withRoomId: self.roomId) else {
                 return
             }
 
-            self.setup(timeline: timeline)
-            self.timeline = timeline
-            completion(timeline)
-        }
+            mxRoom.liveTimeline() { timeline in
+                 guard let timeline = timeline else {
+                     return
+                 }
+
+                 self.setup(timeline: timeline)
+                 self.timeline = timeline
+                 completion(timeline)
+             }
+        })
     }
 
     private func setup(timeline: MXEventTimeline) {

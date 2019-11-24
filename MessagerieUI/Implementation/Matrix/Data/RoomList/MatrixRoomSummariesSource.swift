@@ -26,14 +26,13 @@ class MatrixRoomSummariesSource: RoomSummariesSourceType {
         mxSession = session.session
     }
 
+    private var dataReadyFuture: AnyCancellable?
     func load() {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.mxSessionStateDidChange, object: mxSession, queue: nil) { (_) in
-            self.update()
-        }
+        dataReadyFuture = session.dataReadyFuture().sink(receiveValue: { state in
+            self.dataReadyFuture = nil      // boring
 
-        if (mxSession.state.rawValue >= MXSessionStateStoreDataReady.rawValue) {
-            update()
-        }
+            self.update()
+        })
     }
 
     func update() {

@@ -34,6 +34,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // TODO: Remove this Mock RoomView test
         //let contentView = RoomView(viewModel: RoomViewModel(source: MockTimeline()))
 
+        // TODO: Remove
+        // This shows we can open a RoomView independently
+//        let account = accountManager.getAccounts().first!
+//        let dataFactory = factoryManager.factory(for: account.protocolName)!
+//
+//        let messagesSource = dataFactory.makeTimeline(account: account, roomId: "!EWjSbpPgywOXTWUFNJ:matrix.org")
+//
+//        let roomViewModel = RoomViewModel(source: messagesSource)
+//        let contentView = RoomView(viewModel: roomViewModel, state: roomViewModel.state)
+
+
 	    // TODO: Remove this Mock test
 //        let loginViewModel = MatrixLoginViewModel {_ in}
 //        let contentView = LoginView(viewModel: loginViewModel, state: loginViewModel.state)

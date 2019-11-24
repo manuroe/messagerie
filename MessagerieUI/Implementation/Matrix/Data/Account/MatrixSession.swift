@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 import SwiftMatrixSDK
 
@@ -30,12 +31,36 @@ class MatrixSession {
         
         matrixRestClient = MXRestClient(credentials: credentials, unrecognizedCertificateHandler: nil)
         session = MXSession(matrixRestClient: matrixRestClient)
-
-        // Q: Expose start in Session protocol?
-        start()
     }
 
-    func start() {
+
+    var sessionStateObserver: NSObjectProtocol?
+    func dataReadyFuture() -> Future<MXSessionState, Never> {
+        return Future<MXSessionState, Never> { promise in
+
+            // TODO: Could be certainly more Combiny
+            if self.session.state.rawValue >= MXSessionStateStoreDataReady.rawValue {
+                promise(.success(self.session.state))
+                return
+            }
+
+            if self.session.state == MXSessionStateInitialised {
+                self.startSession()
+            }
+
+            self.sessionStateObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.mxSessionStateDidChange, object: self.session, queue: nil) { (_) in
+                if self.session.state.rawValue >= MXSessionStateStoreDataReady.rawValue {
+                    if let sessionStateObserver = self.sessionStateObserver {
+                        NotificationCenter.default.removeObserver(sessionStateObserver)
+                    }
+                    promise(.success(self.session.state))
+                }
+            }
+        }
+    }
+
+    
+    private func startSession() {
         let store = MXFileStore()
         session.setStore(store) { _ in
             self.session.start() { _ in

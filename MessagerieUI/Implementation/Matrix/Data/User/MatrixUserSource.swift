@@ -30,15 +30,15 @@ class MatrixUserSource: UserSourceType {
         self.userId = userId
     }
 
-    func load() {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.mxSessionStateDidChange, object: mxSession, queue: nil) { (_) in
-            self.update()
-        }
 
-        if (mxSession.state.rawValue >= MXSessionStateStoreDataReady.rawValue) {
-            update()
-        }
-    }
+    private var dataReadyFuture: AnyCancellable?
+    func load() {
+         dataReadyFuture = session.dataReadyFuture().sink(receiveValue: { state in
+             self.dataReadyFuture = nil      // boring
+
+             self.update()
+         })
+     }
 
     func update() {
         if mxUser == nil {
