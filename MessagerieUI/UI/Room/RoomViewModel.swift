@@ -22,11 +22,11 @@ class RoomViewModel: RoomViewModelType {
         state = RoomViewState(roomName: "TODO",
                               roomAvatar:"https://matrix.org/matrix.png")
 
-        // TODO: Why this is required ?
+        // TODO: Hide it. Why this is required ?
         let message = Message(eventId: "11",
                 sender:  "111",
-                senderDisplayName: "WTF",
-                content: .text(message: "Need a random message to make UI work. Why???"))
+                senderDisplayName: "",
+                content: .text(message: ""))
 
         state.items = makeItems(from: [message])
 
