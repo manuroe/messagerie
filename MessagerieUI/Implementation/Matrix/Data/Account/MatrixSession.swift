@@ -50,9 +50,6 @@ class MatrixSession {
 
             self.sessionStateObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.mxSessionStateDidChange, object: self.session, queue: nil) { (_) in
                 if self.session.state.rawValue >= MXSessionStateStoreDataReady.rawValue {
-                    if let sessionStateObserver = self.sessionStateObserver {
-                        NotificationCenter.default.removeObserver(sessionStateObserver)
-                    }
                     promise(.success(self.session.state))
                 }
             }
