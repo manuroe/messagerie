@@ -38,6 +38,11 @@ struct MessageView: View {
                     MessageImageView(urlString: imageModel.url)
                 )
 
+            case .unsupported(let message):
+                return AnyView(
+                    MessageTextView(message: message)
+                )
+
             // EXPERIMENTAL
             case .html(let body):
                 return AnyView(

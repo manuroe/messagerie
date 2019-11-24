@@ -18,6 +18,8 @@ enum MessageContent {
     case text(message: String)
     case image(imageModel: MessageContentImage)
 
+    case unsupported(message: String)
+
     // EXPERIMENTAL
     case html(body: String)
     case widget(url: URL)

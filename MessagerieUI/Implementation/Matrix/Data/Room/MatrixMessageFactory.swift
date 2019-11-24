@@ -34,7 +34,8 @@ struct MatrixMessageFactory {
 
     private func buildMessageContent(from event: MXEvent) -> MessageContent? {
 
-        switch MXEventType(identifier: event.type) {
+        let eventType = MXEventType(identifier: event.type)
+        switch eventType {
         case .roomMessage:
             guard let messageType = event.content["msgtype"] as? String else {
                 return nil
@@ -45,10 +46,8 @@ struct MatrixMessageFactory {
             return self.buildCustomMessageContent(from: event, customType: eventType)
 
         default:
-            break
+            return .unsupported(message: "# \(eventType.identifier)")
         }
-
-        return nil
     }
 
     private func buildRoomMessageContent(from event: MXEvent, messageType: MXMessageType) -> MessageContent? {
@@ -70,7 +69,7 @@ struct MatrixMessageFactory {
 
             return .image(imageModel: MessageContentImage(url: url, size: size))
         default:
-            return .text(message: "## Unsupported msgtype: \(messageType)")
+            return .unsupported(message: "## \(messageType)")
         }
     }
 
