@@ -20,9 +20,11 @@ struct MatrixMessageFactory {
             return nil
         }
 
-        let senderDisplayName: String = roomState.members.memberName(event.sender) ?? event.sender
-        let mxcSenderAvatar = roomState.members.member(withUserId: event.sender)?.avatarUrl
-        let senderAvatar = session.urlString(mxcString: mxcSenderAvatar, size: CGSize(width: 40, height: 40))
+        guard let senderDisplayName: String = roomState.members.memberName(event.sender) ?? event.sender,
+            let mxcSenderAvatar = roomState.members.member(withUserId: event.sender)?.avatarUrl,
+            let senderAvatar = session.urlString(mxcString: mxcSenderAvatar, size: CGSize(width: 40, height: 40)) else {
+                return nil
+        }
 
         return Message(eventId: event.eventId,
                         sender: event.sender,
