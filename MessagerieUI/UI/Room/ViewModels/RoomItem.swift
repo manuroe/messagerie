@@ -10,6 +10,9 @@ import Foundation
 
 enum RoomItem {
     // case dateHeader
+    // case paginating
+    // case readMarker
+    // case timelineBreak // roomupgrade
     case message(message: Message)
     //case collapsed
     //case urlPreview
