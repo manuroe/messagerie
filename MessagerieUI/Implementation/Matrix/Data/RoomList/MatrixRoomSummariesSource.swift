@@ -21,6 +21,11 @@ class MatrixRoomSummariesSource: RoomSummariesSourceType {
     private let session: MatrixSession
     private let mxSession: MXSession
 
+    private lazy var processingQueue: DispatchQueue = {
+        DispatchQueue(label: "messagerie.MatrixRoomSummariesSource")
+       }()
+
+ 
     init(session: MatrixSession) {
         self.session = session
         mxSession = session.session
@@ -40,8 +45,13 @@ class MatrixRoomSummariesSource: RoomSummariesSourceType {
     func update() {
         let roomsSummaries = mxSession.roomsSummaries() as [MXRoomSummary]
 
-        let rooms = roomsSummaries.map({ return self.makeRoom(from: $0) })
-        subject.send(rooms)
+        // TODO: Combine that
+        processingQueue.async {
+            let rooms = roomsSummaries.map({ return self.makeRoom(from: $0) })
+            DispatchQueue.main.async {
+                self.subject.send(rooms)
+            }
+        }
     }
 
 

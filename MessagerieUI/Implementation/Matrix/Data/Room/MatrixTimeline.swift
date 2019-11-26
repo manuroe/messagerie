@@ -27,6 +27,11 @@ class MatrixTimeline: MessagesSourceType {
     // TODO: injection
     private lazy var messageFactory = MatrixMessageFactory(session: session)
 
+    private lazy var processingQueue: DispatchQueue = {
+        DispatchQueue(label: "messagerie.MatrixTimeline.\(roomId)")
+       }()
+
+
     init(session: MatrixSession, roomId: String) {
         self.session = session
         self.roomId = roomId
@@ -35,7 +40,6 @@ class MatrixTimeline: MessagesSourceType {
 
     func paginate(messagesCount: UInt, direction: Direction) {
         self.getLiveTimeline { timeline in
-            
             timeline.paginate(messagesCount,
                               direction: direction == .backwards ? .backwards : .forwards,
                               onlyFromStore: false) { _ in }
@@ -69,6 +73,7 @@ class MatrixTimeline: MessagesSourceType {
     }
 
     private func setup(timeline: MXEventTimeline) {
+
         timeline.resetPagination()
         self.setupEventListener(for: timeline)
     }
@@ -80,14 +85,20 @@ class MatrixTimeline: MessagesSourceType {
     }
 
     private func onMatrixEvent(_ event: MXEvent, roomState: MXRoomState, direction: MXTimelineDirection) {
-        if let message = self.messageFactory.buildMessage(from: event, roomState: roomState, direction: direction) {
-            // TODO: Bufferise updates
-            // TODO: Manage other cases (deletion, update)
-            if direction == .backwards {
-                self.subject.send(.backwards(messages: [message]))
-            } else {
-                self.subject.send(.forwards(messages: [message]))
+        // TODO: Bufferise updates
+        // TODO: Manage other cases (deletion, update)
+        // TODO: Combine that
+        processingQueue.async {
+            if let message = self.messageFactory.buildMessage(from: event, roomState: roomState, direction: direction) {
+                DispatchQueue.main.async {
+                    if direction == .backwards {
+                        self.subject.send(.backwards(messages: [message]))
+                    } else {
+                        self.subject.send(.forwards(messages: [message]))
+                    }
+                }
             }
         }
     }
+    
 }

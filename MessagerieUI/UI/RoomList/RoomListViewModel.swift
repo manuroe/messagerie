@@ -18,6 +18,11 @@ class RoomListViewModel: RoomListViewModelType {
     private let userSource: UserSourceType
     private var userSourceObserver: AnyCancellable?
 
+    private lazy var processingQueue: DispatchQueue = {
+        DispatchQueue(label: "messagerie.RoomListViewModel")
+       }()
+
+
     init(account: AccountType, source: RoomSummariesSourceType, userSource: UserSourceType) {
         self.summariesSource = source
         self.userSource = userSource
@@ -32,9 +37,14 @@ class RoomListViewModel: RoomListViewModelType {
     }
 
     private func load() {
-        summariesSourceObserver = summariesSource.publisher.sink { (rooms) in
-            self.state.rooms = rooms.sorted(by: { $0.lastMessageTs > $1.lastMessageTs })
-        }
+        summariesSourceObserver = summariesSource.publisher
+            .receive(on: processingQueue)
+            .map({ (rooms) in
+                rooms.sorted(by: { $0.lastMessageTs > $1.lastMessageTs })
+            })
+            .receive(on: RunLoop.main)
+            .assign(to: \.rooms, on: self.state)
+
         summariesSource.load()
 
         userSourceObserver = userSource.publisher.sink { (user) in
