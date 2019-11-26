@@ -12,10 +12,16 @@ import Foundation
 // TODO: Can be cut into several protocols for better composition
 protocol ProtocolDataFactoryType {
 
+    // - MARK: Data
+
     func makeRoomSummariesSource(account: AccountType) -> RoomSummariesSourceType
     func makeTimeline(account: AccountType, roomId: String) -> MessagesSourceType
     func makeUserSource(account: AccountType, userId: String) -> UserSourceType
 
+
+    // To move
+    // - MARK: Service
+    func makeRoomService(account: AccountType, roomId: String) -> RoomServiceType
 }
 
 /// List of supported protocol (Matrix, Mock)

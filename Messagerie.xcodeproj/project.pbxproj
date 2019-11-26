@@ -17,6 +17,10 @@
 		320005322389B75F0064C360 /* RoomAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320005312389B75F0064C360 /* RoomAction.swift */; };
 		320005362389B7AC0064C360 /* RoomViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320005352389B7AC0064C360 /* RoomViewState.swift */; };
 		320005382389B8C90064C360 /* RoomViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320005372389B8C90064C360 /* RoomViewModelType.swift */; };
+		3200EB17238C7D7D00D69A6E /* MessageComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200EB16238C7D7D00D69A6E /* MessageComposerView.swift */; };
+		3200EB19238C7F2D00D69A6E /* MessageComposerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200EB18238C7F2D00D69A6E /* MessageComposerAction.swift */; };
+		3200EB1C238C8C3300D69A6E /* RoomServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200EB1B238C8C3300D69A6E /* RoomServiceType.swift */; };
+		3200EB1F238C8D3B00D69A6E /* MatrixRoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200EB1E238C8D3B00D69A6E /* MatrixRoomService.swift */; };
 		320F7EF2237723C400BCAE2F /* MockTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF1237723C400BCAE2F /* MockTimeline.swift */; };
 		320F7EF4237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */; };
 		320F7EF6237A0E0C00BCAE2F /* SwiftUIPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */; };
@@ -85,6 +89,10 @@
 		320005312389B75F0064C360 /* RoomAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomAction.swift; sourceTree = "<group>"; };
 		320005352389B7AC0064C360 /* RoomViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewState.swift; sourceTree = "<group>"; };
 		320005372389B8C90064C360 /* RoomViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewModelType.swift; sourceTree = "<group>"; };
+		3200EB16238C7D7D00D69A6E /* MessageComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageComposerView.swift; sourceTree = "<group>"; };
+		3200EB18238C7F2D00D69A6E /* MessageComposerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageComposerAction.swift; sourceTree = "<group>"; };
+		3200EB1B238C8C3300D69A6E /* RoomServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomServiceType.swift; sourceTree = "<group>"; };
+		3200EB1E238C8D3B00D69A6E /* MatrixRoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixRoomService.swift; sourceTree = "<group>"; };
 		320F7EF1237723C400BCAE2F /* MockTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimeline.swift; sourceTree = "<group>"; };
 		320F7EF3237A01FC00BCAE2F /* ProtocolDataFactoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDataFactoryManager.swift; sourceTree = "<group>"; };
 		320F7EF5237A0E0C00BCAE2F /* SwiftUIPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPagerView.swift; sourceTree = "<group>"; };
@@ -174,6 +182,31 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		3200EB15238C7D3700D69A6E /* MessageComposer */ = {
+			isa = PBXGroup;
+			children = (
+				3200EB16238C7D7D00D69A6E /* MessageComposerView.swift */,
+				3200EB18238C7F2D00D69A6E /* MessageComposerAction.swift */,
+			);
+			path = MessageComposer;
+			sourceTree = "<group>";
+		};
+		3200EB1A238C8B1700D69A6E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3200EB1B238C8C3300D69A6E /* RoomServiceType.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3200EB1D238C8D2000D69A6E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3200EB1E238C8D3B00D69A6E /* MatrixRoomService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		320F7EEE2377236B00BCAE2F /* Room */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +258,7 @@
 			children = (
 				329909152372208A00D7D989 /* Common */,
 				329909282372208A00D7D989 /* Data */,
+				3200EB1A238C8B1700D69A6E /* Services */,
 				3299090E2372208A00D7D989 /* UI */,
 				3299091A2372208A00D7D989 /* Implementation */,
 			);
@@ -234,6 +268,7 @@
 		3299090E2372208A00D7D989 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3200EB15238C7D3700D69A6E /* MessageComposer */,
 				3236A0EA237B6E460056EA88 /* Login */,
 				320F7EF7237A0F4B00BCAE2F /* Home */,
 				3299090F2372208A00D7D989 /* Room */,
@@ -335,8 +370,9 @@
 		3299091F2372208A00D7D989 /* Matrix */ = {
 			isa = PBXGroup;
 			children = (
-				326EB5432381EFCC00DD5857 /* UI */,
 				329909202372208A00D7D989 /* Data */,
+				3200EB1D238C8D2000D69A6E /* Services */,
+				326EB5432381EFCC00DD5857 /* UI */,
 			);
 			path = Matrix;
 			sourceTree = "<group>";
@@ -654,6 +690,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3200EB17238C7D7D00D69A6E /* MessageComposerView.swift in Sources */,
 				3299095423723B1C00D7D989 /* MatrixTimeline.swift in Sources */,
 				329909352372208A00D7D989 /* ImageLoader.swift in Sources */,
 				32AF64152385E7EA00D70570 /* SecureAccountManager.swift in Sources */,
@@ -661,6 +698,7 @@
 				32000525238880960064C360 /* SecuredAccount.swift in Sources */,
 				3299093D2372208A00D7D989 /* RoomSummary.swift in Sources */,
 				326EB5462381EFFD00DD5857 /* MatrixLoginViewModel.swift in Sources */,
+				3200EB1C238C8C3300D69A6E /* RoomServiceType.swift in Sources */,
 				320005362389B7AC0064C360 /* RoomViewState.swift in Sources */,
 				3299096A2373691800D7D989 /* MessageTextView.swift in Sources */,
 				320005322389B75F0064C360 /* RoomAction.swift in Sources */,
@@ -692,6 +730,8 @@
 				329909662373691800D7D989 /* RoomViewModel.swift in Sources */,
 				329909692373691800D7D989 /* MessageWidgetView.swift in Sources */,
 				3299093F2372208A00D7D989 /* AccountManager.swift in Sources */,
+				3200EB1F238C8D3B00D69A6E /* MatrixRoomService.swift in Sources */,
+				3200EB19238C7F2D00D69A6E /* MessageComposerAction.swift in Sources */,
 				320F7EF2237723C400BCAE2F /* MockTimeline.swift in Sources */,
 				329909362372208A00D7D989 /* MockRoomSummariesSource.swift in Sources */,
 				3200052C2389B1CB0064C360 /* RoomListViewState.swift in Sources */,

@@ -10,4 +10,5 @@ import Foundation
 
 enum RoomAction {
     case load
+    case messageComposerAction(action: MessageComposerAction)
 }

@@ -27,8 +27,16 @@ struct RoomView: View {
             .onAppear {
                 self.viewModel.process(action: .load)
             }
+
+            MessageComposerView(onComposerAction: { action in
+                self.onComposerAction(action: action)
+            })
         }
         .navigationBarTitle(Text(state.roomName), displayMode: .inline)
+    }
+
+    private func onComposerAction(action: MessageComposerAction) {
+        viewModel.process(action: .messageComposerAction(action: action))
     }
 }
 

@@ -13,12 +13,15 @@ class RoomViewModel: RoomViewModelType {
     let state: RoomViewState
 
     let timeline: MessagesSourceType
+    let roomService: RoomServiceType
+
 
     var timelineObserver: AnyCancellable?
 
 
-    init(source: MessagesSourceType) {
+    init(source: MessagesSourceType, roomService: RoomServiceType) {
         timeline = source
+        self.roomService = roomService
         state = RoomViewState(roomName: "TODO",
                               roomAvatar:"https://matrix.org/matrix.png")
 
@@ -36,22 +39,33 @@ class RoomViewModel: RoomViewModelType {
         switch action {
         case .load:
             load()
+        case .messageComposerAction(let action):
+            sendMessage(action: action)
         }
     }
 
-    func load() {
+
+    private func load() {
         setupObservers()
         timeline.paginate()
     }
 
-    func setupObservers() {
+    private func sendMessage(action: MessageComposerAction) {
+        switch action {
+        case .textMessage(let message):
+            _ = roomService.send(message: message)
+        }
+    }
+
+
+    private func setupObservers() {
         timelineObserver = timeline.publisher
             .sink(receiveValue: { (update) in
                 self.handle(update: update)
             })
     }
 
-    func handle(update: MessagesUpdate) {
+    private func handle(update: MessagesUpdate) {
         switch update {
         case .backwards(let messages):
             state.items = makeItems(from: messages) + state.items

@@ -23,6 +23,9 @@ class MatrixDataFactory: ProtocolDataFactoryType {
         sdkOptions.enableCryptoWhenStartingMXSession = true
     }
 
+
+    // MARK: - Data
+
     func makeRoomSummariesSource(account: AccountType) -> RoomSummariesSourceType {
         let session = matrixSession(forAccount: account)
         return MatrixRoomSummariesSource(session: session)
@@ -38,6 +41,16 @@ class MatrixDataFactory: ProtocolDataFactoryType {
         return MatrixUserSource(session: session, userId: userId)
     }
 
+
+    // MARK: - Service
+
+    func makeRoomService(account: AccountType, roomId: String) -> RoomServiceType {
+        let session = matrixSession(forAccount: account)
+        return MatrixRoomService(session: session, roomId: roomId)
+    }
+
+
+    // MARK: - Private
 
     private func matrixSession(forAccount account: AccountType) -> MatrixSession{
         // Die in case of error
