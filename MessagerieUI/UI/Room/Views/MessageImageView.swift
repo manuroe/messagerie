@@ -8,15 +8,21 @@
 
 import SwiftUI
 
+import SDWebImage
+import SDWebImageSwiftUI
+
 struct MessageImageView: View {
-    @ObservedObject private var imageLoader = ImageLoader()
+    let url: URL?
 
     init(urlString: String) {
-        self.imageLoader.loadUrl(urlString: urlString)
+        url = URL(string: urlString)
     }
 
     var body: some View {
-        Image(uiImage: self.imageLoader.image)
+        WebImage(url: url)
+//            .placeholder {
+//                Rectangle().foregroundColor(.gray)
+//            }
             .aspectRatio(contentMode: .fit)
     }
 }

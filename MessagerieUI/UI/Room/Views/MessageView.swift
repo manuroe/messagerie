@@ -13,7 +13,7 @@ struct MessageView: View {
 
     var body: some View {
         HStack (alignment: .top) {
-            AvatarView(avatarUrl: message.senderAvatar, width: 40, height: 40)
+            AvatarView(avatar: message.senderAvatar, width: 40, height: 40)
                 .padding(.leading, 8)
 
             VStack (alignment: .leading) {

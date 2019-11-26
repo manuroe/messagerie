@@ -14,9 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - Alamofire (4.9.1)
-  - AlamofireImage (3.6.0):
-    - Alamofire (~> 4.9)
   - GZIP (1.2.3)
   - libbase58 (0.1.4)
   - Locksmith (4.0.0)
@@ -25,27 +22,23 @@ PODS:
     - OLMKit/olmcpp (= 3.1.0)
   - OLMKit/olmc (3.1.0)
   - OLMKit/olmcpp (3.1.0)
-  - Realm (3.13.1):
-    - Realm/Headers (= 3.13.1)
-  - Realm/Headers (3.13.1)
-  - SwiftMatrixSDK (0.13.1):
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - SwiftMatrixSDK (0.15.0):
     - AFNetworking (~> 3.2.0)
     - GZIP (~> 1.2.2)
     - libbase58 (~> 0.1.4)
     - OLMKit (~> 3.1.0)
-    - Realm (~> 3.13.1)
+    - Realm (~> 3.17.3)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.8)
-  - AlamofireImage (~> 3.5)
   - Locksmith
-  - SwiftMatrixSDK (= 0.13.1)
+  - SwiftMatrixSDK (= 0.15.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
-    - Alamofire
-    - AlamofireImage
     - GZIP
     - libbase58
     - Locksmith
@@ -55,15 +48,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   GZIP: af5c90ef903776a7e9afe6ebebd794a84a2929d4
   libbase58: 7c040313537b8c44b6e2d15586af8e21f7354efd
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   OLMKit: 4ee0159d63feeb86d836fdcfefe418e163511639
-  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
-  SwiftMatrixSDK: 3e91121526999dc8fa1c484faabbe1ae09bc1eff
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  SwiftMatrixSDK: 84957de558895ff562884c51572a75ae96b7c1f1
 
-PODFILE CHECKSUM: 63c1c5a548519190b966b19da5c3077afd8b9905
+PODFILE CHECKSUM: 1f6dad2e314e86196d6cdf817117a1c8c85c3fed
 
 COCOAPODS: 1.8.4

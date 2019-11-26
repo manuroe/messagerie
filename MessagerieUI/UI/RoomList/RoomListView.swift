@@ -23,7 +23,7 @@ struct RoomListView: View {
                         List(state.rooms!) { room in
                             NavigationLink(destination: self.roomView(for: room.roomId)) {
                                 HStack {
-                                    AvatarView(avatarUrl: room.avatar, width: 40, height: 40)
+                                    AvatarView(avatar: room.avatar, width: 40, height: 40)
                                     Text(room.displayname)
                                 }
                             }
@@ -42,7 +42,7 @@ struct RoomListView: View {
                 displayMode: .inline
             )
             .navigationBarItems(
-                leading: AvatarView(avatarUrl: state.myUser?.avatar, width: 30, height: 30)
+                leading: AvatarView(avatar: state.myUser?.avatar, width: 30, height: 30)
             )
         }
     }

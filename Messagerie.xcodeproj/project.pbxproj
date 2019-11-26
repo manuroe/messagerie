@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,10 +32,10 @@
 		326EB5422381E84D00DD5857 /* LoginViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB5412381E84D00DD5857 /* LoginViewModelType.swift */; };
 		326EB5462381EFFD00DD5857 /* MatrixLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB5452381EFFD00DD5857 /* MatrixLoginViewModel.swift */; };
 		326EB5482381FA8000DD5857 /* LoginViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB5472381FA8000DD5857 /* LoginViewAction.swift */; };
+		32782E16238DBE0B00B1B14C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 32782E15238DBE0B00B1B14C /* SDWebImageSwiftUI */; };
 		329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909132372208A00D7D989 /* RoomListViewModel.swift */; };
 		329909332372208A00D7D989 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909142372208A00D7D989 /* RoomListView.swift */; };
 		329909342372208A00D7D989 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909172372208A00D7D989 /* AvatarView.swift */; };
-		329909352372208A00D7D989 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909192372208A00D7D989 /* ImageLoader.swift */; };
 		329909362372208A00D7D989 /* MockRoomSummariesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299091E2372208A00D7D989 /* MockRoomSummariesSource.swift */; };
 		329909372372208A00D7D989 /* MatrixRoomSummariesSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909222372208A00D7D989 /* MatrixRoomSummariesSource.swift */; };
 		329909382372208A00D7D989 /* MatrixSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909242372208A00D7D989 /* MatrixSession.swift */; };
@@ -107,7 +107,6 @@
 		329909132372208A00D7D989 /* RoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
 		329909142372208A00D7D989 /* RoomListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListView.swift; sourceTree = "<group>"; };
 		329909172372208A00D7D989 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
-		329909192372208A00D7D989 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		3299091E2372208A00D7D989 /* MockRoomSummariesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRoomSummariesSource.swift; sourceTree = "<group>"; };
 		329909222372208A00D7D989 /* MatrixRoomSummariesSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixRoomSummariesSource.swift; sourceTree = "<group>"; };
 		329909242372208A00D7D989 /* MatrixSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixSession.swift; sourceTree = "<group>"; };
@@ -159,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32782E16238DBE0B00B1B14C /* SDWebImageSwiftUI in Frameworks */,
 				36881D96632A4B97E93FEEB1 /* Pods_Messagerie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +327,6 @@
 		329909182372208A00D7D989 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				329909192372208A00D7D989 /* ImageLoader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -591,6 +590,9 @@
 			dependencies = (
 			);
 			name = Messagerie;
+			packageProductDependencies = (
+				32782E15238DBE0B00B1B14C /* SDWebImageSwiftUI */,
+			);
 			productName = Messagerie;
 			productReference = 32D5C1EC2367A23E00CDE9BC /* Messagerie.app */;
 			productType = "com.apple.product-type.application";
@@ -619,6 +621,9 @@
 				Base,
 			);
 			mainGroup = 32D5C1E32367A23E00CDE9BC;
+			packageReferences = (
+				32782E14238DBE0B00B1B14C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 32D5C1ED2367A23E00CDE9BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -692,7 +697,6 @@
 			files = (
 				3200EB17238C7D7D00D69A6E /* MessageComposerView.swift in Sources */,
 				3299095423723B1C00D7D989 /* MatrixTimeline.swift in Sources */,
-				329909352372208A00D7D989 /* ImageLoader.swift in Sources */,
 				32AF64152385E7EA00D70570 /* SecureAccountManager.swift in Sources */,
 				3299093C2372208A00D7D989 /* ProtocolDataFactoryType.swift in Sources */,
 				32000525238880960064C360 /* SecuredAccount.swift in Sources */,
@@ -948,6 +952,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32782E14238DBE0B00B1B14C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32782E15238DBE0B00B1B14C /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32782E14238DBE0B00B1B14C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 32D5C1E42367A23E00CDE9BC /* Project object */;
 }

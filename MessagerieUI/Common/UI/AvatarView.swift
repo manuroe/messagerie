@@ -8,26 +8,30 @@
 
 import SwiftUI
 
-struct AvatarView: View {
-    @ObservedObject private var imageLoader = ImageLoader()
+import SDWebImage
+import SDWebImageSwiftUI
 
+struct AvatarView: View {
+    let avatarUrl: URL?
     let width: CGFloat?
     let height: CGFloat?
 
-    init(avatarUrl: String?, width: CGFloat? = nil, height: CGFloat? = nil) {
+    init(avatar: String?, width: CGFloat? = nil, height: CGFloat? = nil) {
+        if let avatar = avatar {
+            avatarUrl = URL(string: avatar)
+        } else {
+            avatarUrl = nil
+        }
         self.width = width
         self.height = height
-
-        if let avatarUrl = avatarUrl {
-            imageLoader.loadUrl(urlString: avatarUrl)
-        }
     }
-
+    
     var body: some View {
-        Image(uiImage: imageLoader.image)
+        WebImage(url: avatarUrl)
             .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: width, height: height)
+            .placeholder(Image(systemName: "photo"))
+            .frame(width: width, height: height, alignment: .center)
+            .scaledToFill()
             .clipShape(Circle())
     }
 }
@@ -35,7 +39,7 @@ struct AvatarView: View {
 #if DEBUG
 struct avatarView_Previews: PreviewProvider {
     static var previews: some View {
-        AvatarView(avatarUrl: "https://matrix.org/matrix.png")
+        AvatarView(avatar: "https://matrix.org/matrix.png")
     }
 }
 #endif
