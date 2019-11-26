@@ -12,6 +12,8 @@ struct RoomListView: View {
     var viewModel: RoomListViewModelType
     @ObservedObject var state: RoomListViewState
 
+    let roomViewsCache = RoomViewsCache()
+
     var body: some View {
 
         NavigationView {
@@ -46,15 +48,25 @@ struct RoomListView: View {
     }
 
     func roomView(for roomId: String) -> RoomView {
+        if let roomView = roomViewsCache.roomViews[roomId] {
+            return roomView
+        }
 
         let factoryManager = ProtocolDataFactoryManager.shared
         let account = state.account
         let dataFactory = factoryManager.factory(for: account.protocolName)!
 
         let messagesSource = dataFactory.makeTimeline(account: account, roomId: roomId)
-        let roomViewModel = RoomViewModel(source: messagesSource)
+        let roomService = dataFactory.makeRoomService(account: account, roomId: roomId)
+        let roomViewModel = RoomViewModel(source: messagesSource, roomService: roomService)
 
-        return RoomView(viewModel: roomViewModel, state: roomViewModel.state)
+        let roomView = RoomView(viewModel: roomViewModel, state: roomViewModel.state)
+        roomViewsCache.roomViews[roomId] = roomView
+        return roomView
+    }
+
+    class RoomViewsCache {
+        var roomViews: [String: RoomView] = [:]
     }
 }
 
