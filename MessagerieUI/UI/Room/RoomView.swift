@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+import KeyboardObserving
+
 struct RoomView: View {
     var viewModel: RoomViewModelType
     @ObservedObject var state: RoomViewState
@@ -33,6 +35,7 @@ struct RoomView: View {
             })
         }
         .navigationBarTitle(Text(state.roomName), displayMode: .inline)
+        .keyboardObserving()
     }
 
     private func onComposerAction(action: MessageComposerAction) {

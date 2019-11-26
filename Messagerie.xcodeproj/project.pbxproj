@@ -33,6 +33,7 @@
 		326EB5462381EFFD00DD5857 /* MatrixLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB5452381EFFD00DD5857 /* MatrixLoginViewModel.swift */; };
 		326EB5482381FA8000DD5857 /* LoginViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EB5472381FA8000DD5857 /* LoginViewAction.swift */; };
 		32782E16238DBE0B00B1B14C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 32782E15238DBE0B00B1B14C /* SDWebImageSwiftUI */; };
+		32782E19238DE03D00B1B14C /* KeyboardObserving in Frameworks */ = {isa = PBXBuildFile; productRef = 32782E18238DE03D00B1B14C /* KeyboardObserving */; };
 		329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909132372208A00D7D989 /* RoomListViewModel.swift */; };
 		329909332372208A00D7D989 /* RoomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909142372208A00D7D989 /* RoomListView.swift */; };
 		329909342372208A00D7D989 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329909172372208A00D7D989 /* AvatarView.swift */; };
@@ -160,6 +161,7 @@
 			files = (
 				32782E16238DBE0B00B1B14C /* SDWebImageSwiftUI in Frameworks */,
 				36881D96632A4B97E93FEEB1 /* Pods_Messagerie.framework in Frameworks */,
+				32782E19238DE03D00B1B14C /* KeyboardObserving in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +594,7 @@
 			name = Messagerie;
 			packageProductDependencies = (
 				32782E15238DBE0B00B1B14C /* SDWebImageSwiftUI */,
+				32782E18238DE03D00B1B14C /* KeyboardObserving */,
 			);
 			productName = Messagerie;
 			productReference = 32D5C1EC2367A23E00CDE9BC /* Messagerie.app */;
@@ -623,6 +626,7 @@
 			mainGroup = 32D5C1E32367A23E00CDE9BC;
 			packageReferences = (
 				32782E14238DBE0B00B1B14C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				32782E17238DE03C00B1B14C /* XCRemoteSwiftPackageReference "KeyboardObserving" */,
 			);
 			productRefGroup = 32D5C1ED2367A23E00CDE9BC /* Products */;
 			projectDirPath = "";
@@ -962,6 +966,14 @@
 				minimumVersion = 0.8.6;
 			};
 		};
+		32782E17238DE03C00B1B14C /* XCRemoteSwiftPackageReference "KeyboardObserving" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nickffox/KeyboardObserving.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -969,6 +981,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 32782E14238DBE0B00B1B14C /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		32782E18238DE03D00B1B14C /* KeyboardObserving */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32782E17238DE03C00B1B14C /* XCRemoteSwiftPackageReference "KeyboardObserving" */;
+			productName = KeyboardObserving;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
