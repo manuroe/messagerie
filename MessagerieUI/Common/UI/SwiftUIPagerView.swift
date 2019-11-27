@@ -26,6 +26,12 @@ struct SwiftUIPagerView: View {
             // 3
             .frame(width: geometry.size.width, height: nil, alignment: .leading)
             .gesture(DragGesture().onChanged({ value in
+                // Scroll only from the nav bar...
+                // TODO: Improve that
+                if value.startLocation.y >= 44 {
+                    return
+                }
+
                 // 4
                 self.isGestureActive = true
                 // 5
