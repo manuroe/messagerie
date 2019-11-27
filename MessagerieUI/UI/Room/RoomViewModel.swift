@@ -68,9 +68,9 @@ class RoomViewModel: RoomViewModelType {
     private func handle(update: MessagesUpdate) {
         switch update {
         case .backwards(let messages):
-            state.items = makeItems(from: messages) + state.items
+            state.items = state.items + makeItems(from: messages.reversed())
         case .forwards(let messages):
-            state.items = state.items + makeItems(from: messages)
+            state.items = makeItems(from: messages.reversed()) + state.items
         case .update(_):
             // TODO
             break

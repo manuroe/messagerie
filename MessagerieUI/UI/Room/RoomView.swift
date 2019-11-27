@@ -23,9 +23,11 @@ struct RoomView: View {
                             RoomItemView(item: item)
                             Spacer()
                         }
+                        .rotationEffect(.degrees(180))
                     }
                 }
             }
+            .rotationEffect(.degrees(180))
             .onAppear {
                 self.viewModel.process(action: .load)
             }
