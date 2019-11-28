@@ -25,14 +25,7 @@ class RoomViewModel: RoomViewModelType {
         state = RoomViewState(roomName: "TODO",
                               roomAvatar:"https://matrix.org/matrix.png")
 
-        // TODO: Hide it. Why this is required ?
-        let message = Message(eventId: "11",
-                sender:  "111",
-                senderDisplayName: "",
-                content: .text(message: ""))
-
-        state.items = makeItems(from: [message])
-
+        enableWorkaround()
     }
 
     func process(action: RoomAction) {
@@ -66,6 +59,8 @@ class RoomViewModel: RoomViewModelType {
     }
 
     private func handle(update: MessagesUpdate) {
+        checkWorkaround()
+
         switch update {
         case .backwards(let messages):
             state.items = state.items + makeItems(from: messages.reversed())
@@ -86,4 +81,16 @@ class RoomViewModel: RoomViewModelType {
         }
     }
 
+
+    // TODO: Remove this
+    // If fixes a blank display at the first display
+    // Having a thing to display fix the issue
+    private func enableWorkaround() {
+        state.items = [.null]
+    }
+    private func checkWorkaround() {
+        if let item = state.items.first, case .null = item {
+            state.items.removeAll()
+        }
+    }
 }

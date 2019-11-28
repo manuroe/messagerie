@@ -76,6 +76,7 @@
 		32D5C1F62367A24100CDE9BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1F52367A24100CDE9BC /* Assets.xcassets */; };
 		32D5C1F92367A24100CDE9BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1F82367A24100CDE9BC /* Preview Assets.xcassets */; };
 		32D5C1FC2367A24100CDE9BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1FA2367A24100CDE9BC /* LaunchScreen.storyboard */; };
+		32DE1C4523905F2C00CFF8BB /* NullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DE1C4423905F2C00CFF8BB /* NullView.swift */; };
 		36881D96632A4B97E93FEEB1 /* Pods_Messagerie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A8EE204848F0C2F45D3FC /* Pods_Messagerie.framework */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +150,7 @@
 		32D5C1F82367A24100CDE9BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32D5C1FB2367A24100CDE9BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32D5C1FD2367A24100CDE9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32DE1C4423905F2C00CFF8BB /* NullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullView.swift; sourceTree = "<group>"; };
 		96BC35D419748984B6B1E7A8 /* Pods-Messagerie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messagerie.debug.xcconfig"; path = "Target Support Files/Pods-Messagerie/Pods-Messagerie.debug.xcconfig"; sourceTree = "<group>"; };
 		A96634EB3F6696EC12BF9593 /* Pods-Messagerie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messagerie.release.xcconfig"; path = "Target Support Files/Pods-Messagerie/Pods-Messagerie.release.xcconfig"; sourceTree = "<group>"; };
 		EC1A8EE204848F0C2F45D3FC /* Pods_Messagerie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messagerie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -491,6 +493,7 @@
 				329909622373691700D7D989 /* MessageWidgetView.swift */,
 				329909632373691700D7D989 /* MessageTextView.swift */,
 				329909642373691700D7D989 /* MessageView.swift */,
+				32DE1C4423905F2C00CFF8BB /* NullView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				320005362389B7AC0064C360 /* RoomViewState.swift in Sources */,
 				3299096A2373691800D7D989 /* MessageTextView.swift in Sources */,
 				320005322389B75F0064C360 /* RoomAction.swift in Sources */,
+				32DE1C4523905F2C00CFF8BB /* NullView.swift in Sources */,
 				329909462372289000D7D989 /* UserSourceType.swift in Sources */,
 				3299095C237359BD00D7D989 /* MessagesUpdate.swift in Sources */,
 				32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */,

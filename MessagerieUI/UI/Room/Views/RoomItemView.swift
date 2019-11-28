@@ -20,6 +20,10 @@ struct RoomItemView: View {
             return AnyView(
                 MessageView(message: message)
             )
+        case .null:
+            return AnyView(
+                NullView()
+            )
         }
     }
 }

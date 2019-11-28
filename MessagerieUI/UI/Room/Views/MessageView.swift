@@ -24,6 +24,8 @@ struct MessageView: View {
 
                 self.messageContentView(messageContent: message.content)
             }
+
+            Spacer()
         }
     }
 

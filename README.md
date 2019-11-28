@@ -12,13 +12,16 @@ This may change in the future and may be more matrix-oriented but data models im
 # TODO
 + Matrix Login screen / Store account
 + Multi account
-- True image cache
++ True image cache
 - avatar: enum: letter + 2 urls preview
-- scroll to bottom
++ scroll to bottom
 - scroll more
 + abstract message more for date, preview, etc
-- WTF text
-- text composer
++ WTF text
++ text composer
+
+# Bugs:
+- Clamp image width in timeline
 
 Later
 - View injection (for messages to render them differently)

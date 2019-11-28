@@ -10,6 +10,9 @@ import SwiftUI
 
 import KeyboardObserving
 
+// Offset control
+// https://zacwhite.com/2019/scrollview-content-offsets-swiftui/
+
 struct RoomView: View {
     var viewModel: RoomViewModelType
     @ObservedObject var state: RoomViewState
@@ -19,11 +22,8 @@ struct RoomView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     ForEach(state.items) { item in
-                        HStack {
-                            RoomItemView(item: item)
-                            Spacer()
-                        }
-                        .rotationEffect(.degrees(180))
+                        RoomItemView(item: item)
+                            .rotationEffect(.degrees(180))
                     }
                 }
             }

@@ -16,6 +16,7 @@ enum RoomItem {
     case message(message: Message)
     //case collapsed
     //case urlPreview
+    case null
 }
 
 extension RoomItem: Identifiable {
@@ -23,6 +24,8 @@ extension RoomItem: Identifiable {
         switch self {
         case .message(let message):
             return message.id
+        case .null:
+            return UUID().uuidString
         }
     }
 }
