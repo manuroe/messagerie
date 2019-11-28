@@ -14,13 +14,12 @@ struct MessageView: View {
     var body: some View {
         HStack (alignment: .top) {
             AvatarView(avatar: message.senderAvatar, width: 40, height: 40)
-                .padding(.leading, 8)
+                .padding(.horizontal, 8)
 
             VStack (alignment: .leading) {
                 Text(message.senderDisplayName)
-                    .font(.headline)
+                    .font(.system(size: 16, weight: .medium))
                     .lineLimit(nil)
-                    .foregroundColor(.red)
 
                 self.messageContentView(messageContent: message.content)
             }
