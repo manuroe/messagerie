@@ -23,7 +23,9 @@ struct MessageImageView: View {
 //            .placeholder {
 //                Rectangle().foregroundColor(.gray)
 //            }
+            .resizable()
             .aspectRatio(contentMode: .fit)
+            .cornerRadius(5)
     }
 }
 
