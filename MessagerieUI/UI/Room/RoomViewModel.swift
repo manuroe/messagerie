@@ -19,11 +19,13 @@ class RoomViewModel: RoomViewModelType {
     var timelineObserver: AnyCancellable?
 
 
-    init(source: MessagesSourceType, roomService: RoomServiceType) {
+    init(source: MessagesSourceType, roomService: RoomServiceType,
+         // TODO
+         roomName: String, roomAvatar: String) {
         timeline = source
         self.roomService = roomService
-        state = RoomViewState(roomName: "TODO",
-                              roomAvatar:"https://matrix.org/matrix.png")
+        state = RoomViewState(roomName: roomName,
+                              roomAvatar: roomAvatar)
 
         enableWorkaround()
     }
