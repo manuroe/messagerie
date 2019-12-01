@@ -19,6 +19,6 @@ struct RoomSummary: Identifiable {
     var displayname: String
     var avatar: String
 
-    // TODO: Replace by last message
     var lastMessageTs: UInt64
+    var lastMessage: Message?
 }

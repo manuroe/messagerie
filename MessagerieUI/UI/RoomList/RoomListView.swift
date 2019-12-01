@@ -20,12 +20,9 @@ struct RoomListView: View {
             VStack {
                 Group {
                     if state.rooms != nil {
-                        List(state.rooms!) { room in
-                            NavigationLink(destination: self.roomView(for: room.roomId)) {
-                                HStack {
-                                    AvatarView(avatar: room.avatar, width: 40, height: 40)
-                                    Text(room.displayname)
-                                }
+                        List(state.rooms!) { summary in
+                            NavigationLink(destination: self.roomView(for: summary)) {
+                                RoomSummaryView(summary: summary)
                             }
                         }
                     }
@@ -47,8 +44,8 @@ struct RoomListView: View {
         }
     }
 
-    func roomView(for roomId: String) -> RoomView {
-        if let roomView = roomViewsCache.roomViews[roomId] {
+    func roomView(for room: RoomSummary) -> RoomView {
+        if let roomView = roomViewsCache.roomViews[room.roomId] {
             return roomView
         }
 
@@ -56,12 +53,13 @@ struct RoomListView: View {
         let account = state.account
         let dataFactory = factoryManager.factory(for: account.protocolName)!
 
-        let messagesSource = dataFactory.makeTimeline(account: account, roomId: roomId)
-        let roomService = dataFactory.makeRoomService(account: account, roomId: roomId)
-        let roomViewModel = RoomViewModel(source: messagesSource, roomService: roomService)
+        let messagesSource = dataFactory.makeTimeline(account: account, roomId: room.roomId)
+        let roomService = dataFactory.makeRoomService(account: account, roomId: room.roomId)
+        let roomViewModel = RoomViewModel(source: messagesSource, roomService: roomService,
+                                          roomName: room.displayname, roomAvatar: room.avatar)
 
         let roomView = RoomView(viewModel: roomViewModel, state: roomViewModel.state)
-        roomViewsCache.roomViews[roomId] = roomView
+        roomViewsCache.roomViews[room.roomId] = roomView
         return roomView
     }
 

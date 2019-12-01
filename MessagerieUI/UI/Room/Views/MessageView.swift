@@ -63,7 +63,8 @@ struct MessageView_Previews: PreviewProvider {
                                  sender: "alice",
                                  senderDisplayName: "Alice",
                                  senderAvatar: "mxc://GwLdwtwfVETgQNZtUvrEzkAC",
-                                 content: .text(message: "Hello"))
+                                 content: .text(message: "Hello"),
+                                 timestamp: 2019)
 
     static var previews: some View {
         MessageView(message: message)

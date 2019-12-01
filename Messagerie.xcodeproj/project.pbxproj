@@ -77,6 +77,9 @@
 		32D5C1F92367A24100CDE9BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1F82367A24100CDE9BC /* Preview Assets.xcassets */; };
 		32D5C1FC2367A24100CDE9BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1FA2367A24100CDE9BC /* LaunchScreen.storyboard */; };
 		32DE1C4523905F2C00CFF8BB /* NullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DE1C4423905F2C00CFF8BB /* NullView.swift */; };
+		32F2FBE123931E1700C73DF8 /* MatrixRoomSummaryUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2FBE023931E1700C73DF8 /* MatrixRoomSummaryUpdater.swift */; };
+		32F2FBE323945FB600C73DF8 /* MXRoomSummary+Messagerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2FBE223945FB600C73DF8 /* MXRoomSummary+Messagerie.swift */; };
+		32F2FBE62394745700C73DF8 /* RoomSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2FBE52394745700C73DF8 /* RoomSummaryView.swift */; };
 		36881D96632A4B97E93FEEB1 /* Pods_Messagerie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1A8EE204848F0C2F45D3FC /* Pods_Messagerie.framework */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +154,9 @@
 		32D5C1FB2367A24100CDE9BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32D5C1FD2367A24100CDE9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32DE1C4423905F2C00CFF8BB /* NullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullView.swift; sourceTree = "<group>"; };
+		32F2FBE023931E1700C73DF8 /* MatrixRoomSummaryUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixRoomSummaryUpdater.swift; sourceTree = "<group>"; };
+		32F2FBE223945FB600C73DF8 /* MXRoomSummary+Messagerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MXRoomSummary+Messagerie.swift"; sourceTree = "<group>"; };
+		32F2FBE52394745700C73DF8 /* RoomSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomSummaryView.swift; sourceTree = "<group>"; };
 		96BC35D419748984B6B1E7A8 /* Pods-Messagerie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messagerie.debug.xcconfig"; path = "Target Support Files/Pods-Messagerie/Pods-Messagerie.debug.xcconfig"; sourceTree = "<group>"; };
 		A96634EB3F6696EC12BF9593 /* Pods-Messagerie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messagerie.release.xcconfig"; path = "Target Support Files/Pods-Messagerie/Pods-Messagerie.release.xcconfig"; sourceTree = "<group>"; };
 		EC1A8EE204848F0C2F45D3FC /* Pods_Messagerie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messagerie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +304,7 @@
 		329909122372208A00D7D989 /* RoomList */ = {
 			isa = PBXGroup;
 			children = (
+				32F2FBE42394742E00C73DF8 /* Views */,
 				329909142372208A00D7D989 /* RoomListView.swift */,
 				3200052D2389B35B0064C360 /* RoomListAction.swift */,
 				3200052F2389B5220064C360 /* RoomListViewModelType.swift */,
@@ -395,6 +402,8 @@
 			isa = PBXGroup;
 			children = (
 				329909222372208A00D7D989 /* MatrixRoomSummariesSource.swift */,
+				32F2FBE023931E1700C73DF8 /* MatrixRoomSummaryUpdater.swift */,
+				32F2FBE223945FB600C73DF8 /* MXRoomSummary+Messagerie.swift */,
 			);
 			path = RoomList;
 			sourceTree = "<group>";
@@ -560,6 +569,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		32F2FBE42394742E00C73DF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32F2FBE52394745700C73DF8 /* RoomSummaryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6133E02DC5EF3514CA914EB9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,6 +733,7 @@
 				32DE1C4523905F2C00CFF8BB /* NullView.swift in Sources */,
 				329909462372289000D7D989 /* UserSourceType.swift in Sources */,
 				3299095C237359BD00D7D989 /* MessagesUpdate.swift in Sources */,
+				32F2FBE123931E1700C73DF8 /* MatrixRoomSummaryUpdater.swift in Sources */,
 				32D5C1F02367A23E00CDE9BC /* AppDelegate.swift in Sources */,
 				329909342372208A00D7D989 /* AvatarView.swift in Sources */,
 				326EB5482381FA8000DD5857 /* LoginViewAction.swift in Sources */,
@@ -733,6 +751,7 @@
 				3299093E2372208A00D7D989 /* RoomSummariesSourceType.swift in Sources */,
 				329909322372208A00D7D989 /* RoomListViewModel.swift in Sources */,
 				3299093B2372208A00D7D989 /* MatrixAccount.swift in Sources */,
+				32F2FBE62394745700C73DF8 /* RoomSummaryView.swift in Sources */,
 				320F7EF6237A0E0C00BCAE2F /* SwiftUIPagerView.swift in Sources */,
 				329909652373691800D7D989 /* RoomView.swift in Sources */,
 				329909332372208A00D7D989 /* RoomListView.swift in Sources */,
@@ -761,6 +780,7 @@
 				32990944237227F900D7D989 /* User.swift in Sources */,
 				320005382389B8C90064C360 /* RoomViewModelType.swift in Sources */,
 				3299095B237359BD00D7D989 /* MessagesSourceType.swift in Sources */,
+				32F2FBE323945FB600C73DF8 /* MXRoomSummary+Messagerie.swift in Sources */,
 				3299095623723BAF00D7D989 /* MatrixMessageFactory.swift in Sources */,
 				320005302389B5220064C360 /* RoomListViewModelType.swift in Sources */,
 				3236A0EC237B6E710056EA88 /* LoginView.swift in Sources */,

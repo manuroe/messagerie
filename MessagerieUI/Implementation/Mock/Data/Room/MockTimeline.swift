@@ -31,7 +31,8 @@ class MockTimeline: MessagesSourceType {
             sender:  "\(index)",
             senderDisplayName: "Alice",
             senderAvatar: "https://placekitten.com/\(index)/\(index)",
-            content: .text(message: "Message #\(index)"))
+            content: .text(message: "Message #\(index)"),
+            timestamp: 1)
     }
 
 }

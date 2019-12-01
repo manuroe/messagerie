@@ -30,7 +30,8 @@ struct MatrixMessageFactory {
                         sender: event.sender,
                         senderDisplayName: senderDisplayName,
                         senderAvatar: senderAvatar,
-                        content:messageContent)
+                        content: messageContent,
+                        timestamp: event.ageLocalTs)
     }
 
 

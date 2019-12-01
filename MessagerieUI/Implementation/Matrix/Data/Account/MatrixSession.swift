@@ -60,6 +60,10 @@ class MatrixSession {
     private func startSession() {
         let store = MXFileStore()
         session.setStore(store) { _ in
+
+            // For testing
+            //store.deleteAllData()
+
             self.session.start() { _ in
             }
         }

@@ -29,6 +29,8 @@ class MatrixRoomSummariesSource: RoomSummariesSourceType {
     init(session: MatrixSession) {
         self.session = session
         mxSession = session.session
+
+        setupRoomSummaryUpdater()
     }
 
     private var dataReadyFuture: AnyCancellable?
@@ -38,7 +40,13 @@ class MatrixRoomSummariesSource: RoomSummariesSourceType {
 
             self.update()
 
-            self.setupListener()
+            self.setupRoomSummaryUpdater()
+        })
+    }
+
+    func setupRoomSummaryUpdater() {
+        mxSession.roomSummaryUpdateDelegate = MatrixRoomSummaryUpdater(session: session, onRoomSummaryUpdate: { (roomId) in
+            self.update()
         })
     }
 
@@ -54,25 +62,13 @@ class MatrixRoomSummariesSource: RoomSummariesSourceType {
         }
     }
 
-
-    private func setupListener() {
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.mxRoomSummaryDidChange, object: nil, queue: nil) { notification in
-            guard let roomSummary = notification.object as? MXRoomSummary else {
-                return
-            }
-
-            if roomSummary.mxSession.myUser.userId == self.mxSession.myUser.userId {
-                self.update()
-            }
-        }
-    }
-
     private func makeRoom(from roomSummary: MXRoomSummary) -> RoomSummary {
-        let size = CGSize(width: 40, height: 40) // TODO: Must be driven by the UI
-        
+        let size = CGSize(width: 56, height: 56) // TODO: Must be driven by the UI
+
         return RoomSummary(roomId: roomSummary.roomId,
                            displayname: roomSummary.displayname ?? roomSummary.roomId,
                            avatar: session.urlString(mxcString: roomSummary.avatar, size: size) ?? "https://matrix.org/matrix.png",
-                           lastMessageTs: roomSummary.lastMessageOriginServerTs)
+                           lastMessageTs: roomSummary.lastMessageOriginServerTs,
+                           lastMessage: roomSummary.mss_lastMessage)
     }
 }
