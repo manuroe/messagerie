@@ -12,28 +12,40 @@ struct RoomSummaryView: View {
     let summary: RoomSummary
 
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             AvatarView(avatar: summary.avatar, width: 56, height: 56)
 
             VStack(alignment: .leading) {
-                Text(summary.displayname)
-                    .font(.system(size: 16, weight: .medium))
-                    .lineLimit(1)
+                HStack {
+                    Text(summary.displayname)
+                        .font(.headline)
+                        .lineLimit(1)
+
+                    Spacer()
+
+                    Text(self.dateString(for: summary.lastMessageTs))
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
 
                 summary.lastMessage.map {
-                    messageContentView(messageContent: $0.content)
+                    messageContentView(senderDisplayName: $0.senderDisplayName, messageContent: $0.content)
                 }
             }
         }
     }
 
-    func messageContentView(messageContent: MessageContent) -> AnyView {
+    func messageContentView(senderDisplayName: String, messageContent: MessageContent) -> AnyView {
         switch messageContent {
         case .text(let message):
-            return AnyView(
-                Text(message)
-                    .font(.system(size: 14))
-                    .lineLimit(3)
+            return AnyView((
+                    Text("\(senderDisplayName) - ")
+                        .font(.subheadline)
+                    + Text(message)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    )
+                .lineLimit(3)
             )
         case .image( _):
             return AnyView(
@@ -60,4 +72,26 @@ struct RoomSummaryView: View {
             )
         }
     }
+
+    // TODO: To externalise
+    func dateString(for timestamp: UInt64) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+
+        let date = Date(timeIntervalSince1970: TimeInterval(timestamp) / 1000)
+
+        let oneDayAgo = Date(timeIntervalSinceNow: (-60 * 60 * 24))
+        let oneWeekAgo = Date(timeIntervalSinceNow: (-60 * 60 * 24 * 7))
+        if date > oneDayAgo {
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+        }
+        else if date < oneWeekAgo {
+            formatter.dateStyle = .short
+            formatter.timeStyle = .none
+        }
+
+        return formatter.string(for: date) ?? ""
+    }
+
 }
