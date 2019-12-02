@@ -13,7 +13,7 @@ struct MessageTextView: View {
     
     var body: some View {
         Text(self.message)
-            .font(.system(size: 14))
+            .font(.subheadline)
             .lineLimit(nil)
     }
 }

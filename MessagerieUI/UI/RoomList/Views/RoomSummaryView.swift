@@ -16,7 +16,7 @@ struct RoomSummaryView: View {
             AvatarView(avatar: summary.avatar, width: 56, height: 56)
 
             VStack(alignment: .leading) {
-                HStack {
+                HStack(alignment: .bottom) {
                     Text(summary.displayname)
                         .font(.headline)
                         .lineLimit(1)
@@ -24,7 +24,7 @@ struct RoomSummaryView: View {
                     Spacer()
 
                     Text(self.dateString(for: summary.lastMessageTs))
-                        .font(.subheadline)
+                        .font(.caption)
                         .foregroundColor(.secondary)
                 }
 
@@ -36,41 +36,32 @@ struct RoomSummaryView: View {
     }
 
     func messageContentView(senderDisplayName: String, messageContent: MessageContent) -> AnyView {
+        var text = ""
+
         switch messageContent {
         case .text(let message):
-            return AnyView((
-                    Text("\(senderDisplayName) - ")
-                        .font(.subheadline)
-                    + Text(message)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    )
-                .lineLimit(3)
-            )
+            text = message
         case .image( _):
-            return AnyView(
-                //MessageImageView(urlString: imageModel.url)
-                Text("Image")
-            )
-
+            text = "Image"
         case .unsupported( _):
-            return AnyView(
-                //MessageTextView(message: message)
-                Text("Unsupported")
-            )
+            text = "Unsupported"
 
         // EXPERIMENTAL
         case .html( _):
-            return AnyView(
-                //MessageHtmlView(html: body)
-                Text("Html")
-            )
+            text = "Html"
         case .widget( _):
-            return AnyView(
-                //MessageWidgetView(url: url)
-                Text("Widget")
-            )
+            text = "Widget"
         }
+
+        return AnyView((
+            Text("\(senderDisplayName) - ")
+                .font(.subheadline)
+            + Text(text)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            )
+            .lineLimit(3)
+        )
     }
 
     // TODO: To externalise

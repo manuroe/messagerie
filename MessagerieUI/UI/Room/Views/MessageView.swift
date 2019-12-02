@@ -18,7 +18,8 @@ struct MessageView: View {
 
             VStack (alignment: .leading) {
                 Text(message.senderDisplayName)
-                    .font(.system(size: 16, weight: .medium))
+                    .font(.body)
+                    .fontWeight(.medium)
                     .lineLimit(nil)
 
                 self.messageContentView(messageContent: message.content)
