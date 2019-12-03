@@ -44,7 +44,8 @@ class MatrixSession {
                 return
             }
 
-            if self.session.state == MXSessionStateInitialised {
+            if self.session.store == nil
+                && self.session.state == MXSessionStateInitialised {
                 self.startSession()
             }
 
@@ -61,12 +62,31 @@ class MatrixSession {
         let store = MXFileStore()
         session.setStore(store) { _ in
 
+            self.setupMatrixSessionOptions()
+
             // For testing
             //store.deleteAllData()
 
             self.session.start() { _ in
+//            self.session.start(withSyncFilter: self.matrixFilter) { _ in
             }
         }
+    }
+
+    private func setupMatrixSessionOptions() {
+        session.crypto.warnOnUnknowDevices = false
+    }
+
+    private var matrixFilter: MXFilterJSONModel {
+        // TODO: The app does not provide room names with LL on :/
+        let filter = MXFilterJSONModel.syncFilterForLazyLoading(withMessageLimit: 1)!
+
+        // Seems to have no effect
+//        filter?.room.timeline.notTypes = [
+//            MXEventType.roomMember,
+//            ].map({ $0.identifier })
+
+        return filter
     }
 }
 
