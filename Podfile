@@ -5,5 +5,6 @@ use_frameworks!
 target 'Messagerie' do
     pod 'Locksmith'
     
-    pod 'SwiftMatrixSDK', '0.15.0'
+    pod 'SwiftMatrixSDK'
+    #pod 'SwiftMatrixSDK', :path => '../matrix-ios-sdk/SwiftMatrixSDK.podspec'
 end

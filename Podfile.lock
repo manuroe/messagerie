@@ -34,7 +34,7 @@ PODS:
 
 DEPENDENCIES:
   - Locksmith
-  - SwiftMatrixSDK (= 0.15.0)
+  - SwiftMatrixSDK
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -55,6 +55,6 @@ SPEC CHECKSUMS:
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
   SwiftMatrixSDK: 84957de558895ff562884c51572a75ae96b7c1f1
 
-PODFILE CHECKSUM: 1f6dad2e314e86196d6cdf817117a1c8c85c3fed
+PODFILE CHECKSUM: 96bab3ce8c1146ed12cd77711341ae5e6ea680fc
 
 COCOAPODS: 1.8.4

@@ -37,6 +37,12 @@ struct SwiftUIPagerView: View {
                 // 5
                 self.offset = value.translation.width + -geometry.size.width * CGFloat(self.index)
             }).onEnded({ value in
+                // Scroll only from the nav bar...
+                // TODO: Improve that
+                if value.startLocation.y >= 44 {
+                    return
+                }
+                
                 if -value.predictedEndTranslation.width > geometry.size.width / 2, self.index < self.pages.endIndex - 1 {
                     self.index += 1
                 }

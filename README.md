@@ -19,9 +19,16 @@ This may change in the future and may be more matrix-oriented but data models im
 + abstract message more for date, preview, etc
 + WTF text
 + text composer
+- Support more messages
+- Filter others
 
 # Bugs:
-- Clamp image width in timeline
++ Clamp image width in timeline
+- Sometimes fails to load (on device)
+- No user data in nav bar (on device)
++ Swipe is still enabled
+- Swipe kills room content
+
 
 Later
 - View injection (for messages to render them differently)
