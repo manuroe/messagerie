@@ -55,14 +55,18 @@ class MatrixRoomSummariesSource: RoomSummariesSourceType {
 
         // TODO: Combine that
         processingQueue.async {
-            let rooms = roomsSummaries.map({ return self.makeRoom(from: $0) })
+            let rooms = roomsSummaries.compactMap({ self.makeRoom(from: $0) })
             DispatchQueue.main.async {
                 self.subject.send(rooms)
             }
         }
     }
 
-    private func makeRoom(from roomSummary: MXRoomSummary) -> RoomSummary {
+    private func makeRoom(from roomSummary: MXRoomSummary) -> RoomSummary? {
+        if roomSummary.hiddenFromUser {
+            return nil
+        }
+
         let size = CGSize(width: 56, height: 56) // TODO: Must be driven by the UI
 
         return RoomSummary(roomId: roomSummary.roomId,
