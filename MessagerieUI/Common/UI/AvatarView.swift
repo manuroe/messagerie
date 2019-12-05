@@ -31,7 +31,6 @@ struct AvatarView: View {
             .resizable()
             .placeholder(Image(systemName: "photo"))
             .frame(width: width, height: height, alignment: .center)
-            .scaledToFill()
             .clipShape(Circle())
     }
 }

@@ -99,7 +99,7 @@ extension MatrixSession {
 
         var urlString: String?
         if let size = size {
-            urlString = mediaManager.url(ofContentThumbnail: mxcString, toFitViewSize: size, with: MXThumbnailingMethodScale)
+            urlString = mediaManager.url(ofContentThumbnail: mxcString, toFitViewSize: size, with: MXThumbnailingMethodCrop)
         }
         else {
             urlString = mediaManager.url(ofContent: mxcString)
