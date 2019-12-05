@@ -19,8 +19,8 @@ This may change in the future and may be more matrix-oriented but data models im
 + abstract message more for date, preview, etc
 + WTF text
 + text composer
-- Support more messages
-- Filter others
++ Support more messages
++ Filter others
 
 # Bugs:
 + Clamp image width in timeline

@@ -85,6 +85,12 @@ class MatrixTimeline: MessagesSourceType {
     }
 
     private func onMatrixEvent(_ event: MXEvent, roomState: MXRoomState, direction: MXTimelineDirection) {
+
+        // TODO: Be less restrictive
+        if event.type != MXEventType.roomMessage.identifier {
+            return
+        }
+
         // TODO: Bufferise updates
         // TODO: Manage other cases (deletion, update)
         // TODO: Combine that

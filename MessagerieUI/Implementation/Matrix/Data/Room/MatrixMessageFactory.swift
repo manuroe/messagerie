@@ -15,18 +15,21 @@ struct MatrixMessageFactory {
     let session: MatrixSession
 
     func buildMessage(from event: MXEvent, roomState: MXRoomState, direction: MXTimelineDirection) -> Message? {
-
-        guard let messageContent = self.buildMessageContent(from: event) else {
+        guard let eventId = event.eventId, let messageContent = self.buildMessageContent(from: event) else {
             return nil
         }
 
-        guard let senderDisplayName: String = roomState.members.memberName(event.sender) ?? event.sender,
-            let mxcSenderAvatar = roomState.members.member(withUserId: event.sender)?.avatarUrl,
-            let senderAvatar = session.urlString(mxcString: mxcSenderAvatar, size: CGSize(width: 40, height: 40)) else {
-                return nil
+        let senderDisplayName = roomState.members.memberName(event.sender) ?? event.sender ?? ""
+
+        let senderAvatar: String
+        if let mxcSenderAvatar = roomState.members.member(withUserId: event.sender)?.avatarUrl {
+            senderAvatar = session.urlString(mxcString: mxcSenderAvatar, size: CGSize(width: 40, height: 40)) ?? "https://matrix.org/matrix.png"
+        }
+        else {
+            senderAvatar = "https://matrix.org/matrix.png"
         }
 
-        return Message(eventId: event.eventId,
+        return Message(eventId: eventId,
                         sender: event.sender,
                         senderDisplayName: senderDisplayName,
                         senderAvatar: senderAvatar,
@@ -36,8 +39,11 @@ struct MatrixMessageFactory {
 
 
     private func buildMessageContent(from event: MXEvent) -> MessageContent? {
+        guard let type = event.type else {
+            return nil
+        }
 
-        let eventType = MXEventType(identifier: event.type)
+        let eventType = MXEventType(identifier: type)
         switch eventType {
         case .roomMessage:
             guard let messageType = event.content["msgtype"] as? String else {
@@ -72,7 +78,11 @@ struct MatrixMessageFactory {
 
             return .image(imageModel: MessageContentImage(url: url, size: size))
         default:
-            return .unsupported(message: "## \(messageType)")
+            if let body = event.content["body"] as? String {
+                return .unsupported(message: body)
+            } else {
+                return .unsupported(message: "## \(messageType)")
+            }
         }
     }
 

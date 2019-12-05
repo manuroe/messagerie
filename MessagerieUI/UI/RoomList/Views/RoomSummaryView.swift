@@ -39,12 +39,11 @@ struct RoomSummaryView: View {
         var text = ""
 
         switch messageContent {
-        case .text(let message):
+        case .text(let message),
+             .unsupported(let message):
             text = message
         case .image( _):
             text = "Image"
-        case .unsupported( _):
-            text = "Unsupported"
 
         // EXPERIMENTAL
         case .html( _):
@@ -54,9 +53,9 @@ struct RoomSummaryView: View {
         }
 
         return AnyView((
-            Text("\(senderDisplayName) - ")
+            Text("\(senderDisplayName)")
                 .font(.subheadline)
-            + Text(text)
+            + Text(" - \(text)")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
             )

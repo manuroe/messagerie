@@ -26,6 +26,12 @@ class MatrixRoomSummaryUpdater: MXRoomSummaryUpdater {
     }
 
     @objc override func session(_ session: MXSession!, update summary: MXRoomSummary!, withLast event: MXEvent!, eventState: MXRoomState!, roomState: MXRoomState!) -> Bool {
+
+        // TODO: Be less restrictive
+        if event.type != MXEventType.roomMessage.identifier {
+            return false
+        }
+
         let result = super.session(session, update: summary, withLast: event, eventState: eventState, roomState: roomState)
 
         if result {
