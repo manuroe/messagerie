@@ -32,6 +32,12 @@ class MatrixTimeline: MessagesSourceType {
        }()
 
 
+    private var remainingMessagesToPaginate: Int?
+    var isPaginating: Bool {
+        remainingMessagesToPaginate != nil
+    }
+
+
     init(session: MatrixSession, roomId: String) {
         self.session = session
         self.roomId = roomId
@@ -39,10 +45,34 @@ class MatrixTimeline: MessagesSourceType {
     }
 
     func paginate(messagesCount: UInt, direction: Direction) {
+        if isPaginating {
+            return
+        }
+
         self.getLiveTimeline { timeline in
-            timeline.paginate(messagesCount,
-                              direction: direction == .backwards ? .backwards : .forwards,
-                              onlyFromStore: false) { _ in }
+            let mxDirection: MXTimelineDirection = direction == .backwards ? .backwards : .forwards
+            if timeline.canPaginate(mxDirection) {
+
+                self.remainingMessagesToPaginate = Int(messagesCount)
+
+                timeline.paginate(max(messagesCount, 30), direction: mxDirection, onlyFromStore: false) { response in
+                    let remainingMessagesToPaginate = self.remainingMessagesToPaginate ?? 0
+                    self.remainingMessagesToPaginate = nil
+
+                    switch response {
+                    case .failure(let error):
+                        print(error)
+                    case .success(_):
+                        if remainingMessagesToPaginate > 0 {
+                            self.paginate(messagesCount: UInt(remainingMessagesToPaginate), direction: direction)
+                        }
+                        print("error")
+
+                    }
+                }
+            } else {
+                self.remainingMessagesToPaginate = nil
+            }
         }
     }
 
@@ -101,6 +131,10 @@ class MatrixTimeline: MessagesSourceType {
                         self.subject.send(.backwards(messages: [message]))
                     } else {
                         self.subject.send(.forwards(messages: [message]))
+                    }
+
+                    if let remainingMessagesToPaginate = self.remainingMessagesToPaginate {
+                        self.remainingMessagesToPaginate = remainingMessagesToPaginate - 1
                     }
                 }
             }
