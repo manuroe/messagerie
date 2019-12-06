@@ -3,7 +3,7 @@
 //  Messagerie
 //
 //  Created by Emmanuel ROHEE on 28/10/2019.
-//  Copyright © 2019 manu.test. All rights reserved.
+//  Copyright © 2019 Emmanuel ROHEE. All rights reserved.
 //
 
 import SwiftUI
