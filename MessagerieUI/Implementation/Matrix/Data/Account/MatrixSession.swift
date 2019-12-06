@@ -92,14 +92,14 @@ class MatrixSession {
 
 extension MatrixSession {
 
-    func urlString(mxcString: String?, size: CGSize? = nil) -> String? {
+    func urlString(mxcString: String?, size: CGSize? = nil, method: MXThumbnailingMethod = MXThumbnailingMethodCrop) -> String? {
         guard let mxcString = mxcString else {
             return nil
         }
 
         var urlString: String?
         if let size = size {
-            urlString = mediaManager.url(ofContentThumbnail: mxcString, toFitViewSize: size, with: MXThumbnailingMethodCrop)
+            urlString = mediaManager.url(ofContentThumbnail: mxcString, toFitViewSize: size, with: method)
         }
         else {
             urlString = mediaManager.url(ofContent: mxcString)

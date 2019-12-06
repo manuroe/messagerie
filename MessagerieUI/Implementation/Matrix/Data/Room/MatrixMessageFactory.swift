@@ -73,7 +73,7 @@ struct MatrixMessageFactory {
             }
 
             // TODO
-            url = session.urlString(mxcString: url, size: CGSize(width: 320, height: 320))!
+            url = session.urlString(mxcString: url, size: CGSize(width: 320, height: 320), method: MXThumbnailingMethodScale)!
             let size = CGSize()
 
             return .image(imageModel: MessageContentImage(url: url, size: size))
