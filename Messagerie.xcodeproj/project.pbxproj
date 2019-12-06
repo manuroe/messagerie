@@ -76,6 +76,7 @@
 		32D5C1F62367A24100CDE9BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1F52367A24100CDE9BC /* Assets.xcassets */; };
 		32D5C1F92367A24100CDE9BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1F82367A24100CDE9BC /* Preview Assets.xcassets */; };
 		32D5C1FC2367A24100CDE9BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32D5C1FA2367A24100CDE9BC /* LaunchScreen.storyboard */; };
+		32DC5E56239A922400728A50 /* MessageContent+codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC5E55239A922400728A50 /* MessageContent+codable.swift */; };
 		32DE1C4523905F2C00CFF8BB /* NullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DE1C4423905F2C00CFF8BB /* NullView.swift */; };
 		32F2FBE123931E1700C73DF8 /* MatrixRoomSummaryUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2FBE023931E1700C73DF8 /* MatrixRoomSummaryUpdater.swift */; };
 		32F2FBE323945FB600C73DF8 /* MXRoomSummary+Messagerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F2FBE223945FB600C73DF8 /* MXRoomSummary+Messagerie.swift */; };
@@ -153,6 +154,7 @@
 		32D5C1F82367A24100CDE9BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32D5C1FB2367A24100CDE9BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32D5C1FD2367A24100CDE9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32DC5E55239A922400728A50 /* MessageContent+codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageContent+codable.swift"; sourceTree = "<group>"; };
 		32DE1C4423905F2C00CFF8BB /* NullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullView.swift; sourceTree = "<group>"; };
 		32F2FBE023931E1700C73DF8 /* MatrixRoomSummaryUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixRoomSummaryUpdater.swift; sourceTree = "<group>"; };
 		32F2FBE223945FB600C73DF8 /* MXRoomSummary+Messagerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MXRoomSummary+Messagerie.swift"; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				3299094D23723A4D00D7D989 /* Message.swift */,
+				32DC5E55239A922400728A50 /* MessageContent+codable.swift */,
 				32990959237359BD00D7D989 /* MessagesSourceType.swift */,
 				3299095A237359BD00D7D989 /* MessagesUpdate.swift */,
 			);
@@ -722,6 +725,7 @@
 				3200EB17238C7D7D00D69A6E /* MessageComposerView.swift in Sources */,
 				3299095423723B1C00D7D989 /* MatrixTimeline.swift in Sources */,
 				32AF64152385E7EA00D70570 /* SecureAccountManager.swift in Sources */,
+				32DC5E56239A922400728A50 /* MessageContent+codable.swift in Sources */,
 				3299093C2372208A00D7D989 /* ProtocolDataFactoryType.swift in Sources */,
 				32000525238880960064C360 /* SecuredAccount.swift in Sources */,
 				3299093D2372208A00D7D989 /* RoomSummary.swift in Sources */,
