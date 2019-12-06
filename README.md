@@ -7,13 +7,18 @@ Apple still camps on its MVC model but SwifUI seems to fit very well with MVVM p
 
 
 
-# Functionalites
+# Features
 
-[screenshots]
+<p float="center">
+  <img src="screenshots/login.png" width="256" />
+  <img src="screenshots/room-list.png" width="256" /> 
+  <img src="screenshots/room.png" width="256" />
+</p>
+
 Any resemblance to a future RiotX-iOS is unexpected :)
 
 Messagerie misses a lot of things but it has:
-- Support of Matrix using [SwiftMatrixSDK]()
+- Support of Matrix using [SwiftMatrixSDK](https://github.com/matrix-org/matrix-ios-sdk)
 - E2EE
 - Multi-account (swipe the navigation bar to switch accounts)
 - Dark mode and auto-sizing fonts (well, they come for free)
@@ -36,6 +41,7 @@ $ xed .
 
 
 # MessagerieUI
+
 This subfolder in the codebase could become a library that offers UI components for a chat app independent from the communication protocol. Messagerie is multi-account and multi-protocol.
 
 UI, data and services are isolated with protocols (the term for interfaces in Swift). There is a dumb dependency injection mechanism so that you inject an implementation of data and services into the UI. The will fetch and trigger things independent from the protocol. 
@@ -49,11 +55,12 @@ UI are implemented in the way we implement MVVM in Riot. We have:
 
 # SwiftUI 
 Well done Apple! SwiftUI makes me happy to code UI again. Once you understood the 3 levels of data binding, writting UI is most of the time flawless and quick and fun.
+
 They way it allows (and advices) you to cut views into small and independant ones is powerful. You can move a view to another container view with no drawbacks. 
 You remember Interface Build? When you needed to click on tons of buttons to create lost contraints? This time is gone :)
 
 ## Performance
-There is no doubt that SwiftUI performs very well. I hit no performance issues on the timeline. I even tried to display webviews into the timeline without any issues. You can see Matrix widgets webviews displayed within the timeline [here](cdcd)
+There is no doubt that SwiftUI performs very well. I hit no performance issues on the timeline. I even tried to display webviews into the timeline without any issues. You can see Matrix widgets webviews displayed and running within the timeline with no issue [here](cdcd)
 
 
 ## Gripes
