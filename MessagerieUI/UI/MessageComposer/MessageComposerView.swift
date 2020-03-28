@@ -15,29 +15,28 @@ struct MessageComposerView: View {
 
     var body: some View {
         HStack {
-
-            TextField("Send a message...",
+            TextField("Text Message",
                       text: $textMessage,
                       onCommit: onTextMessageCommit)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .frame(minHeight: 40)
-            .padding(.leading)
-
-
-//            Button(action: {
-//                // TODO
-//            }) {
-//                   Image(systemName: "plus")
-//               }
+                .offset(x: 8)
 
             Button(action: {
                 self.onTextMessageCommit()
             }, label: {
-                Image(systemName: "paperplane.fill")
+                Image(systemName: "arrow.up.circle.fill")
+                .resizable()
+                .frame(width: 27.0, height: 27.0)
+                .foregroundColor(.green)
             })
-            .padding(.trailing)
             .disabled(textMessage.isEmpty)
         }
+        .padding(3)
+        .overlay(
+            RoundedRectangle(cornerRadius: 24)
+                .stroke(Color.secondary)
+        )
+        .padding(.vertical, 2.0)
+        .padding(.horizontal, 8.0)
     }
 
     func onTextMessageCommit() -> Void {
@@ -49,6 +48,7 @@ struct MessageComposerView: View {
 
 struct MessageComposerView_Previews: PreviewProvider {
     static var previews: some View {
-        Text("TODO")
+        MessageComposerView(onComposerAction: { action in
+        })
     }
 }
