@@ -37,12 +37,25 @@ struct MessageComposerView: View {
         )
         .padding(.vertical, 2.0)
         .padding(.horizontal, 8.0)
+        // Blur effect behind the composer
+        .background(
+            VisualEffectView(effect: UIBlurEffect(style: .systemThinMaterial))
+                .edgesIgnoringSafeArea(.bottom)
+        )
     }
 
     func onTextMessageCommit() -> Void {
         onComposerAction(.textMessage(message: textMessage))
         textMessage = ""
     }
+}
+
+
+// https://stackoverflow.com/a/59111492
+struct VisualEffectView: UIViewRepresentable {
+    var effect: UIVisualEffect?
+    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
+    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
 }
 
 

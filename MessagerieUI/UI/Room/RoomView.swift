@@ -18,7 +18,7 @@ struct RoomView: View {
     @ObservedObject var state: RoomViewState
 
     var body: some View {
-        VStack {
+        ZStack(alignment: .bottom) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     ForEach(state.items) { item in
@@ -31,7 +31,11 @@ struct RoomView: View {
             .onAppear {
                 self.viewModel.process(action: .load)
             }
+            // To enable blur effect on top and bottom of screen
+            // As a bonus, it puts the scrollbar to the normal RHS (?)
+            .edgesIgnoringSafeArea(.all)
 
+            
             MessageComposerView(onComposerAction: { action in
                 self.onComposerAction(action: action)
             })
@@ -44,6 +48,7 @@ struct RoomView: View {
         viewModel.process(action: .messageComposerAction(action: action))
     }
 }
+
 
 //#if DEBUG
 //struct RoomView_Previews: PreviewProvider {
