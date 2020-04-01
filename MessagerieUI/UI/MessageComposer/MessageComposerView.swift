@@ -13,8 +13,9 @@ struct MessageComposerView: View {
 
     @State var textMessage: String = ""
 
+    let buttonSize: CGFloat = 27.0
     var body: some View {
-        HStack {
+        HStack(alignment: .bottom) {
             TextField("Text Message",
                       text: $textMessage,
                       onCommit: onTextMessageCommit)
@@ -25,14 +26,14 @@ struct MessageComposerView: View {
             }, label: {
                 Image(systemName: "arrow.up.circle.fill")
                 .resizable()
-                .frame(width: 27.0, height: 27.0)
+                .frame(width: buttonSize, height: buttonSize)
                 .foregroundColor(.green)
             })
             .disabled(textMessage.isEmpty)
         }
         .padding(3)
         .overlay(
-            RoundedRectangle(cornerRadius: 24)
+            RoundedRectangle(cornerRadius: buttonSize)
                 .stroke(Color.secondary)
         )
         .padding(.vertical, 2.0)
