@@ -6,7 +6,6 @@
 //  Copyright © 2019 Emmanuel ROHEE. All rights reserved.
 //
 
-import UIKit
 import Combine
 
 class RoomViewModel: RoomViewModelType {

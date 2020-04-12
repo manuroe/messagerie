@@ -6,8 +6,6 @@
 //  Copyright © 2019 Emmanuel ROHEE. All rights reserved.
 //
 
-import UIKit
-
 import SwiftMatrixSDK
 
 struct MatrixMessageFactory {

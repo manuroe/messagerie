@@ -15,13 +15,12 @@ class SecureAccountManager: AccountManagerType {
 
     func getAccounts() -> [AccountType] {
         return getAllKeyChainAccountServicePair().compactMap { (account, service) in
-            guard let dictionary = Locksmith.loadDataForUserAccount(userAccount: account, inService: service) else {
-                return nil
-            }
-
             do {
                 // TODO: Remove this dependency
                 if service == ProtocolName.matrix {
+                    guard let dictionary = Locksmith.loadDataForUserAccount(userAccount: account, inService: service) else {
+                        return nil
+                    }
                     return try MatrixAccount(from: dictionary)
                 }
             } catch {
@@ -65,13 +64,21 @@ extension SecureAccountManager {
     // https://stackoverflow.com/a/48895792
     private func getAllKeyChainAccountServicePair(_ secClass: String = kSecClassGenericPassword as String) -> [(account: String, service: String)] {
 
+#if os(OSX)
         let query: [String: Any] = [
             kSecClass as String: secClass,
-            kSecReturnData as String  : true,
             kSecReturnAttributes as String : true,
-            kSecReturnRef as String : true,
             kSecMatchLimit as String: kSecMatchLimitAll
         ]
+#else
+        let query: [String: Any] = [
+            kSecClass as String: secClass,
+            kSecReturnAttributes as String : true,
+            kSecMatchLimit as String: kSecMatchLimitAll,
+            kSecReturnData as String : true,
+            kSecReturnRef as String : true//import UIKit
+        ]
+#endif
 
         var result: AnyObject?
 
@@ -81,13 +88,13 @@ extension SecureAccountManager {
 
         var values = [(account: String, service: String)]()
         if lastResultCode == noErr {
-            let array = result as? Array<Dictionary<String, Any>>
-
-            for item in array! {
-                if let account = item[kSecAttrAccount as String] as? String,
-                    let service = item[kSecAttrService as String] as? String {
-                    values.append((account: account,
-                                   service: service))
+            if let array = result as? Array<Dictionary<String, Any>> {
+                for item in array {
+                    if let account = item[kSecAttrAccount as String] as? String,
+                        let service = item[kSecAttrService as String] as? String {
+                        values.append((account: account,
+                                       service: service))
+                    }
                 }
             }
         }
