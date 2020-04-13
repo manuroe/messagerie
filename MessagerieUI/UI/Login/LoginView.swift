@@ -46,7 +46,8 @@ struct LoginView: View {
                     }
                 }.disabled(state.logingIn)
             }
-            .navigationBarTitle("Sign In", displayMode: .large)
+            // TODO(MacOS)
+            //.navigationBarTitle("Sign In", displayMode: .large)
             .onAppear(perform: didLoad)
         }
     }

@@ -48,11 +48,13 @@ struct MessageView: View {
             // EXPERIMENTAL
             case .html(let body):
                 return AnyView(
-                    MessageHtmlView(html: body)
+                    //MessageHtmlView(html: body)   // TODO(MacOS)
+                    MessageTextView(message: body)
                 )
             case .widget(let url):
                 return AnyView(
-                    MessageWidgetView(url: url)
+                    //MessageWidgetView(url: url)   // TODO(MacOS)
+                    MessageTextView(message: url.absoluteString)
                 )
             }
         }

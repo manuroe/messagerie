@@ -29,7 +29,7 @@ struct AvatarView: View {
     var body: some View {
         WebImage(url: avatarUrl)
             .resizable()
-            .placeholder(Image(systemName: "photo"))
+            .placeholder(Image("photo"))    // TODO(MacOS)
             .frame(width: width, height: height, alignment: .center)
             .clipShape(Circle())
     }

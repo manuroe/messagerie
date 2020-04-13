@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.0):
+    - AFNetworking/NSURLSession (= 4.0.0)
+    - AFNetworking/Reachability (= 4.0.0)
+    - AFNetworking/Security (= 4.0.0)
+    - AFNetworking/Serialization (= 4.0.0)
+    - AFNetworking/UIKit (= 4.0.0)
+  - AFNetworking/NSURLSession (4.0.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.0)
+  - AFNetworking/Security (4.0.0)
+  - AFNetworking/Serialization (4.0.0)
+  - AFNetworking/UIKit (4.0.0):
     - AFNetworking/NSURLSession
   - GZIP (1.2.3)
   - libbase58 (0.1.4)
@@ -22,39 +22,48 @@ PODS:
     - OLMKit/olmcpp (= 3.1.0)
   - OLMKit/olmc (3.1.0)
   - OLMKit/olmcpp (3.1.0)
-  - Realm (3.17.3):
-    - Realm/Headers (= 3.17.3)
-  - Realm/Headers (3.17.3)
-  - SwiftMatrixSDK (0.15.0):
-    - AFNetworking (~> 3.2.0)
+  - Realm (4.4.0):
+    - Realm/Headers (= 4.4.0)
+  - Realm/Headers (4.4.0)
+  - SwiftMatrixSDK (0.15.2):
+    - AFNetworking (~> 4.0.0)
     - GZIP (~> 1.2.2)
     - libbase58 (~> 0.1.4)
     - OLMKit (~> 3.1.0)
-    - Realm (~> 3.17.3)
+    - Realm (~> 4.4.0)
 
 DEPENDENCIES:
   - Locksmith
-  - SwiftMatrixSDK
+  - SwiftMatrixSDK (from `https://github.com/matrix-org/matrix-ios-sdk.git`, branch `xcode11`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - AFNetworking
     - GZIP
     - libbase58
     - Locksmith
     - OLMKit
     - Realm
-    - SwiftMatrixSDK
+
+EXTERNAL SOURCES:
+  SwiftMatrixSDK:
+    :branch: xcode11
+    :git: https://github.com/matrix-org/matrix-ios-sdk.git
+
+CHECKOUT OPTIONS:
+  SwiftMatrixSDK:
+    :commit: f011e86db576d6c7e1425a72c19f93264e655ae4
+    :git: https://github.com/matrix-org/matrix-ios-sdk.git
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
   GZIP: af5c90ef903776a7e9afe6ebebd794a84a2929d4
   libbase58: 7c040313537b8c44b6e2d15586af8e21f7354efd
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
   OLMKit: 4ee0159d63feeb86d836fdcfefe418e163511639
-  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
-  SwiftMatrixSDK: 84957de558895ff562884c51572a75ae96b7c1f1
+  Realm: e125f464884cda953ebefe70c671b75b03b81b9b
+  SwiftMatrixSDK: 6440b99ee1fa0f161105f0ee239a8774e726f5f7
 
-PODFILE CHECKSUM: 96bab3ce8c1146ed12cd77711341ae5e6ea680fc
+PODFILE CHECKSUM: d2edf2d8444a35f9f01af04d46098fd429b81706
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

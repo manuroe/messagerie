@@ -24,7 +24,7 @@ struct MessageComposerView: View {
             Button(action: {
                 self.onTextMessageCommit()
             }, label: {
-                Image(systemName: "arrow.up.circle.fill")
+                Image("arrow.up.circle.fill")   // TODO(MacOS)
                 .resizable()
                 .frame(width: buttonSize, height: buttonSize)
                 .foregroundColor(.green)
@@ -38,11 +38,12 @@ struct MessageComposerView: View {
         )
         .padding(.vertical, 2.0)
         .padding(.horizontal, 8.0)
+        // TODO(MacOS)
         // Blur effect behind the composer
-        .background(
-            VisualEffectView(effect: UIBlurEffect(style: .systemThinMaterial))
-                .edgesIgnoringSafeArea(.bottom)
-        )
+//        .background(
+//            VisualEffectView(effect: UIBlurEffect(style: .systemThinMaterial))
+//                .edgesIgnoringSafeArea(.bottom)
+//        )
     }
 
     func onTextMessageCommit() -> Void {
@@ -52,12 +53,12 @@ struct MessageComposerView: View {
 }
 
 
-// https://stackoverflow.com/a/59111492
-struct VisualEffectView: UIViewRepresentable {
-    var effect: UIVisualEffect?
-    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
-    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
-}
+//// https://stackoverflow.com/a/59111492
+//struct VisualEffectView: UIViewRepresentable {
+//    var effect: UIVisualEffect?
+//    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
+//    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
+//}
 
 
 struct MessageComposerView_Previews: PreviewProvider {

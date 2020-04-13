@@ -34,13 +34,14 @@ struct RoomListView: View {
             .onAppear {
                 self.viewModel.process(action: .load)
             }
-            .navigationBarTitle(
-                Text((state.myUser != nil) ? state.myUser!.displayname : ""),
-                displayMode: .inline
-            )
-            .navigationBarItems(
-                leading: AvatarView(avatar: state.myUser?.avatar, width: 30, height: 30)
-            )
+            // TODO(MacOS)
+//            .navigationBarTitle(
+//                Text((state.myUser != nil) ? state.myUser!.displayname : ""),
+//                displayMode: .inline
+//            )
+//            .navigationBarItems(
+//                leading: AvatarView(avatar: state.myUser?.avatar, width: 30, height: 30)
+//            )
         }
     }
 

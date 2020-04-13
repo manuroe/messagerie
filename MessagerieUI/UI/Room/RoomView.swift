@@ -8,7 +8,9 @@
 
 import SwiftUI
 
-import KeyboardObserving
+// TODO(MacOS)
+//import KeyboardObserving
+
 
 // Offset control
 // https://zacwhite.com/2019/scrollview-content-offsets-swiftui/
@@ -40,8 +42,9 @@ struct RoomView: View {
                 self.onComposerAction(action: action)
             })
         }
-        .navigationBarTitle(Text(state.roomName), displayMode: .inline)
-        .keyboardObserving()
+        // TODO(MacOS)
+        //.navigationBarTitle(Text(state.roomName), displayMode: .inline)
+        //.keyboardObserving()
     }
 
     private func onComposerAction(action: MessageComposerAction) {
